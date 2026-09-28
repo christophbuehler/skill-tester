@@ -1,0 +1,128 @@
+{
+  "id": "impeccable-20260928090818875",
+  "profile": "impeccable",
+  "label": "Impeccable",
+  "skills": [
+    {
+      "id": "impeccable",
+      "name": "Impeccable",
+      "repo": "pbakaus/impeccable",
+      "path": ".agents/skills/impeccable",
+      "commit": "9d715cc4f5564a990ca8345abfdd5df6dc9b41c8",
+      "license": "Apache-2.0",
+      "requiredResources": [
+        "SKILL.md",
+        "reference/new-work.md",
+        "reference/craft-floor.md",
+        "scripts/impeccable"
+      ]
+    }
+  ],
+  "createdAt": "2026-09-28T09:08:20.688Z",
+  "benchmark": "folio-v1",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "acd5368648d598aef41ba8de7ddb8602856525a42d00b76d58362265650b6515",
+  "starterHash": "4b9a02ef9d65ef26dd6b5fcd01b49d82ae8d7b58829788613b11f6e220a2716a",
+  "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/impeccable/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 1,
+    "promptHash": "96ee333ab414145833ed5f9483706c9c6211f7d669f17e4bde2a4c911aae6b56"
+  },
+  "repairCount": 1,
+  "status": "passed",
+  "elapsedMs": 379735,
+  "tokenUsage": [
+    {
+      "input_tokens": 317415,
+      "cached_input_tokens": 262400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 9162,
+      "reasoning_output_tokens": 336
+    },
+    {
+      "input_tokens": 138259,
+      "cached_input_tokens": 115456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 597,
+      "reasoning_output_tokens": 20
+    }
+  ],
+  "loadedSkills": [
+    ".agents/skills/impeccable/SKILL.md"
+  ],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "validationAttempts": [
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": false,
+        "failure": "\n> skill-tester@1.0.0 test:e2e /private<workspace>\n> BENCHMARK_ISOLATED=1 playwright test\n\n\nRunning 4 tests using 4 workers\n\n  ✓  4 tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send (583ms)\n  ✓  1 tests/variants.spec.ts:93:3 › isolated: deterministic error recovery (3.3s)\n  ✓  3 tests/variants.spec.ts:13:3 › isolated: chat, streaming, stop, retry, switch (3.3s)\n  ✘  2 tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report (30.0s)\n\n\n  1) tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report ──────\n\n    \u001b[31mTest timeout of 30000ms exceeded.\u001b[39m\n\n    Error: locator.click: Test timeout of 30000ms exceeded.\n    Call log:\n    \u001b[2m  - waiting for getByRole('button', { name: 'Open conversations', exact: true })\u001b[22m\n    \u001b[2m    - locator resolved to <button class=\"mobile-menu icon-button\" aria-label=\"Open conversations\">…</button>\u001b[22m\n    \u001b[2m  - attempting click action\u001b[22m\n    \u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m      - element is visible, enabled and stable\u001b[22m\n    \u001b[2m      - scrolling into view if needed\u001b[22m\n    \u001b[2m      - done scrolling\u001b[22m\n    \u001b[2m      - <a href=\"#message\" class=\"skip-link\">Skip to message composer</a> intercepts pointer events\u001b[22m\n    \u001b[2m    - retrying click action\u001b[22m\n    \u001b[2m    - waiting 20ms\u001b[22m\n    \u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m      - element is visible, enabled and stable\u001b[22m\n    \u001b[2m      - scrolling into view if needed\u001b[22m\n    \u001b[2m      - done scrolling\u001b[22m\n    \u001b[2m      - <a href=\"#message\" class=\"skip-link\">Skip to message composer</a> intercepts pointer events\u001b[22m\n    \u001b[2m    - retrying click action\u001b[22m\n    \u001b[2m      - waiting 100ms\u001b[22m\n    \u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m       - element is visible, enabled and stable\u001b[22m\n    \u001b[2m       - scrolling into view if needed\u001b[22m\n    \u001b[2m       - done scrolling\u001b[22m\n    \u001b[2m       - <a href=\"#message\" class=\"skip-link\">Skip to message composer</a> intercepts pointer events\u001b[22m\n    \u001b[2m     - retrying click action\u001b[22m\n    \u001b[2m       - waiting 500ms\u001b[22m\n\n\n      36 |    const a11y=await new AxeBuilder({page}).analyze();await info.attach(`${name}-accessibility`,{body:JSON.stringify(a11y.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length})),null,2),contentType:'application/json'});\n      37 |    await page.keyboard.press('Tab');expect(await page.evaluate(()=>document.activeElement!==document.body)).toBe(true);\n    > 38 |    if(name==='mobile') {const open=page.getByRole('button',{name:'Open conversations',exact:true});if(await open.isVisible())await open.click();await page.getByRole('button',{name:'Document review',exact:true}).click();await expect(page.getByTestId('messages')).toContainText('launch-brief.pdf');}\n         |                                                                                                                                         ^\n      39 |   }\n      40 |  });\n      41 | }\n        at /private<workspace>/tests/variants.spec.ts:38:137\n\n    Error Context: test-results/variants-isolated-responsi-41793-ts-and-accessibility-report/error-context.md\n\n  1 failed\n    tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report ───────\n  3 passed (31.2s)\n ELIFECYCLE  Command failed with exit code 1.\n\n(node:73926) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:73933) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:73934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:73934) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:73943) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73942) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73941) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:73941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73944) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:73942) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:73943) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:73944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73943) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:73942) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ]
+  ],
+  "failure": null,
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    }
+  ],
+  "sourceHash": "0e2177586e96113d6eeb57f744fac83c9447c2229d523d0e912e5f02d8e5f8ae"
+}

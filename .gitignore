@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.local/
+apm_modules/
+profiles/*/.agents/
+profiles/*/.codex/
+profiles/*/AGENTS.md
+playwright-report/
+test-results/
+.DS_Store

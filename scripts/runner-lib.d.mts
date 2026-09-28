@@ -1,0 +1,10 @@
+export function hash(value: string | Uint8Array): string;
+export function files(directory: string): string[];
+export function snapshot(directory: string): Record<string, string>;
+export function allowed(file: string): boolean;
+export function protectedChanges(before: Record<string, string>, after: Record<string, string>): string[];
+export function extractSkills(prompt: unknown): string[];
+export function assertIsolated(prompt: unknown, permitted: string[]): { passed: true; skills: number; promptHash: string };
+export function safeRunDir(root: string, id: string): string;
+export function validateSkillResources(entrypoint: string, required?: string[]): void;
+export function validateProfilePins(profile: { skills: string[] }, registry: Record<string, { repo: string; path: string; commit: string }>, manifest: string, lock: string): void;

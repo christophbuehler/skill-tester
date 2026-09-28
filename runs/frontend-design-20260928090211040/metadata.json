@@ -1,0 +1,113 @@
+{
+  "id": "frontend-design-20260928090211040",
+  "profile": "frontend-design",
+  "label": "Frontend Design",
+  "skills": [
+    {
+      "id": "frontend-design",
+      "name": "Frontend Design",
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "commit": "33375500bcea98d610eb30ce10ac4e59b89c390d",
+      "license": "Apache-2.0",
+      "requiredResources": [
+        "SKILL.md",
+        "LICENSE.txt"
+      ]
+    }
+  ],
+  "createdAt": "2026-09-28T09:02:12.774Z",
+  "benchmark": "folio-v1",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "acd5368648d598aef41ba8de7ddb8602856525a42d00b76d58362265650b6515",
+  "starterHash": "4b9a02ef9d65ef26dd6b5fcd01b49d82ae8d7b58829788613b11f6e220a2716a",
+  "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/frontend-design/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 1,
+    "promptHash": "1ebd50dcb9992209629eb5422c54a5de305524f7d1600bc719e80f339639b241"
+  },
+  "repairCount": 1,
+  "status": "passed",
+  "elapsedMs": 365683,
+  "tokenUsage": [
+    {
+      "input_tokens": 144884,
+      "cached_input_tokens": 122752,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8564,
+      "reasoning_output_tokens": 168
+    },
+    {
+      "input_tokens": 123067,
+      "cached_input_tokens": 96640,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 791,
+      "reasoning_output_tokens": 44
+    }
+  ],
+  "loadedSkills": [
+    ".agents/skills/frontend-design/SKILL.md"
+  ],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 8
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 3
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "description": "Ensure elements that have scrollable content are accessible by keyboard",
+          "nodes": 1
+        }
+      ]
+    }
+  ],
+  "sourceHash": "2fefdf145d8c0f8dc133193b8681ab6dd7f9c13d1ee09aec96f76df760a39b6f"
+}

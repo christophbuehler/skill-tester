@@ -1,0 +1,8 @@
+name: frontend-design
+version: 1.0.0
+description: Skill Tester profile frontend-design
+targets:
+  - codex
+dependencies:
+  apm:
+    - anthropics/skills/skills/frontend-design#33375500bcea98d610eb30ce10ac4e59b89c390d

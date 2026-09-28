@@ -1,0 +1,39 @@
+{
+  "frontend-design": {
+    "name": "Frontend Design",
+    "repo": "anthropics/skills",
+    "path": "skills/frontend-design",
+    "commit": "33375500bcea98d610eb30ce10ac4e59b89c390d",
+    "license": "Apache-2.0",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt"
+    ]
+  },
+  "impeccable": {
+    "name": "Impeccable",
+    "repo": "pbakaus/impeccable",
+    "path": ".agents/skills/impeccable",
+    "commit": "9d715cc4f5564a990ca8345abfdd5df6dc9b41c8",
+    "license": "Apache-2.0",
+    "requiredResources": [
+      "SKILL.md",
+      "reference/new-work.md",
+      "reference/craft-floor.md",
+      "scripts/impeccable"
+    ]
+  },
+  "ui-ux-pro-max": {
+    "name": "UI/UX Pro Max",
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "path": ".claude/skills/ui-ux-pro-max",
+    "commit": "09170eec67eefd46a7ae85de61b40c194020f997",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "scripts/search.py",
+      "data/styles.csv",
+      "references/quick-reference.md"
+    ]
+  }
+}

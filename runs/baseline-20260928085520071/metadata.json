@@ -1,0 +1,98 @@
+{
+  "id": "baseline-20260928085520071",
+  "profile": "baseline",
+  "label": "No design skill",
+  "skills": [],
+  "createdAt": "2026-09-28T08:55:21.352Z",
+  "benchmark": "folio-v1",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "acd5368648d598aef41ba8de7ddb8602856525a42d00b76d58362265650b6515",
+  "starterHash": "4b9a02ef9d65ef26dd6b5fcd01b49d82ae8d7b58829788613b11f6e220a2716a",
+  "profileInstruction": "No design skills are selected. Use only the shared benchmark brief and contract.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 0,
+    "promptHash": "6454219bcc60a40dad7ddf1810485b0ecd7f3673745238b49ec1a4a00a55c45d"
+  },
+  "repairCount": 1,
+  "status": "passed",
+  "elapsedMs": 399922,
+  "tokenUsage": [
+    {
+      "input_tokens": 218337,
+      "cached_input_tokens": 188160,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10315,
+      "reasoning_output_tokens": 192
+    },
+    {
+      "input_tokens": 113686,
+      "cached_input_tokens": 94720,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 566,
+      "reasoning_output_tokens": 51
+    }
+  ],
+  "loadedSkills": [],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 15
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 6
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "description": "Ensure elements that have scrollable content are accessible by keyboard",
+          "nodes": 1
+        }
+      ]
+    }
+  ],
+  "sourceHash": "e7fc46b1dd5a2d05659826e511770ab441442ccffff51e29dfafb7085ab52275"
+}

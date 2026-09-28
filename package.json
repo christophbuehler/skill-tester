@@ -1,0 +1,37 @@
+{
+  "name": "skill-tester",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/build.mjs",
+    "test": "tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "typecheck": "node scripts/typecheck.mjs",
+    "profile": "node scripts/profiles.mjs",
+    "generate": "node scripts/generate.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "dependencies": {
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "lucide-react": "0.468.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.13",
+    "tailwindcss": "4.1.13",
+    "@vitejs/plugin-react": "5.0.3",
+    "vite": "7.1.7",
+    "typescript": "5.9.2",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "@types/node": "24.5.2",
+    "tsx": "4.20.5",
+    "@playwright/test": "1.55.1",
+    "@axe-core/playwright": "4.10.2"
+  }
+}

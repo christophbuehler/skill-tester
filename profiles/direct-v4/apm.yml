@@ -1,0 +1,12 @@
+name: direct-v4
+version: 1.0.0
+description: Skill Tester profile direct-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - christophbuehler/skill-tester/skills/modern-interface-craft#2677ddd7d3b0fd7ccd4290909a0e4868bc1ef791
+    - emilkowalski/skills/skills/apple-design#d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+    - addyosmani/web-quality-skills/skills/accessibility#afa8da942115f2961fdbfa80807ea0b232ff6c00
+    - christophbuehler/skill-tester/skills/nested-geometry#0fdd20bed5a45857c652427a445089b045167413
+    - christophbuehler/skill-tester/skills/motion-storytelling#046ff46b275cb8aa8414741ad938f912098df872

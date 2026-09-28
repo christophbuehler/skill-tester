@@ -67,3 +67,8 @@ The eight new individual profiles have APM lockfiles and passed exact-pin, entry
 - [Motion Storytelling](../skills/motion-storytelling/SKILL.md) is a new original adaptation of the user-supplied motion-guide screenshot. It is model-independent, with causal scene planning, object continuity, narration/caption timing and complete-deliverable review. The handcrafted paper aesthetic is optional. Its [brief template](../skills/motion-storytelling/references/brief-template.md) is reusable outside this repository. For a UI combination, apply its interaction-continuity principles without importing a film, narrator or mascot.
 
 The `quiet-v4` profile pins both sources at `046ff46b275cb8aa8414741ad938f912098df872`. It combines Modern Interface Craft / Quiet, Apple Design (Emil Kowalski), Accessibility, Nested Geometry and Motion Storytelling. Beautiful Shadows is omitted because this direction favors flat tonal surfaces. APM resource and fresh-session isolation preflight passed with exactly these five skills. Existing Studio runs retain their historical sources; generation outcomes are recorded separately in run metadata.
+
+
+## Direct navigation and restrained typography
+
+`direct-v4` retains the Quiet combination's four specialist pins and selects Modern Interface Craft / Direct at `2677ddd7d3b0fd7ccd4290909a0e4868bc1ef791`. It updates the visual lead in response to user review: normal UI titles/descriptions share size and medium weight, secondary tone carries the distinction, and repeated conversation switching gets a persistent desktop rail. Mobile history can collapse for space. The quiet composer and moderate geometry remain. Older profiles and outputs are unchanged.

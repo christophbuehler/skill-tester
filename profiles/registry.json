@@ -450,5 +450,20 @@
       "LICENSE.txt",
       "references/brief-template.md"
     ]
+  },
+  "modern-interface-craft-direct": {
+    "name": "Modern Interface Craft / Direct",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/modern-interface-craft",
+    "commit": "2677ddd7d3b0fd7ccd4290909a0e4868bc1ef791",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/light-workspace.md",
+      "references/interaction-recipes.md",
+      "references/research.md",
+      "references/source-audit.json"
+    ]
   }
 }

@@ -1,0 +1,147 @@
+{
+  "id": "modern-interface-craft-20260928104302011",
+  "profile": "modern-interface-craft",
+  "label": "Modern Interface Craft",
+  "skills": [
+    {
+      "id": "modern-interface-craft",
+      "name": "Modern Interface Craft",
+      "repo": "christophbuehler/skill-tester",
+      "path": "skills/modern-interface-craft",
+      "commit": "88cea44c0a8956648dee75404fda7cd1d7a56651",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md",
+        "LICENSE.txt",
+        "references/interaction-recipes.md",
+        "references/research.md",
+        "references/source-audit.json"
+      ]
+    }
+  ],
+  "createdAt": "2026-09-28T10:43:03.483Z",
+  "benchmark": "folio-v1",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "acd5368648d598aef41ba8de7ddb8602856525a42d00b76d58362265650b6515",
+  "starterHash": "4b9a02ef9d65ef26dd6b5fcd01b49d82ae8d7b58829788613b11f6e220a2716a",
+  "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/modern-interface-craft/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 1,
+    "promptHash": "c842220c12d9ed5021f30100ac9256a265e1a23c750a0c2018f1680727ab02db"
+  },
+  "repairCount": 1,
+  "status": "passed",
+  "elapsedMs": 428082,
+  "tokenUsage": [
+    {
+      "input_tokens": 222135,
+      "cached_input_tokens": 194432,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 11384,
+      "reasoning_output_tokens": 725
+    },
+    {
+      "input_tokens": 99381,
+      "cached_input_tokens": 75264,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 549,
+      "reasoning_output_tokens": 21
+    }
+  ],
+  "loadedSkills": [
+    ".agents/skills/modern-interface-craft/SKILL.md"
+  ],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "validationAttempts": [
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": false,
+        "failure": "\n> skill-tester@1.0.0 test:e2e /private<workspace>\n> BENCHMARK_ISOLATED=1 playwright test\n\n\nRunning 4 tests using 4 workers\n\n  ✓  3 tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report (1.3s)\n  ✓  1 tests/variants.spec.ts:13:3 › isolated: chat, streaming, stop, retry, switch (3.3s)\n  ✓  2 tests/variants.spec.ts:93:3 › isolated: deterministic error recovery (3.3s)\n  ✘  4 tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send (5.5s)\n\n\n  1) tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send ──────────────────────\n\n    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n    Locator: getByTestId('pending-attachments')\n    Expected string: not \u001b[32m\"notes.txt\"\u001b[39m\n    Received: <element(s) not found>\n    Timeout: 5000ms\n\n    Call log:\n    \u001b[2m  - Expect \"not toContainText\" with timeout 5000ms\u001b[22m\n    \u001b[2m  - waiting for getByTestId('pending-attachments')\u001b[22m\n\n\n      21 |   await page.goto(route);await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'notes.txt',mimeType:'text/plain',buffer:Buffer.from('Research notes')});\n      22 |   await expect(page.getByTestId('pending-attachments')).toContainText('notes.txt');await page.getByRole('button',{name:'Remove notes.txt',exact:true}).click();\n    > 23 |   await expect(page.getByTestId('pending-attachments')).not.toContainText('notes.txt');\n         |                                                             ^\n      24 |   await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'bad.exe',mimeType:'application/octet-stream',buffer:Buffer.from('x')});await expect(page.getByRole('alert')).toContainText('unsupported');\n      25 |   await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'brief.pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF fixture')});await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.getByTestId('messages')).toContainText('brief.pdf');\n      26 |  });\n        at /private<workspace>/tests/variants.spec.ts:23:61\n\n    Error Context: test-results/variants-isolated-attachments-invalid-files-send/error-context.md\n\n  1 failed\n    tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send ───────────────────────\n  3 passed (7.8s)\n ELIFECYCLE  Command failed with exit code 1.\n\n(node:80337) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:80343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:80344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:80344) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:80352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80355) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80353) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:80353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80352) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:80352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80355) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:80355) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:80354) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:80354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ]
+  ],
+  "failure": null,
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 12
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 6
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "description": "Ensure elements that have scrollable content are accessible by keyboard",
+          "nodes": 1
+        }
+      ]
+    }
+  ],
+  "sourceHash": "41b5855486e0293677661eb2041bc86098be32deee9165a4f47a4c1b6fda1c9b"
+}

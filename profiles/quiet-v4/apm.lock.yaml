@@ -1,0 +1,335 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T14:52:35.969275+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: addyosmani/web-quality-skills
+  name: web-quality-skills
+  host: github.com
+  resolved_commit: afa8da942115f2961fdbfa80807ea0b232ff6c00
+  resolved_ref: afa8da942115f2961fdbfa80807ea0b232ff6c00
+  version: unknown
+  virtual_path: skills/accessibility
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/accessibility
+  - .agents/skills/accessibility/SKILL.md
+  - .agents/skills/accessibility/references/A11Y-PATTERNS.md
+  - .agents/skills/accessibility/references/WCAG.md
+  deployed_file_hashes:
+    .agents/skills/accessibility/SKILL.md: sha256:267fb2a0707d6142f2871f22688203a42ba21291a2aa200fb740936e41362b5d
+    .agents/skills/accessibility/references/A11Y-PATTERNS.md: sha256:f10e238dd4dd3c4f51134c2056bc02d3dd4f8fb6ccc9145c2c1ba7aab4d58140
+    .agents/skills/accessibility/references/WCAG.md: sha256:16683e025e3833d931c9d880645d98a448827f97e10189b6c8f12c832e7a2361
+  content_hash: sha256:48861fac56e62fd43f9c3a173cef9e35a1545637445c6bdb64c18f083af84a44
+- repo_url: christophbuehler/skill-tester
+  name: skill-tester
+  host: github.com
+  resolved_commit: 046ff46b275cb8aa8414741ad938f912098df872
+  resolved_ref: 046ff46b275cb8aa8414741ad938f912098df872
+  version: unknown
+  virtual_path: skills/modern-interface-craft
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/modern-interface-craft
+  - .agents/skills/modern-interface-craft/LICENSE.txt
+  - .agents/skills/modern-interface-craft/SKILL.md
+  - .agents/skills/modern-interface-craft/evals/evals.json
+  - .agents/skills/modern-interface-craft/references/interaction-recipes.md
+  - .agents/skills/modern-interface-craft/references/light-workspace.md
+  - .agents/skills/modern-interface-craft/references/research.md
+  - .agents/skills/modern-interface-craft/references/source-audit.json
+  deployed_file_hashes:
+    .agents/skills/modern-interface-craft/LICENSE.txt: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+    .agents/skills/modern-interface-craft/SKILL.md: sha256:ecc10850058d36444a50a7374d8512e3f0158d30ddc6efb4cd179f3fa40f9c57
+    .agents/skills/modern-interface-craft/evals/evals.json: sha256:13042f99f3a8dcc0d8f39beba9c8d5ae02d70a3c526d9aa8bf4b9d912502bf6f
+    .agents/skills/modern-interface-craft/references/interaction-recipes.md: sha256:ec6777eeca0ea2c67c11f606256f24adabfb9714b44f9f245a992acd9b5da980
+    .agents/skills/modern-interface-craft/references/light-workspace.md: sha256:f26abb22988f821943a3d4576f00746221a453fb76c06def99bfb83d31912002
+    .agents/skills/modern-interface-craft/references/research.md: sha256:a56c4c25435898129c43fdca01e2b11aba0240ae10d01ecf2dcf43a67dc1f77f
+    .agents/skills/modern-interface-craft/references/source-audit.json: sha256:51f80b42e50ffe59b2d4d1977e262726565dd246eb603cbe712b681d944dfb6c
+  content_hash: sha256:5d570cdbc742280e86cec4f0a34a840963166eb0284d01936576d725d38bbb8a
+- repo_url: christophbuehler/skill-tester
+  name: skill-tester
+  host: github.com
+  resolved_commit: 046ff46b275cb8aa8414741ad938f912098df872
+  resolved_ref: 046ff46b275cb8aa8414741ad938f912098df872
+  version: unknown
+  virtual_path: skills/motion-storytelling
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/motion-storytelling
+  - .agents/skills/motion-storytelling/LICENSE.txt
+  - .agents/skills/motion-storytelling/SKILL.md
+  - .agents/skills/motion-storytelling/agents/openai.yaml
+  - .agents/skills/motion-storytelling/references/brief-template.md
+  deployed_file_hashes:
+    .agents/skills/motion-storytelling/LICENSE.txt: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+    .agents/skills/motion-storytelling/SKILL.md: sha256:00aa4cfce358bbd46c8993bebe4a7ea968375c05c536a6f2f68ff6f2fa6780f6
+    .agents/skills/motion-storytelling/agents/openai.yaml: sha256:22f039ff6394ad8b716981bcf412b3205a55639f1536c296ed316c9b9d80829b
+    .agents/skills/motion-storytelling/references/brief-template.md: sha256:4c46ff8e9598500526f9146720c19d9a5aefc98eff2d705056fa0a9ece880ee1
+  content_hash: sha256:975e0bc0df21c7742eb5ac738172cb76c70663ca6b7f54187cf2b8f89da88d85
+- repo_url: christophbuehler/skill-tester
+  name: skill-tester
+  host: github.com
+  resolved_commit: 0fdd20bed5a45857c652427a445089b045167413
+  resolved_ref: 0fdd20bed5a45857c652427a445089b045167413
+  version: unknown
+  virtual_path: skills/nested-geometry
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/nested-geometry
+  - .agents/skills/nested-geometry/LICENSE.txt
+  - .agents/skills/nested-geometry/SKILL.md
+  - .agents/skills/nested-geometry/evals/evals.json
+  - .agents/skills/nested-geometry/scripts/geometry.d.mts
+  - .agents/skills/nested-geometry/scripts/geometry.mjs
+  deployed_file_hashes:
+    .agents/skills/nested-geometry/LICENSE.txt: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+    .agents/skills/nested-geometry/SKILL.md: sha256:d9eea7be62a146d9541b56958406fb005bddaf72784fe8f8f853dc086cc9b2a2
+    .agents/skills/nested-geometry/evals/evals.json: sha256:c6d8e1a016c509a3b52db5e7be8aa1e49181197147234edc2e90368db76a7551
+    .agents/skills/nested-geometry/scripts/geometry.d.mts: sha256:24f2a2ab936db1ffbc1947434d4eccd9d596a24fd57c3276a759d54b77acff66
+    .agents/skills/nested-geometry/scripts/geometry.mjs: sha256:41f6335a1a8513676e023626e600255cb94e6f0655250cd151590d282226f1a0
+  content_hash: sha256:daaf3ec3e7a9dda34c4de08adac5480c42d7fcb44bdd0c9eaf2f6a671ece8aaf
+- repo_url: emilkowalski/skills
+  name: skills
+  host: github.com
+  resolved_commit: d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+  resolved_ref: d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+  version: unknown
+  virtual_path: skills/apple-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/apple-design
+  - .agents/skills/apple-design/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/apple-design/SKILL.md: sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7
+  content_hash: sha256:0190417d092a0df447b000154e39733ea6d97efad6d3bec8a6ce3845aeb88914
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: sha256:267fb2a0707d6142f2871f22688203a42ba21291a2aa200fb740936e41362b5d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility/references/A11Y-PATTERNS.md
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: sha256:f10e238dd4dd3c4f51134c2056bc02d3dd4f8fb6ccc9145c2c1ba7aab4d58140
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility/references/WCAG.md
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: sha256:16683e025e3833d931c9d880645d98a448827f97e10189b6c8f12c832e7a2361
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills/skills/apple-design
+  active_owner: emilkowalski/skills/skills/apple-design
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills/skills/apple-design
+  active_owner: emilkowalski/skills/skills/apple-design
+  content_hash: sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:ecc10850058d36444a50a7374d8512e3f0158d30ddc6efb4cd179f3fa40f9c57
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:13042f99f3a8dcc0d8f39beba9c8d5ae02d70a3c526d9aa8bf4b9d912502bf6f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/interaction-recipes.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:ec6777eeca0ea2c67c11f606256f24adabfb9714b44f9f245a992acd9b5da980
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/light-workspace.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:f26abb22988f821943a3d4576f00746221a453fb76c06def99bfb83d31912002
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/research.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:a56c4c25435898129c43fdca01e2b11aba0240ae10d01ecf2dcf43a67dc1f77f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/source-audit.json
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:51f80b42e50ffe59b2d4d1977e262726565dd246eb603cbe712b681d944dfb6c
+- kind: project-relative
+  target: agents
+  value: .agents/skills/motion-storytelling
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/motion-storytelling
+  active_owner: christophbuehler/skill-tester/skills/motion-storytelling
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/motion-storytelling/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/motion-storytelling
+  active_owner: christophbuehler/skill-tester/skills/motion-storytelling
+  content_hash: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/motion-storytelling/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/motion-storytelling
+  active_owner: christophbuehler/skill-tester/skills/motion-storytelling
+  content_hash: sha256:00aa4cfce358bbd46c8993bebe4a7ea968375c05c536a6f2f68ff6f2fa6780f6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/motion-storytelling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/motion-storytelling
+  active_owner: christophbuehler/skill-tester/skills/motion-storytelling
+  content_hash: sha256:22f039ff6394ad8b716981bcf412b3205a55639f1536c296ed316c9b9d80829b
+- kind: project-relative
+  target: agents
+  value: .agents/skills/motion-storytelling/references/brief-template.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/motion-storytelling
+  active_owner: christophbuehler/skill-tester/skills/motion-storytelling
+  content_hash: sha256:4c46ff8e9598500526f9146720c19d9a5aefc98eff2d705056fa0a9ece880ee1
+- kind: project-relative
+  target: agents
+  value: .agents/skills/nested-geometry
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/nested-geometry
+  active_owner: christophbuehler/skill-tester/skills/nested-geometry
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/nested-geometry/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/nested-geometry
+  active_owner: christophbuehler/skill-tester/skills/nested-geometry
+  content_hash: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/nested-geometry/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/nested-geometry
+  active_owner: christophbuehler/skill-tester/skills/nested-geometry
+  content_hash: sha256:d9eea7be62a146d9541b56958406fb005bddaf72784fe8f8f853dc086cc9b2a2
+- kind: project-relative
+  target: agents
+  value: .agents/skills/nested-geometry/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/nested-geometry
+  active_owner: christophbuehler/skill-tester/skills/nested-geometry
+  content_hash: sha256:c6d8e1a016c509a3b52db5e7be8aa1e49181197147234edc2e90368db76a7551
+- kind: project-relative
+  target: agents
+  value: .agents/skills/nested-geometry/scripts/geometry.d.mts
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/nested-geometry
+  active_owner: christophbuehler/skill-tester/skills/nested-geometry
+  content_hash: sha256:24f2a2ab936db1ffbc1947434d4eccd9d596a24fd57c3276a759d54b77acff66
+- kind: project-relative
+  target: agents
+  value: .agents/skills/nested-geometry/scripts/geometry.mjs
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/nested-geometry
+  active_owner: christophbuehler/skill-tester/skills/nested-geometry
+  content_hash: sha256:41f6335a1a8513676e023626e600255cb94e6f0655250cd151590d282226f1a0

@@ -423,5 +423,32 @@
       "references/research.md",
       "references/source-audit.json"
     ]
+  },
+  "modern-interface-craft-quiet": {
+    "name": "Modern Interface Craft / Quiet",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/modern-interface-craft",
+    "commit": "046ff46b275cb8aa8414741ad938f912098df872",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/light-workspace.md",
+      "references/interaction-recipes.md",
+      "references/research.md",
+      "references/source-audit.json"
+    ]
+  },
+  "motion-storytelling": {
+    "name": "Motion Storytelling",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/motion-storytelling",
+    "commit": "046ff46b275cb8aa8414741ad938f912098df872",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/brief-template.md"
+    ]
   }
 }

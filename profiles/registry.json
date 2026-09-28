@@ -35,5 +35,19 @@
       "data/styles.csv",
       "references/quick-reference.md"
     ]
+  },
+  "modern-interface-craft": {
+    "name": "Modern Interface Craft",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/modern-interface-craft",
+    "commit": "88cea44c0a8956648dee75404fda7cd1d7a56651",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/interaction-recipes.md",
+      "references/research.md",
+      "references/source-audit.json"
+    ]
   }
 }

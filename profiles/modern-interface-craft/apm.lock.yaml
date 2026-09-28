@@ -1,0 +1,93 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T10:36:08.579479+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: christophbuehler/skill-tester
+  name: skill-tester
+  host: github.com
+  resolved_commit: 88cea44c0a8956648dee75404fda7cd1d7a56651
+  resolved_ref: 88cea44c0a8956648dee75404fda7cd1d7a56651
+  version: unknown
+  virtual_path: skills/modern-interface-craft
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/modern-interface-craft
+  - .agents/skills/modern-interface-craft/LICENSE.txt
+  - .agents/skills/modern-interface-craft/SKILL.md
+  - .agents/skills/modern-interface-craft/evals/evals.json
+  - .agents/skills/modern-interface-craft/references/interaction-recipes.md
+  - .agents/skills/modern-interface-craft/references/research.md
+  - .agents/skills/modern-interface-craft/references/source-audit.json
+  deployed_file_hashes:
+    .agents/skills/modern-interface-craft/LICENSE.txt: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+    .agents/skills/modern-interface-craft/SKILL.md: sha256:962836d8537fad1273d4dae976664df4de20091bce746513f20d09ca86f41038
+    .agents/skills/modern-interface-craft/evals/evals.json: sha256:10df7e64e2c977f8aca9b9bcc667686183570d06e6a49251027ba49c42bcf7da
+    .agents/skills/modern-interface-craft/references/interaction-recipes.md: sha256:ecdbb454fcb29edef6192600bbd7cb5fd2e1607d1d327ec184895d1e04be64e9
+    .agents/skills/modern-interface-craft/references/research.md: sha256:a56c4c25435898129c43fdca01e2b11aba0240ae10d01ecf2dcf43a67dc1f77f
+    .agents/skills/modern-interface-craft/references/source-audit.json: sha256:51f80b42e50ffe59b2d4d1977e262726565dd246eb603cbe712b681d944dfb6c
+  content_hash: sha256:f13410196276e9d1ce09c472c8aab460dd144f92677d5bb303df4703581ea133
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:962836d8537fad1273d4dae976664df4de20091bce746513f20d09ca86f41038
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:10df7e64e2c977f8aca9b9bcc667686183570d06e6a49251027ba49c42bcf7da
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/interaction-recipes.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:ecdbb454fcb29edef6192600bbd7cb5fd2e1607d1d327ec184895d1e04be64e9
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/research.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:a56c4c25435898129c43fdca01e2b11aba0240ae10d01ecf2dcf43a67dc1f77f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/modern-interface-craft/references/source-audit.json
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/modern-interface-craft
+  active_owner: christophbuehler/skill-tester/skills/modern-interface-craft
+  content_hash: sha256:51f80b42e50ffe59b2d4d1977e262726565dd246eb603cbe712b681d944dfb6c

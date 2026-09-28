@@ -92,3 +92,42 @@ The harness and comparison website are MIT licensed. Generated samples are inclu
 - [Anthropic Frontend Design](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design): Apache-2.0.
 - [Impeccable](https://github.com/pbakaus/impeccable/tree/9d715cc4f5564a990ca8345abfdd5df6dc9b41c8): Apache-2.0, Paul Bakaus; see its NOTICE for upstream attribution.
 - [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/09170eec67eefd46a7ae85de61b40c194020f997): MIT, NextLevelBuilder.
+
+## Custom skill: Modern Interface Craft
+
+[`skills/modern-interface-craft/SKILL.md`](skills/modern-interface-craft/SKILL.md)
+contains an original design skill created using Anthropic's Skill Creator workflow.
+It emphasizes clean contemporary composition, useful responsive behavior, coherent
+visual identity, purposeful motion, and complete microinteraction states. It does
+not impose a palette, component library, font, or animation dependency.
+
+The [research notes](skills/modern-interface-craft/references/research.md) and
+[source audit](skills/modern-interface-craft/references/source-audit.json) record
+all 555 external resources and designer URLs discovered across Designeer's pages.
+Coverage includes 454 readable pages, 64 limited shells, and 37 unavailable or
+blocked responses; it is not a claim of 555 rendered usability reviews.
+
+Use the pinned single-skill profile:
+
+```sh
+pnpm generate modern-interface-craft --preflight
+pnpm generate modern-interface-craft
+```
+
+Or explicitly combine it with the existing three skills in one new variant:
+
+```sh
+pnpm run profile add all-four frontend-design impeccable ui-ux-pro-max modern-interface-craft
+(cd profiles/all-four && apm install)
+pnpm generate all-four --preflight
+pnpm generate all-four
+```
+
+Registering a profile does not generate a result or change existing runs. The
+custom skill lives outside `.agents/skills` so it is available only when selected
+by a profile; it cannot silently influence baseline or other skill runs. When
+editing it, commit and push the new source first, then register a new profile
+pinned to that exact revision. Preserve old profile pins and immutable results.
+
+See the [initial authoring evaluation](docs/modern-interface-craft-evaluation.md)
+for paired prototype checks, contrast findings, and evaluation limitations.

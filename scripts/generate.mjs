@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { loadContinuation } from "./continuation.mjs";
 import { auditPresentation } from "./audit-presentation.mjs";
 import { captureReview } from "./capture-review.mjs";
 import path from "node:path";
@@ -33,6 +34,14 @@ for (const id of profile.skills) {
 const config = JSON.parse(
   fs.readFileSync(path.join(root, "benchmark/config.json"), "utf8"),
 );
+const parentId = args.includes('--continue') ? args[args.indexOf('--continue') + 1] : null;
+const notesFile = args.includes('--review-notes') ? args[args.indexOf('--review-notes') + 1] : null;
+if ((args.includes('--continue') && (!parentId || parentId.startsWith('--'))) || (args.includes('--review-notes') && (!notesFile || notesFile.startsWith('--')))) throw Error('Missing continuation argument.');
+if (Boolean(parentId) !== Boolean(notesFile)) throw Error('--continue and --review-notes must be supplied together.');
+const continuation = parentId ? loadContinuation(root, parentId, profileId, config.id) : null;
+const reviewInstruction = notesFile ? fs.readFileSync(path.resolve(root, notesFile), 'utf8') : null;
+if (continuation && !reviewInstruction?.trim()) throw Error('A curated continuation needs recorded review instructions.');
+if (continuation && (continuation.metadata.model !== config.model || continuation.metadata.reasoning !== config.reasoning || JSON.stringify(continuation.metadata.skills.map(s => [s.id,s.repo,s.path,s.commit])) !== JSON.stringify(profile.skills.map(id => [id,reg[id].repo,reg[id].path,reg[id].commit])))) throw Error('Continuation model/settings/skill revisions must match its parent.');
 // Reject overlapping runs: the identical acceptance fixture uses one local port.
 fs.mkdirSync(path.join(root, ".local"), { recursive: true });
 const lock = path.join(root, ".local/generation.lock");
@@ -253,11 +262,19 @@ try {
         .sort(),
     ),
   );
+  if (continuation) {
+    // Seed presentation only; all protected behavior, fixtures and dependencies remain fresh.
+    for (const entry of fs.readdirSync(path.join(continuation.dir, 'src'))) {
+      if (entry !== 'main.tsx') cp(path.join(continuation.dir, 'src', entry), path.join(work, 'src', entry));
+    }
+    cp(path.join(continuation.dir, 'DESIGN.md'), path.join(work, 'DESIGN.md'));
+  }
   const metadata = {
     id: runId,
     profile: profileId,
     requestedSkills: profile.requestedSkills || profile.skills,
-    label: profile.label,
+    label: continuation ? `${profile.label} / Reviewed` : profile.label,
+    ...(continuation ? {mode: "curated-followup", parentRunId: parentId, parentSourceHash: continuation.metadata.sourceHash, reviewInstruction, reviewInstructionHash: hash(reviewInstruction)} : {}),
     skills: profile.skills.map((id) => ({ id, ...reg[id] })),
     createdAt: new Date().toISOString(),
     benchmark: config.id,
@@ -271,7 +288,7 @@ try {
     isolation,
     repairCount: 0,
     refinementCount: 0,
-    refinementRounds: config.refinementRounds,
+    refinementRounds: continuation ? 1 : config.refinementRounds,
     taskPrompt: prompt,
     refinementPrompt: fs.readFileSync(path.join(root, "benchmark/refinement.md"), "utf8"),
     refinementTimeoutMs: config.refinementTimeoutMs,
@@ -423,7 +440,7 @@ try {
     }
     try {
       console.log(`Generating ${runId}; local logs: ${logDir}`);
-      await invoke(prompt, config.generationTimeoutMs, "generation");
+      if (!continuation) await invoke(prompt, config.generationTimeoutMs, "generation");
       async function validateWithRepair() {
         let failures = check();
         if (failures.length && metadata.repairCount === 0) {
@@ -437,13 +454,13 @@ try {
       let phase = 'review-before';
       let review = await captureReview(work, path.join(logDir,phase));
       metadata.browserReview = {before: review};
-      for (let round=1; round<=config.refinementRounds; round++) {
+      for (let round=1; round<=metadata.refinementRounds; round++) {
         metadata.refinementCount = round;
-        await invoke(`${prompt}\n\nDesign refinement ${round} of ${config.refinementRounds}.\n${metadata.refinementPrompt}\nBrowser observations:\n${JSON.stringify(review)}`, config.refinementTimeoutMs, `refinement-${round}`, review.captures.map(file => path.join(logDir,phase,file)));
+        await invoke(`${prompt}\n\nDesign refinement ${round} of ${metadata.refinementRounds}.\n${metadata.refinementPrompt}${continuation ? `\nRecorded coordinator review (curated follow-up, not a fresh benchmark generation):\n${reviewInstruction}` : ""}\nBrowser observations:\n${JSON.stringify(review)}`, config.refinementTimeoutMs, `refinement-${round}`, review.captures.map(file => path.join(logDir,phase,file)));
         await validateWithRepair();
-        phase = round===config.refinementRounds ? 'review-after' : `review-round-${round}`;
+        phase = round===metadata.refinementRounds ? 'review-after' : `review-round-${round}`;
         review = await captureReview(work,path.join(logDir,phase));
-        metadata.browserReview[round===config.refinementRounds ? 'after' : `round${round}`] = review;
+        metadata.browserReview[round===metadata.refinementRounds ? 'after' : `round${round}`] = review;
       }
       if (metadata.loadedSkills.length !== selected.length)
         throw Error("Missing successful skill entrypoint read evidence.");
@@ -490,7 +507,7 @@ try {
       collect(r.suites || []);
       metadata.accessibility = violations;
     }
-    for (const phase of ['review-before', ...Array.from({length: config.refinementRounds-1}, (_,i)=>`review-round-${i+1}`), 'review-after']) {
+    for (const phase of ['review-before', ...Array.from({length: metadata.refinementRounds-1}, (_,i)=>`review-round-${i+1}`), 'review-after']) {
       if (fs.existsSync(path.join(logDir,phase))) cp(path.join(logDir,phase),path.join(evidence,phase));
     }
     metadata.sourceHash = hash(JSON.stringify(snapshot(dest)));

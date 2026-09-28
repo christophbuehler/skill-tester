@@ -167,8 +167,10 @@ The first v3 batch compares baseline and the two custom directions; earlier upst
 ## Folio v4: complementary skills and explicit decisions
 
 See the [complete requested skill catalog and selection rationale](docs/skill-catalog.md).
-The new `considered-v4` combination selects Frontend Design, Emil Design Engineering,
-Beautiful Shadows, Accessibility, and the new Nested Geometry skill. The shared brief
+The `studio-v4` combination selects Modern Interface Craft / Light, the actual
+upstream Apple Design, Beautiful Shadows, Accessibility, and Nested Geometry.
+The first `considered-v4` candidate remains preserved after its design review
+was stopped; see [v4 observations](docs/folio-v4.md). The shared brief
 requires light mode and semantic Tailwind color tokens; optional dark canvases must be
 OLED black. Reasoning is xhigh on the same model, so earlier medium runs are not a
 controlled skill-only comparison. V3 inputs are preserved in `benchmark/versions/folio-v3`.
@@ -179,3 +181,5 @@ Blocked source/tooling configurations fail with an explanation. No global skills
 installed. Every active skill is shown by name in the comparison chooser, and run
 notes link to the generated decision ledger rather than claiming file loading proves
 useful influence.
+
+For explicitly curated work, `pnpm generate <profile> --continue <run-id> --review-notes <markdown-path>` preserves an imported parent and performs one additional fresh ten-minute review. The result records its parent hash, exact feedback and separate evidence, and is labelled **curated follow-up**. It is not an equal-budget, blank-starter benchmark run. See [the Studio follow-up rationale](docs/folio-v4.md).

@@ -17,7 +17,8 @@ export function catalog() {
     )
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
-const runs = catalog();
+const assessments = JSON.parse(fs.readFileSync(path.join(root, "reviews/assessments.json"), "utf8"));
+const runs = catalog().map(run => ({...run, ...(assessments[run.id] ? {assessment: assessments[run.id]} : {})}));
 fs.mkdirSync(path.join(root, "src/generated"), { recursive: true });
 fs.writeFileSync(
   path.join(root, "src/generated/catalog.json"),

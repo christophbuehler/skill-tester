@@ -408,5 +408,20 @@
       "LICENSE.txt",
       "scripts/geometry.mjs"
     ]
+  },
+  "modern-interface-craft-light": {
+    "name": "Modern Interface Craft / Light",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/modern-interface-craft",
+    "commit": "6556eda21215e6327ec6a9399cf745aac0aee6fb",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/light-workspace.md",
+      "references/interaction-recipes.md",
+      "references/research.md",
+      "references/source-audit.json"
+    ]
   }
 }

@@ -43,10 +43,17 @@ test("each benchmark batch shares inputs and exact prompt provenance", () => {
     const prompt=fs.readFileSync(version===current?'benchmark/prompt.md':`benchmark/versions/${version}/prompt.md`,'utf8');
     for(const r of batch) {
       assert.equal(hash(prompt),r.promptHash);
-      if(r.benchmark==='folio-v3' && r.status==='passed') {
-        assert.equal(r.refinementCount,2);
-        assert.equal(r.refinementRounds,2);
-        for(const phase of ['before','round1','after']) {
+      if(['folio-v3','folio-v4'].includes(r.benchmark) && r.status==='passed') {
+        assert.equal(r.refinementCount,r.mode==='curated-followup'?1:2);
+        assert.equal(r.refinementRounds,r.mode==='curated-followup'?1:2);
+        if(r.mode==='curated-followup') {
+          const parent=records.find(p=>p.id===r.parentRunId);
+          assert.ok(parent); assert.equal(r.parentSourceHash,parent.sourceHash);
+          assert.equal(r.profile,parent.profile);
+          assert.equal(hash(r.reviewInstruction),r.reviewInstructionHash);
+          assert.deepEqual(r.skills,parent.skills);
+        }
+        for(const phase of (r.mode==='curated-followup'?['before','after']:['before','round1','after'])) {
           assert.equal(r.browserReview[phase].captures.length,10);
           assert.equal(r.browserReview[phase].recordings.length,2);
           const folder = phase==='before' ? 'review-before' : phase==='after' ? 'review-after' : 'review-round-1';
@@ -64,5 +71,13 @@ test("each benchmark batch shares inputs and exact prompt provenance", () => {
         assert.equal(r.browserReview.after.captures.length,8);
       }
     }
+  }
+});
+
+import { auditPresentation } from "../scripts/audit-presentation.mjs";
+test("passing v4 presentations keep direct color literals in tokens", () => {
+  for (const id of ids) {
+    const record = JSON.parse(fs.readFileSync(`runs/${id}/metadata.json`, 'utf8'));
+    if (record.benchmark === 'folio-v4' && record.status === 'passed') assert.deepEqual(auditPresentation(`runs/${id}`), [], id);
   }
 });

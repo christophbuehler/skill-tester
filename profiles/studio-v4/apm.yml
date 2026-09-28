@@ -1,0 +1,12 @@
+name: studio-v4
+version: 1.0.0
+description: Skill Tester profile studio-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - christophbuehler/skill-tester/skills/modern-interface-craft#6556eda21215e6327ec6a9399cf745aac0aee6fb
+    - emilkowalski/skills/skills/apple-design#d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+    - MengTo/Skills/agent-skills/web-design/beautiful-shadows#798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d
+    - addyosmani/web-quality-skills/skills/accessibility#afa8da942115f2961fdbfa80807ea0b232ff6c00
+    - christophbuehler/skill-tester/skills/nested-geometry#0fdd20bed5a45857c652427a445089b045167413

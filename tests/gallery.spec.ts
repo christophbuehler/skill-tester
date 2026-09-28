@@ -225,3 +225,28 @@ test('combined and single-skill headers keep desktop canvases aligned', async ({
   const second = await viewports.nth(1).boundingBox();
   expect(Math.abs(first!.y-second!.y)).toBeLessThan(1);
 });
+
+test('curation notes distinguish a stopped design from failed functional checks', async ({ page }) => {
+  const assessments = JSON.parse(fs.readFileSync('reviews/assessments.json','utf8'));
+  const id = Object.keys(assessments)[0];
+  const run = runs.find(r=>r.id === id);
+  test.skip(!run, 'Curated attempt not imported');
+  await page.goto('/skill-tester/');
+  const card = page.locator('article.variant-card').filter({has: page.getByRole('heading',{name:run.label,exact:true})});
+  await expect(card.getByText(assessments[id].label,{exact:true})).toBeVisible();
+  await expect(card.getByRole('checkbox')).toBeDisabled();
+  await card.getByRole('button',{name:'Run details'}).click();
+  await expect(page.getByRole('dialog')).toContainText(assessments[id].reason);
+  await expect(page.getByRole('dialog')).toContainText(run.failure);
+});
+
+test('curated follow-up exposes its parent and additional review instructions',async({page})=>{
+ const run=runs.find(r=>r.mode==='curated-followup');
+ test.skip(!run,'No curated follow-up imported');
+ await page.goto('/skill-tester/');
+ const card=page.locator('article.variant-card').filter({has:page.getByRole('heading',{name:run.label,exact:true})});
+ await card.getByRole('button',{name:'Run details'}).click();
+ await expect(page.getByRole('dialog')).toContainText('Curated follow-up (extra review, not a fresh benchmark run)');
+ await expect(page.getByRole('dialog')).toContainText(run.parentRunId);
+ await expect(page.getByRole('dialog')).toContainText('Outer page scrolling is broken.');
+});

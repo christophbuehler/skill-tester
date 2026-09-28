@@ -1,0 +1,8 @@
+name: modern-interface-craft-light-v4
+version: 1.0.0
+description: Skill Tester profile modern-interface-craft-light-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - christophbuehler/skill-tester/skills/modern-interface-craft#6556eda21215e6327ec6a9399cf745aac0aee6fb

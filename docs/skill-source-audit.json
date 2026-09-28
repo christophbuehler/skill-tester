@@ -669,5 +669,9 @@
       ]
     }
   ],
-  "adhx": "Requested post could not be fetched; no claims derived from it."
+  "adhx": {
+    "url": "https://adhx.com/kail_designs/status/2102265246325047711",
+    "status": "Verified in browser after reader-tool fetch failed. Visible post lists the same ten skills supplied by the user. Video was not reviewed.",
+    "auditedAt": "2026-09-28"
+  }
 }

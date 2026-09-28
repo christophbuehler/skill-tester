@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import {test,expect} from '@playwright/test';
+const reviewed=fs.readdirSync('runs').filter(id=>fs.existsSync(`runs/${id}/metadata.json`)).map(id=>JSON.parse(fs.readFileSync(`runs/${id}/metadata.json`,'utf8'))).sort((a,b)=>b.createdAt.localeCompare(a.createdAt)).find(run=>run.profile==='studio-v4'&&run.mode==='curated-followup'&&run.status==='passed');
+test('reviewed Studio keeps mobile scrolling contained and short table headers intact',async({page})=>{
+ test.skip(!reviewed,'No completed curated follow-up');
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(`/skill-tester/variants/${reviewed!.id}/?scenario=research`);
+ await expect(page.locator('thead th').filter({hasText:/^Owner$/})).toBeVisible();
+ const extent=()=>page.evaluate(()=>({height:document.documentElement.scrollHeight,viewport:innerHeight,outerScroll:scrollY}));
+ expect((await extent()).height).toBeLessThanOrEqual(845);
+ const ownerLines=await page.locator('thead th').filter({hasText:/^Owner$/}).evaluate(element=>{const range=document.createRange();range.selectNodeContents(element);return range.getClientRects().length});
+ expect(ownerLines).toBe(1);
+ await page.getByRole('button',{name:'Continue reading',exact:true}).click();
+ await expect.poll(async()=>(await extent()).outerScroll).toBe(0);
+ expect((await extent()).height).toBeLessThanOrEqual(845);
+ await page.getByRole('textbox',{name:'Message',exact:true}).focus();
+ const geometry=await page.getByRole('button',{name:'Send message',exact:true}).evaluate(button=>{const parent=button.closest('form')!;const p=parent.getBoundingClientRect(),b=button.getBoundingClientRect();return {radius:parseFloat(getComputedStyle(parent).borderBottomRightRadius),insetX:p.right-b.right,insetY:p.bottom-b.bottom,childRadius:Math.min(b.width,b.height)/2};});
+ expect(Math.abs(geometry.radius-geometry.insetX-geometry.childRadius)).toBeLessThan(1);
+ expect(Math.abs(geometry.radius-geometry.insetY-geometry.childRadius)).toBeLessThan(1);
+});

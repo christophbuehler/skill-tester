@@ -21,6 +21,9 @@ import "./styles.css";
 type Run = {
   id: string;
   benchmark: string;
+  mode?: string;
+  parentRunId?: string;
+  reviewInstruction?: string;
   profile: string;
   label: string;
   status: string;
@@ -48,6 +51,7 @@ type Run = {
   starterHash: string;
   validation: { task: string; passed: boolean }[];
   failure?: string | null;
+  assessment?: { statusLabel?: string; label: string; reason: string; summary?: string; document: string };
   accessibility?: {
     viewport: string;
     findings: { id: string; impact: string; nodes: number }[];
@@ -316,8 +320,8 @@ function App() {
                       ) : (
                         <div className="failed-preview">
                           <X />
-                          <strong>Generation did not pass</strong>
-                          <p>{run.failure}</p>
+                          <strong>{run.assessment?.label || "Generation did not pass"}</strong>
+                          <p>{run.assessment?.summary || run.failure}</p>
                         </div>
                       )}
                       {run.status === "passed" && (
@@ -337,7 +341,7 @@ function App() {
                           ) : (
                             <X size={12} />
                           )}{" "}
-                          {run.status === "passed" ? "Checks passed" : "Failed"}
+                          {run.status === "passed" ? "Checks passed" : run.assessment?.statusLabel || "Failed"}
                         </span>
                       </div>
                       <p>
@@ -427,7 +431,8 @@ function App() {
                 <h2>{details.label}</h2>
                 <p className="muted">{details.id}</p>
                 <dl>
-                  <dt>Benchmark</dt><dd>{details.benchmark}</dd>
+                  <dt>Benchmark</dt><dd>{details.benchmark}{details.mode === "curated-followup" && " · Curated follow-up (extra review, not a fresh benchmark run)"}</dd>
+                  {details.parentRunId && <><dt>Parent run</dt><dd>{details.parentRunId}</dd><dt>Recorded review</dt><dd><pre className="prompt-text">{details.reviewInstruction}</pre></dd></>}
                   <dt>Model</dt>
                   <dd>
                     {details.model} / {details.reasoning}
@@ -435,6 +440,7 @@ function App() {
                   <dt>Task prompt</dt><dd><details><summary>Read exact prompt</summary><pre className="prompt-text">{(prompts as Record<string,string>)[details.benchmark]}</pre></details></dd>
                   <dt>Generated</dt>
                   <dd>{new Date(details.createdAt).toLocaleString()}</dd>
+                  {details.assessment && <><dt>Design review</dt><dd><strong>{details.assessment.label}</strong><p>{details.assessment.reason}</p><a href={`${repo}/blob/main/${details.assessment.document}`}>Read the assessment</a></dd></>}
                   <dt>Outcome</dt>
                   <dd>
                     {details.status}; {details.refinementCount ?? 0} visual refinement(s); {details.repairCount} repair(s)
@@ -579,7 +585,7 @@ function Compare({
   const identical =
     !!left &&
     !!right &&
-    ["model", "reasoning", "promptHash", "starterHash", "benchmark"].every(
+    ["model", "reasoning", "promptHash", "starterHash", "benchmark", "mode", "parentRunId"].every(
       (k) => left[k as keyof Run] === right[k as keyof Run],
     );
   function update(k: string, v: string) {

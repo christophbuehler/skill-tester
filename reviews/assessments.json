@@ -1,0 +1,16 @@
+{
+  "considered-v4-20260928130912761": {
+    "label": "Stopped after design review",
+    "reason": "The coordinator stopped the first refinement after inspecting the initial rendered result. Functional and semantic-color checks had passed after one mobile skip-link repair, but the conventional sidebar and large textarea did not meet the requested design direction. This is an interrupted run, not a claim that its last completed functional checks failed. The incomplete attempt and all captured evidence are preserved.",
+    "document": "docs/folio-v4.md",
+    "summary": "Checks passed, but the first rendered direction remained too conventional. Stopped during refinement; source and evidence preserved.",
+    "statusLabel": "Stopped"
+  },
+  "studio-v4-20260928133225545": {
+    "label": "Final refinement timed out",
+    "statusLabel": "Timed out",
+    "summary": "A buildable revision was produced, but the final review exceeded its time limit. Preserved with its evidence; a separate curated follow-up addresses coordinator findings.",
+    "reason": "The second ten-minute refinement timed out after source changes and successful typecheck/build commands. The runner correctly records failure, not a completed review. Coordinator inspection also found outer-page scrolling from a hidden status label, broken mobile table words and an incomplete final-attachment exit. A separately labelled continuation preserves this parent and records the additional review instructions and budget.",
+    "document": "docs/folio-v4.md"
+  }
+}

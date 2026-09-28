@@ -1,85 +1,58 @@
 ---
 name: modern-interface-craft
-description: Design and build exceptionally clean, contemporary interfaces with distinctive composition, responsive layouts, purposeful motion, and satisfying microinteractions. Use when creating or substantially redesigning web apps, dashboards, interactive tools, product pages, or polished React/Tailwind interfaces, especially requests for modern, refined, creative, fluid, or tactile UI. Also use for improving interaction states and mobile UX. Do not apply to backend-only work, content-only edits, or requests to preserve an existing appearance exactly.
+description: Build contemporary, minimal product interfaces with considered typography, inventive composition, fluid state changes, and responsive interaction design. Use when creating or redesigning web apps and interactive tools where clean visual craft and an excellent working experience matter. Not for backend work or preserving an existing visual design exactly.
 ---
 
 # Modern Interface Craft
 
-Make the interface feel clear at first glance, useful during real work, and rewarding in its smallest details. Give it a recognizable idea without making the user learn a novel control language.
+Build a product someone wants to use, with character coming from how clearly and gracefully it works. This skill favors contemporary minimalism: strong proportions, precise typography, restrained surfaces, and controls that appear where they are useful. Minimal means fewer decisions and distractions for the user, not fewer capabilities or faint text.
 
-This is an original synthesis informed by the Designeer directory. It is a design decision process, not a template, component collection, or fixed palette. Read `references/interaction-recipes.md` when implementing motion, overlays, asynchronous actions, or responsive state changes. Read `references/research.md` only when tracing the research or choosing further references; browsing is not required to use this skill.
+## Start with the work
 
-## 1. Understand the work before choosing the look
+Identify the primary task and the content people spend time with. Decide what deserves permanent space and what is occasional. Choose the composition from those frequencies; a conventional sidebar or dashboard shell is an option, not a starting requirement. Compare two genuinely different arrangements before implementing one. Do not make novelty itself a goal: an unfamiliar navigation mechanism must repay its learning cost.
 
-Read the task, existing interface, stack, and constraints. Identify the user's main job, the primary object they manipulate, the most frequent action, and the cost of an error. Infer sensible details from the brief; ask only when an unanswered question changes the product.
+A working product should open onto its useful action. Avoid filling its first screen with a marketing headline, slogan, decorative illustration, and a grid of prompts while pushing that action to the bottom. Empty space should establish hierarchy or give content room, not merely separate ornamental sections.
 
-Write a compact internal design contract:
+Keep supplied behavior, content, contracts, and dependencies intact. Use the host's available tools and assets. Read `references/interaction-recipes.md` for asynchronous states, overlays, or responsive transitions. `references/research.md` and `source-audit.json` document inspiration provenance; they are not templates or evidence of measured design performance.
 
-- **Job:** what the person needs to finish, and where they start.
-- **Hierarchy:** primary content/action, supporting context, occasional controls.
-- **Character:** two or three specific qualities expressed through composition, typography, materials, and behavior.
-- **Signature:** one coherent visual or interaction idea that fits this product.
-- **States:** the important empty, populated, loading, success, error, disabled, and interrupted cases.
-- **Small screen:** what reflows, what becomes a disclosure, and how the primary task stays reachable.
+## Give the composition a point of view
 
-User requirements and repository rules take precedence. Keep supplied logic, data, accessibility contracts, copy, tests, and dependency limits intact. When combined with other skills, reconcile choices into one design direction rather than stacking every suggested effect. Do not add runtime dependencies, fetch assets, or change protected files just because a reference uses them.
+Choose a relationship that makes the product recognizable: the balance of content and controls, a distinctive reading rhythm, a contextual transition, or the way an object expands into its working state. Make this useful in populated states, not just impressive in an empty screenshot. A new palette or display font alone is not a design concept.
 
-## 2. Choose a direction, then make it specific
+Work in this order: content hierarchy, proportions, type, spacing, then surfaces and color. First see whether proximity and alignment establish groups. Add a border only where an edge explains interaction or separates otherwise ambiguous regions. The same goes for shadow and tinted panels. If every element is outlined, none is meaningfully emphasized.
 
-Consider two plausible compositions mentally and choose the one that best supports the job. A research tool might emphasize a legible reading plane with quiet contextual controls; a planning tool might center a time axis and an adaptive inspector; a discovery page might use an expressive typographic opening followed by a rigorous comparison grid. These are examples, not mandatory layouts.
+Typography should carry the hierarchy without announcing itself. Use comfortable text sizes, deliberate weight and line height, and readable contrast. Sentence case is the default for interface language. Tiny widely tracked uppercase labels often add ceremonial structure without information; remove them unless the context makes them useful. Display typography belongs where reading and meaning benefit, not automatically on every empty state.
 
-Give the design one memorable decision: an unusually confident type scale, a crisp information rail, a carefully proportioned split, a distinctive selection treatment, or a contextual control that changes purpose in place. Carry that decision into spacing, states, and motion. Avoid adding unrelated decoration to manufacture personality.
+Use neutral space confidently and accent color selectively. Avoid washing the entire application in a brand tint. A warm editorial aesthetic is one possible direction, not a shortcut to sophistication. Keep essential secondary text readable; muted is a role, not a license for low contrast.
 
-Use real task content to judge the design. A strong hero is appropriate to a marketing page; a working app should get to the work quickly. Do not turn every product into a landing page, bento grid, pill collection, or glass dashboard.
+Write concise, concrete interface copy. Do not invent account tiers, avatars, workspace breadcrumbs, security badges, statistics, or pseudo-navigation to make a demo look complete. Explain real limitations once, at the relevant point, rather than repeating reassuring footer copy around the screen.
 
-## 3. Build a clean visual system with visible hierarchy
+## Make interactions feel designed
 
-Define a small local set of tokens for surfaces, text, emphasis, borders, spacing, radii, and motion. Keep roles consistent even when colors change. Choose light, dark, warm, cool, or saturated treatments for the content and brand; there is no default required palette.
+For every action, connect intent, feedback, and result. Selecting an object should make its context clear. A document should remain recognizable when moving from pending selection into a sent message. Assistant activity should resolve into the response without a competing permanent status dashboard. A canceled action preserves useful work and provides a clear next step.
 
-- Establish hierarchy through type size, weight, contrast, placement, and whitespace before adding boxes. Group related controls more tightly than unrelated regions.
-- Use a readable body face and a deliberate display treatment only where it adds character. Prefer available local/system fonts under offline or dependency constraints. Keep long text comfortable to read and code horizontally scrollable within its own container.
-- Align text, icons, and control edges optically, not merely mathematically. Make icon stroke weight and size coherent. Icon-only controls still need accessible names.
-- Use fewer competing emphasis signals. Reserve the strongest treatment for the next meaningful action; selected, hovered, focused, and disabled are different states.
-- Create depth when it explains layers. A menu can have elevation; every section does not need a shadow. Check borders and secondary text on the actual surface instead of assuming a muted color remains readable.
-- Prefer precise spacing and useful content to decorative noise. An accent, illustration, gradient, texture, or 3D element earns its place by supporting the chosen direction; it is neither compulsory nor forbidden.
+Motion communicates these relationships. Plan it around actual transitions between states: composing to sending, opening and closing context, adding or removing an item, switching tasks. A hover color change is useful feedback, but does not by itself constitute motion design. Avoid gratuitous card lifts, bouncing icons, rotating decorations, and entrance choreography for every row. Repeated interactions need to remain fast.
 
-## 4. Design behavior as carefully as the resting screenshot
+Keep targets stable, transitions interruptible, and content readable during changes. Prefer modest transform/opacity transitions where appropriate; tune timing to distance and frequency rather than pasting one easing everywhere. Reduced motion retains state feedback without spatial travel. Do not delay real work so an animation can finish.
 
-Map each interactive element to a real action and all states needed to complete it. Use semantic controls and established keyboard conventions. Surface errors near the action with a recovery path. Preserve user input during failures or cancellation when the contract allows it.
+Reveal occasional controls in context while preserving discoverability, touch use, keyboard operation, and visible focus. Essential actions cannot exist only on hover. A clean screenshot is not worth an obscure workflow.
 
-Keep context near the object: disclose an item's details in a stable adjacent region when practical, rather than repeatedly sending the person elsewhere. Make progressive disclosure discoverable. Important actions cannot depend on hover alone.
+## Compose for the available space
 
-For asynchronous work, communicate what is happening, what has completed, and what the user can do next. Prefer honest indeterminate status to fabricated percentages. Preserve useful partial output. Avoid moving the user's reading position or auto-scrolling them away from inspected history.
+Design the narrow view as a first-class working surface. Reconsider hierarchy and disclosure rather than shrinking desktop panels. Keep the primary task within reach, let content establish the reading order, and preserve state and focus when a surface opens, closes, or reflows. Account for short viewports and the on-screen keyboard. Contain wide code and tables without creating horizontal page scrolling.
 
-Microinteractions should close a feedback loop: a press acknowledges input, a pending state prevents accidental duplicates, a completed state confirms the result, an error offers retry. They should not delay the operation for theatrical timing. Read the recipes before inventing a new mechanism.
+Do not add a navigation drawer simply because the screen is narrow; decide whether the chosen navigation needs one. When an overlay is appropriate, implement its keyboard and focus behavior completely.
 
-## 5. Add purposeful motion
+## Critique the rendered product
 
-Assign each transition a job: acknowledge input, connect cause and effect, reveal structure, maintain spatial continuity, or celebrate a meaningful completion. Repeated actions deserve restraint; a delightful effect becomes friction if replayed every time.
+Use actual browser evidence at wide, intermediate, and narrow sizes, including populated and interrupted states. If captures are supplied by a runner, inspect those and distinguish them from interactions you personally exercised. Never infer successful motion from a still image.
 
-Choose a few shared timing/easing tokens. As starting points, try roughly 100–160ms for immediate feedback and 180–280ms for a small surface transition; tune for distance, frequency, and the interface's character. These are starting values, not laws or measured values from the reference sites.
+Ask concrete questions:
+- What attracts the eye first, and is it the thing the person needs?
+- Which labels, frames, badges, and repeated explanations can be removed without losing understanding?
+- Does the populated product retain its character, or was the design only an empty-state treatment?
+- Is there continuity from action to result, including loading, failure, retry, and cancellation?
+- Can a keyboard or touch user find the same capabilities without hunting?
+- Does the small screen feel intentionally composed, and can the person still reach the main action?
 
-Prefer opacity and transforms for small transitions. Keep interaction targets stable while surrounding content changes. Interrupt or reverse motion naturally when the user acts again. Avoid `transition: all`, unrelated infinite movement, animation on every streamed token, scroll hijacking, and entrance sequences that postpone access to content.
-
-Reduced motion is a complete alternate behavior: remove spatial travel, scaling, spring overshoot, and smooth scrolling while retaining immediate state feedback. Apply the preference to CSS and JavaScript motion. Keep the underlying UI usable if animation support or an optional effect fails.
-
-## 6. Make responsiveness a change of composition
-
-Design for available space and input modality, not a scaled-down desktop picture.
-
-- Keep the primary task visible at narrow widths. Move occasional navigation into a clearly labeled disclosure; preserve access to it and restore focus when it closes.
-- Reflow multi-column content into a meaningful reading order. Let toolbars wrap or simplify without hiding essential actions. Avoid making every panel a fixed-height nested scroller.
-- Use fluid widths, sensible max widths, `min-width: 0` where needed, and wrapping for long labels. Contain wide code/tables rather than clipping the page.
-- Size touch targets generously, leave separation between destructive and common actions, and provide focus equivalents for hover feedback.
-- Account for viewport height, safe areas, and the on-screen keyboard when using bottom composers or sticky actions. Check that sticky elements do not obscure focused fields or final content.
-- Preserve selection, drafts, and task state when changing breakpoints; layout changes should not silently reset the user's work.
-
-## 7. Finish with evidence
-
-Use available browser tools to inspect the real interface. Check a wide view, a narrow view, and an intermediate width where the composition changes. Exercise keyboard navigation and the main task, including loading, error/recovery, interruption, long content, and reduced motion. Check readable contrast, visible focus, accessible names, overflow, and console errors.
-
-If browser tools are unavailable, inspect the code and state transitions and say exactly what remains unverified. Never claim tested motion or responsive behavior from a static screenshot.
-
-Make a focused refinement pass: fix the largest hierarchy issue, the most awkward interaction, and the least convincing small-screen region. Remove any effect that does not contribute. Do not erase useful behavior to get a cleaner screenshot.
-
-Deliver working source in the requested format. Briefly explain the design idea, meaningful interaction choices, and verification or remaining limits. Keep implementation commentary out of the product UI unless users need it to make a decision.
+Refine the biggest problems visible in that evidence. Remove ornament before adding effects. Preserve accessible contrast and focus through the final pass. Report functional verification separately from subjective design judgment and identify anything the available tools did not let you observe.

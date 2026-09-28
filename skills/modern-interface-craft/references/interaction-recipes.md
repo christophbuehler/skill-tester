@@ -26,37 +26,11 @@ Provide a regular file picker alongside drop behavior. Highlight a valid drop re
 
 A supporting inspector can sit beside primary content on a wide view, move below it at an intermediate width, and open as a reachable disclosure on a small screen. Preserve the selected object between these layouts. Avoid mounting duplicate stateful copies of the same control. If details are crucial to the main job, keep them in the reading flow rather than hiding them.
 
-## Small CSS motion foundation
+## Motion decisions
 
-Adapt names and values to the chosen direction. These values are original defaults, not reference-site measurements. Apply only to relevant elements, not the entire page.
+Specify the start and end states before choosing CSS. For a disclosure, preserve the trigger's position and connect the appearing surface to its context. For a pending item, acknowledge addition and removal without shifting unrelated controls. For asynchronous work, let progress resolve into its outcome rather than replaying an entrance animation on each update. Keep repeated actions immediate and make changes reversible when users act quickly.
 
-```css
-:root {
-  --motion-feedback: 130ms;
-  --motion-surface: 220ms;
-  --ease-settle: cubic-bezier(.2, .8, .2, 1);
-}
-.action:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 3px;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .action {
-    transition: background-color var(--motion-feedback),
-      transform var(--motion-feedback) var(--ease-settle);
-  }
-  .action:active:not(:disabled) { transform: translateY(1px); }
-  .surface-enter {
-    animation: surface-enter var(--motion-surface) var(--ease-settle);
-  }
-  @keyframes surface-enter {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-```
-
-For JavaScript or canvas motion, subscribe to the media-query preference and stop existing nonessential animation when it changes. Do not use a blanket near-zero animation-duration override if application correctness depends on completion events; keep semantic state independent of animation completion.
+Choose implementation and timing for that relationship. There is no default card-hover lift or decorative entrance snippet. Reduced motion should express the same semantic change without spatial animation. Check real interaction when browser access permits; screenshots only establish static states.
 
 ## Review prompts
 

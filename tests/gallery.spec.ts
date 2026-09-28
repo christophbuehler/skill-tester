@@ -86,3 +86,35 @@ test('versioned briefs and comparisons preserve benchmark provenance',async({pag
   await expect(page.getByText('These runs use different inputs or settings. Check run details before comparing.')).toBeVisible();
  }
 });
+
+test('v3 interaction evidence is playable from the Pages base path', async ({page}) => {
+  const run = passed.find(r => r.benchmark === 'folio-v3');
+  test.skip(!run, 'Need a completed v3 run');
+  await page.goto(`/skill-tester/#compare?left=${run.id}&right=${run.id}`);
+  await page.getByRole('button', {name: 'Details', exact: true}).first().click();
+  const videos = page.getByRole('dialog').locator('video');
+  await expect(videos).toHaveCount(6);
+  for (const video of await videos.all()) {
+    await video.evaluate((element: HTMLVideoElement) => element.load());
+    await expect.poll(() => video.evaluate((element: HTMLVideoElement) => ({
+      ready: element.readyState >= 1 && element.duration > 0,
+      error: element.error?.message ?? null,
+    }))).toEqual({ready: true, error: null});
+  }
+});
+
+test('failed runs retain their outcome and review evidence', async ({page}) => {
+  const run = runs.find(r => r.status === 'failed');
+  test.skip(!run, 'No failed runs in this catalog');
+  await page.goto('/skill-tester/');
+  const card = page.locator('article.variant-card').filter({
+    has: page.getByRole('heading', {name: run.label, exact: true}),
+  });
+  await expect(card.getByText('Generation did not pass')).toBeVisible();
+  await expect(card.getByRole('checkbox')).toBeDisabled();
+  await card.getByRole('button', {name: 'Run details'}).click();
+  await expect(page.getByRole('dialog')).toContainText(run.id);
+  await expect(page.getByRole('dialog')).toContainText('failed;');
+  const recordingCount = Object.values(run.browserReview ?? {}).reduce((sum: number, phase: any) => sum + (phase.recordings?.length ?? 0), 0);
+  await expect(page.getByRole('dialog').locator('video')).toHaveCount(recordingCount);
+});

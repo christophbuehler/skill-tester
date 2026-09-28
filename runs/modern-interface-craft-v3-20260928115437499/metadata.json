@@ -1,0 +1,659 @@
+{
+  "id": "modern-interface-craft-v3-20260928115437499",
+  "profile": "modern-interface-craft-v3",
+  "label": "Modern Interface Craft · v3",
+  "skills": [
+    {
+      "id": "modern-interface-craft-v3",
+      "name": "Modern Interface Craft v3",
+      "repo": "christophbuehler/skill-tester",
+      "path": "skills/modern-interface-craft",
+      "commit": "f80e26d80fd4cfe11d81fa3c852cd1928f7cc570",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md",
+        "LICENSE.txt",
+        "references/interaction-recipes.md",
+        "references/research.md",
+        "references/source-audit.json"
+      ]
+    }
+  ],
+  "createdAt": "2026-09-28T11:54:39.538Z",
+  "benchmark": "folio-v3",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "f029ddd89ac14f45d32dd456518977eaf1acd2e71151c941a489b2dd3e06175c",
+  "starterHash": "06621608113daca5b062e89618a219c5eb615f033d4bda231953e625c653e721",
+  "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/modern-interface-craft/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 1,
+    "promptHash": "4817eaccdbf69050fa2720dd1db2ca0966ec5abfda43ea4ef43ef9794a746fe4"
+  },
+  "repairCount": 0,
+  "refinementCount": 2,
+  "refinementRounds": 2,
+  "taskPrompt": "Build **Folio**, a fictional research workspace for professionals asking questions and discussing documents. Deliver a complete React/Tailwind product interface, not a marketing page.\n\nPeople need to start and revisit conversations, write multiline questions, attach/remove local documents, read streaming Markdown answers, understand tool activity, stop work, retry interruptions, and copy useful responses. Use the supplied `useChat` hook for that behavior. Keep its fixture content and logic intact.\n\nOwn the product's information architecture and visual/interaction design. The selected design skills are the art direction: translate their opinions into the navigation model, silhouette, typography, primary input, material, and motion. They are allowed to make strong decisions. The shared contract fixes capabilities and automation names only; it does not prescribe layout, palette, surface treatment, radii, a logo, or composer structure. Baseline has no selected design skill and chooses its own direction.\n\nBefore implementation, write three structurally different concepts in DESIGN.md, choose the strongest under the selected skills, and state the concrete decisions the skill changes. A palette swap is not a different concept. Then implement one coherent design. Treat the composer and the transitions into/out of work as product design problems, not stock form controls. Optional suggestions need not become cards. Brand expression may be a carefully set wordmark; no decorative logo is required. Do not add fake functionality to make the screen appear richer.\n\nRead CONTRACT.md, CAPABILITIES.md, and the shared package. Write presentation source under src/ except protected src/main.tsx; DESIGN.md is also allowed. Preserve the shared mock, fixtures, package versions, configuration, tests, and benchmark instructions. No real backend, AI service, uploads, remote assets, network calls, or new dependencies. Use the supplied offline fonts, icons, and animation tools as appropriate. No shared component theme is provided.\n\nUse every explicitly selected skill, and no unrelated skills, memory, plugins, subagents, host projects, or web research. The behavioral contract wins only on actual behavioral conflicts; it does not override the skill's aesthetic direction. Make routine decisions independently. A combined profile makes one coherent implementation from all selected skills.\n\nThe runner gives every profile the same implementation budget, two browser-informed design refinement sessions, and at most one objective repair. It captures settled desktop/mobile states, navigation and work interactions, temporal contact sheets, and videos outside the sandbox. Refinement can change the composition substantially while preserving behavior. Be critical of a merely competent first draft. Keep accessibility, keyboard/touch use, responsiveness, and reduced motion intact.\n\nYou may run pnpm typecheck and pnpm build. Browser launch is provided by the runner; don't spend the generation budget working around sandbox restrictions. Finish with working source and an honest design/verification note. Do not commit or publish.\n",
+  "refinementPrompt": "Inspect the attached settled browser screenshots, temporal contact sheets, and browser observations. Images are ordered by filenames in the report. The recordings contain real scripted interactions; contact sheets sample moments, not smooth playback. Read the actual source, DESIGN.md, and all selected skill entrypoints again (none for baseline).\n\nUse this session for a substantial design critique and refinement. Is the selected skill visible in the silhouette, navigation, primary control, typography, shape, and transitions, or did the implementation retreat into a generic chat shell? Do the entry and working states feel like one product? Does the main control have considered geometry and interaction behavior? Are important transitions continuous, interruptible, and readable? Assess populated states and mobile as seriously as the empty view.\n\nYou may replace the composition or interaction presentation if that better realizes the selected skill. Do not settle for changing colors or a few margins while the main design problem remains. Avoid adding decoration merely to look different. Use the profile as art direction, not a second generic checklist. Baseline evaluates its own chosen direction without adopting another profile.\n\nAlso address objective findings from the report. Preserve behavior, accessibility, fixed content, and protected files. Keep the meaning of intermediate frames separate from the settled screenshots; do not delete useful motion because a sampled transition frame is partially transparent. Record the concrete shortcomings you found, the changes made, and any uncertainty in DESIGN.md. No claim of interactive browsing by the generating model, no invented aesthetic score, no commit or publication.\n",
+  "refinementTimeoutMs": 600000,
+  "status": "passed",
+  "elapsedMs": 639235,
+  "tokenUsage": [
+    {
+      "input_tokens": 118016,
+      "cached_input_tokens": 97408,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8528,
+      "reasoning_output_tokens": 521
+    },
+    {
+      "input_tokens": 247877,
+      "cached_input_tokens": 204544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4097,
+      "reasoning_output_tokens": 626
+    },
+    {
+      "input_tokens": 270516,
+      "cached_input_tokens": 230144,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3422,
+      "reasoning_output_tokens": 734
+    }
+  ],
+  "loadedSkills": [
+    ".agents/skills/modern-interface-craft/SKILL.md"
+  ],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "validationAttempts": [
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ]
+  ],
+  "failure": null,
+  "browserReview": {
+    "before": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png",
+        "interaction-desktop.png",
+        "interaction-mobile.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "accessibility": [
+        {
+          "viewport": "desktop",
+          "findings": [
+            {
+              "id": "page-has-heading-one",
+              "impact": "moderate",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "reason": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "viewport": "intermediate",
+          "findings": [
+            {
+              "id": "page-has-heading-one",
+              "impact": "moderate",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "reason": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "viewport": "mobile",
+          "findings": [
+            {
+              "id": "page-has-heading-one",
+              "impact": "moderate",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "reason": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+              ]
+            },
+            {
+              "id": "scrollable-region-focusable",
+              "impact": "serious",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "pre"
+                  ],
+                  "reason": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "recordings": [
+        {
+          "video": "interaction-desktop.webm",
+          "sheet": "interaction-desktop.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 6
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 744
+            },
+            {
+              "label": "Add local document",
+              "ms": 1250
+            },
+            {
+              "label": "Remove document",
+              "ms": 1866
+            },
+            {
+              "label": "Send first message",
+              "ms": 2485
+            },
+            {
+              "label": "Stop",
+              "ms": 2917
+            },
+            {
+              "label": "Retry",
+              "ms": 3399
+            },
+            {
+              "label": "Completed",
+              "ms": 6401
+            }
+          ],
+          "durationSeconds": 8.2,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        },
+        {
+          "video": "interaction-mobile.webm",
+          "sheet": "interaction-mobile.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 5
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 728
+            },
+            {
+              "label": "Add local document",
+              "ms": 1238
+            },
+            {
+              "label": "Remove document",
+              "ms": 1850
+            },
+            {
+              "label": "Send first message",
+              "ms": 2478
+            },
+            {
+              "label": "Stop",
+              "ms": 2925
+            },
+            {
+              "label": "Retry",
+              "ms": 3404
+            },
+            {
+              "label": "Completed",
+              "ms": 6406
+            }
+          ],
+          "durationSeconds": 8.24,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        }
+      ],
+      "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+    },
+    "round1": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png",
+        "interaction-desktop.png",
+        "interaction-mobile.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "accessibility": [
+        {
+          "viewport": "desktop",
+          "findings": []
+        },
+        {
+          "viewport": "intermediate",
+          "findings": []
+        },
+        {
+          "viewport": "mobile",
+          "findings": []
+        }
+      ],
+      "recordings": [
+        {
+          "video": "interaction-desktop.webm",
+          "sheet": "interaction-desktop.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 3
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 778
+            },
+            {
+              "label": "Add local document",
+              "ms": 1284
+            },
+            {
+              "label": "Remove document",
+              "ms": 1900
+            },
+            {
+              "label": "Send first message",
+              "ms": 2516
+            },
+            {
+              "label": "Stop",
+              "ms": 2948
+            },
+            {
+              "label": "Retry",
+              "ms": 3429
+            },
+            {
+              "label": "Completed",
+              "ms": 6431
+            }
+          ],
+          "durationSeconds": 8.12,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        },
+        {
+          "video": "interaction-mobile.webm",
+          "sheet": "interaction-mobile.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 3
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 766
+            },
+            {
+              "label": "Add local document",
+              "ms": 1274
+            },
+            {
+              "label": "Remove document",
+              "ms": 1885
+            },
+            {
+              "label": "Send first message",
+              "ms": 2525
+            },
+            {
+              "label": "Stop",
+              "ms": 2958
+            },
+            {
+              "label": "Retry",
+              "ms": 3437
+            },
+            {
+              "label": "Completed",
+              "ms": 6447
+            }
+          ],
+          "durationSeconds": 8.28,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        }
+      ],
+      "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+    },
+    "after": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png",
+        "interaction-desktop.png",
+        "interaction-mobile.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "accessibility": [
+        {
+          "viewport": "desktop",
+          "findings": []
+        },
+        {
+          "viewport": "intermediate",
+          "findings": []
+        },
+        {
+          "viewport": "mobile",
+          "findings": []
+        }
+      ],
+      "recordings": [
+        {
+          "video": "interaction-desktop.webm",
+          "sheet": "interaction-desktop.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 4
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 768
+            },
+            {
+              "label": "Add local document",
+              "ms": 1279
+            },
+            {
+              "label": "Remove document",
+              "ms": 1895
+            },
+            {
+              "label": "Send first message",
+              "ms": 2528
+            },
+            {
+              "label": "Stop",
+              "ms": 2973
+            },
+            {
+              "label": "Retry",
+              "ms": 3453
+            },
+            {
+              "label": "Completed",
+              "ms": 6469
+            }
+          ],
+          "durationSeconds": 8.08,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        },
+        {
+          "video": "interaction-mobile.webm",
+          "sheet": "interaction-mobile.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 5
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 778
+            },
+            {
+              "label": "Add local document",
+              "ms": 1292
+            },
+            {
+              "label": "Remove document",
+              "ms": 1910
+            },
+            {
+              "label": "Send first message",
+              "ms": 2538
+            },
+            {
+              "label": "Stop",
+              "ms": 2982
+            },
+            {
+              "label": "Retry",
+              "ms": 3477
+            },
+            {
+              "label": "Completed",
+              "ms": 6493
+            }
+          ],
+          "durationSeconds": 8.08,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        }
+      ],
+      "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+    }
+  },
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": []
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": []
+    }
+  ],
+  "sourceHash": "1dfc71eeea4538884de03bfd2fd50abad1f715ec03b9caeb355d2d169d5a8616"
+}

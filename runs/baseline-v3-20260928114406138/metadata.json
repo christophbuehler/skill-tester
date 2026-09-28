@@ -1,0 +1,697 @@
+{
+  "id": "baseline-v3-20260928114406138",
+  "profile": "baseline-v3",
+  "label": "No design skill · v3",
+  "skills": [],
+  "createdAt": "2026-09-28T11:44:08.698Z",
+  "benchmark": "folio-v3",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "f029ddd89ac14f45d32dd456518977eaf1acd2e71151c941a489b2dd3e06175c",
+  "starterHash": "06621608113daca5b062e89618a219c5eb615f033d4bda231953e625c653e721",
+  "profileInstruction": "No design skills are selected. Use only the shared benchmark brief and contract.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 0,
+    "promptHash": "425bb0133c2bf5a018b4f7c68ab175a09744372673c0ec5a8ef02d882bab4f5d"
+  },
+  "repairCount": 0,
+  "refinementCount": 2,
+  "refinementRounds": 2,
+  "taskPrompt": "Build **Folio**, a fictional research workspace for professionals asking questions and discussing documents. Deliver a complete React/Tailwind product interface, not a marketing page.\n\nPeople need to start and revisit conversations, write multiline questions, attach/remove local documents, read streaming Markdown answers, understand tool activity, stop work, retry interruptions, and copy useful responses. Use the supplied `useChat` hook for that behavior. Keep its fixture content and logic intact.\n\nOwn the product's information architecture and visual/interaction design. The selected design skills are the art direction: translate their opinions into the navigation model, silhouette, typography, primary input, material, and motion. They are allowed to make strong decisions. The shared contract fixes capabilities and automation names only; it does not prescribe layout, palette, surface treatment, radii, a logo, or composer structure. Baseline has no selected design skill and chooses its own direction.\n\nBefore implementation, write three structurally different concepts in DESIGN.md, choose the strongest under the selected skills, and state the concrete decisions the skill changes. A palette swap is not a different concept. Then implement one coherent design. Treat the composer and the transitions into/out of work as product design problems, not stock form controls. Optional suggestions need not become cards. Brand expression may be a carefully set wordmark; no decorative logo is required. Do not add fake functionality to make the screen appear richer.\n\nRead CONTRACT.md, CAPABILITIES.md, and the shared package. Write presentation source under src/ except protected src/main.tsx; DESIGN.md is also allowed. Preserve the shared mock, fixtures, package versions, configuration, tests, and benchmark instructions. No real backend, AI service, uploads, remote assets, network calls, or new dependencies. Use the supplied offline fonts, icons, and animation tools as appropriate. No shared component theme is provided.\n\nUse every explicitly selected skill, and no unrelated skills, memory, plugins, subagents, host projects, or web research. The behavioral contract wins only on actual behavioral conflicts; it does not override the skill's aesthetic direction. Make routine decisions independently. A combined profile makes one coherent implementation from all selected skills.\n\nThe runner gives every profile the same implementation budget, two browser-informed design refinement sessions, and at most one objective repair. It captures settled desktop/mobile states, navigation and work interactions, temporal contact sheets, and videos outside the sandbox. Refinement can change the composition substantially while preserving behavior. Be critical of a merely competent first draft. Keep accessibility, keyboard/touch use, responsiveness, and reduced motion intact.\n\nYou may run pnpm typecheck and pnpm build. Browser launch is provided by the runner; don't spend the generation budget working around sandbox restrictions. Finish with working source and an honest design/verification note. Do not commit or publish.\n",
+  "refinementPrompt": "Inspect the attached settled browser screenshots, temporal contact sheets, and browser observations. Images are ordered by filenames in the report. The recordings contain real scripted interactions; contact sheets sample moments, not smooth playback. Read the actual source, DESIGN.md, and all selected skill entrypoints again (none for baseline).\n\nUse this session for a substantial design critique and refinement. Is the selected skill visible in the silhouette, navigation, primary control, typography, shape, and transitions, or did the implementation retreat into a generic chat shell? Do the entry and working states feel like one product? Does the main control have considered geometry and interaction behavior? Are important transitions continuous, interruptible, and readable? Assess populated states and mobile as seriously as the empty view.\n\nYou may replace the composition or interaction presentation if that better realizes the selected skill. Do not settle for changing colors or a few margins while the main design problem remains. Avoid adding decoration merely to look different. Use the profile as art direction, not a second generic checklist. Baseline evaluates its own chosen direction without adopting another profile.\n\nAlso address objective findings from the report. Preserve behavior, accessibility, fixed content, and protected files. Keep the meaning of intermediate frames separate from the settled screenshots; do not delete useful motion because a sampled transition frame is partially transparent. Record the concrete shortcomings you found, the changes made, and any uncertainty in DESIGN.md. No claim of interactive browsing by the generating model, no invented aesthetic score, no commit or publication.\n",
+  "refinementTimeoutMs": 600000,
+  "status": "passed",
+  "elapsedMs": 627856,
+  "tokenUsage": [
+    {
+      "input_tokens": 150530,
+      "cached_input_tokens": 130560,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8810,
+      "reasoning_output_tokens": 213
+    },
+    {
+      "input_tokens": 242837,
+      "cached_input_tokens": 200576,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3183,
+      "reasoning_output_tokens": 379
+    },
+    {
+      "input_tokens": 299743,
+      "cached_input_tokens": 260480,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3354,
+      "reasoning_output_tokens": 418
+    }
+  ],
+  "loadedSkills": [],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "validationAttempts": [
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ]
+  ],
+  "failure": null,
+  "browserReview": {
+    "before": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png",
+        "interaction-desktop.png",
+        "interaction-mobile.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "accessibility": [
+        {
+          "viewport": "desktop",
+          "findings": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 8,
+              "examples": [
+                {
+                  "target": [
+                    "aside > .brand-row > .edition"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #707365, background color: #eeeee6, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "aside > .index-label"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #6e7565, background color: #eeeee6, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "aside > .index-label > span"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #6e7565, background color: #eeeee6, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "aside > .sidebar-bottom > p"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #6e7565, background color: #eeeee6, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ]
+            },
+            {
+              "id": "page-has-heading-one",
+              "impact": "moderate",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "reason": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "viewport": "intermediate",
+          "findings": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 8,
+              "examples": [
+                {
+                  "target": [
+                    "aside > .brand-row > .edition"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #707365, background color: #eeeee6, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "aside > .index-label"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #6e7565, background color: #eeeee6, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "aside > .index-label > span"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #6e7565, background color: #eeeee6, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "aside > .sidebar-bottom > p"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #6e7565, background color: #eeeee6, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ]
+            },
+            {
+              "id": "page-has-heading-one",
+              "impact": "moderate",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "reason": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "viewport": "mobile",
+          "findings": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 2,
+              "examples": [
+                {
+                  "target": [
+                    ".demo-badge"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #737d64, background color: #f9f9f5, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    ".attach-button > span"
+                  ],
+                  "reason": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #727b65, background color: #ffffff, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ]
+            },
+            {
+              "id": "page-has-heading-one",
+              "impact": "moderate",
+              "nodes": 1,
+              "examples": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "reason": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "recordings": [
+        {
+          "video": "interaction-desktop.webm",
+          "sheet": "interaction-desktop.png",
+          "events": [
+            {
+              "label": "Conversation navigation already exposed",
+              "ms": 5
+            },
+            {
+              "label": "Add local document",
+              "ms": 5
+            },
+            {
+              "label": "Remove document",
+              "ms": 616
+            },
+            {
+              "label": "Send first message",
+              "ms": 1242
+            },
+            {
+              "label": "Stop",
+              "ms": 1679
+            },
+            {
+              "label": "Retry",
+              "ms": 2171
+            },
+            {
+              "label": "Completed",
+              "ms": 5169
+            }
+          ],
+          "durationSeconds": 6.36,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        },
+        {
+          "video": "interaction-mobile.webm",
+          "sheet": "interaction-mobile.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 6
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 784
+            },
+            {
+              "label": "Add local document",
+              "ms": 1293
+            },
+            {
+              "label": "Remove document",
+              "ms": 1907
+            },
+            {
+              "label": "Send first message",
+              "ms": 2547
+            },
+            {
+              "label": "Stop",
+              "ms": 2986
+            },
+            {
+              "label": "Retry",
+              "ms": 3482
+            },
+            {
+              "label": "Completed",
+              "ms": 6495
+            }
+          ],
+          "durationSeconds": 8.04,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        }
+      ],
+      "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+    },
+    "round1": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png",
+        "interaction-desktop.png",
+        "interaction-mobile.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "accessibility": [
+        {
+          "viewport": "desktop",
+          "findings": []
+        },
+        {
+          "viewport": "intermediate",
+          "findings": []
+        },
+        {
+          "viewport": "mobile",
+          "findings": []
+        }
+      ],
+      "recordings": [
+        {
+          "video": "interaction-desktop.webm",
+          "sheet": "interaction-desktop.png",
+          "events": [
+            {
+              "label": "Conversation navigation already exposed",
+              "ms": 3
+            },
+            {
+              "label": "Add local document",
+              "ms": 3
+            },
+            {
+              "label": "Remove document",
+              "ms": 612
+            },
+            {
+              "label": "Send first message",
+              "ms": 1231
+            },
+            {
+              "label": "Stop",
+              "ms": 1682
+            },
+            {
+              "label": "Retry",
+              "ms": 2158
+            },
+            {
+              "label": "Completed",
+              "ms": 5159
+            }
+          ],
+          "durationSeconds": 6.4,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        },
+        {
+          "video": "interaction-mobile.webm",
+          "sheet": "interaction-mobile.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 3
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 768
+            },
+            {
+              "label": "Add local document",
+              "ms": 1273
+            },
+            {
+              "label": "Remove document",
+              "ms": 1882
+            },
+            {
+              "label": "Send first message",
+              "ms": 2503
+            },
+            {
+              "label": "Stop",
+              "ms": 2940
+            },
+            {
+              "label": "Retry",
+              "ms": 3420
+            },
+            {
+              "label": "Completed",
+              "ms": 6425
+            }
+          ],
+          "durationSeconds": 7.88,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        }
+      ],
+      "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+    },
+    "after": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png",
+        "interaction-desktop.png",
+        "interaction-mobile.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "accessibility": [
+        {
+          "viewport": "desktop",
+          "findings": []
+        },
+        {
+          "viewport": "intermediate",
+          "findings": []
+        },
+        {
+          "viewport": "mobile",
+          "findings": []
+        }
+      ],
+      "recordings": [
+        {
+          "video": "interaction-desktop.webm",
+          "sheet": "interaction-desktop.png",
+          "events": [
+            {
+              "label": "Conversation navigation already exposed",
+              "ms": 4
+            },
+            {
+              "label": "Add local document",
+              "ms": 4
+            },
+            {
+              "label": "Remove document",
+              "ms": 617
+            },
+            {
+              "label": "Send first message",
+              "ms": 1263
+            },
+            {
+              "label": "Stop",
+              "ms": 1717
+            },
+            {
+              "label": "Retry",
+              "ms": 2207
+            },
+            {
+              "label": "Completed",
+              "ms": 5209
+            }
+          ],
+          "durationSeconds": 6.56,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        },
+        {
+          "video": "interaction-mobile.webm",
+          "sheet": "interaction-mobile.png",
+          "events": [
+            {
+              "label": "Open history",
+              "ms": 5
+            },
+            {
+              "label": "Dismiss history with Escape",
+              "ms": 784
+            },
+            {
+              "label": "Add local document",
+              "ms": 1294
+            },
+            {
+              "label": "Remove document",
+              "ms": 1910
+            },
+            {
+              "label": "Send first message",
+              "ms": 2545
+            },
+            {
+              "label": "Stop",
+              "ms": 2986
+            },
+            {
+              "label": "Retry",
+              "ms": 3480
+            },
+            {
+              "label": "Completed",
+              "ms": 6484
+            }
+          ],
+          "durationSeconds": 7.96,
+          "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+        }
+      ],
+      "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+    }
+  },
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": []
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": []
+    }
+  ],
+  "sourceHash": "084f8b07ab1ceff04398914443d102c50db7a29cef11f11267717598d414d979"
+}

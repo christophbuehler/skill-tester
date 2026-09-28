@@ -89,5 +89,17 @@
       "LICENSE.txt",
       "references/design-language.md"
     ]
+  },
+  "apple-design-refined": {
+    "name": "Apple Design refined",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/apple-design",
+    "commit": "98691cb47275bdd60d850bc9864ec8b0effaddba",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/design-language.md"
+    ]
   }
 }

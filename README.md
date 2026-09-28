@@ -137,12 +137,7 @@ for paired prototype checks, contrast findings, and evaluation limitations.
 
 The v2 benchmark expresses capabilities rather than prescribing sidebar, card, or attachment presentation. Conversation navigation may be disclosed at any width; suggestions are optional. V1 prompts/configuration remain in `benchmark/versions/folio-v1`, with existing runs and profile pins unchanged. The gallery labels benchmark versions and warns about comparing different inputs.
 
-```sh
-pnpm generate baseline-v2 --preflight
-pnpm generate baseline-v2
-pnpm generate modern-interface-craft-v2 --preflight
-pnpm generate modern-interface-craft-v2
-```
+The `baseline-v2` and `modern-interface-craft-v2` profile IDs preserve their skill selections, not the benchmark inputs. Generation always uses the current `benchmark/config.json`; selecting a historical profile does not replay its historical benchmark. Existing v2 results remain available in the gallery with their exact recorded prompts.
 
 The updated skill favors minimal product composition, concrete copy, contextual controls, and continuity between meaningful states. Its aesthetic guidance appears only in that skill profile. Both profiles receive identical neutral implementation/refinement prompts and budgets. New metadata records the exact prompts, refinement count, browser observations, and before/after captures. One pair is a showcase, not evidence of a reliable skill ranking. Functional success and accessibility findings are separate from a human design assessment.
 
@@ -150,7 +145,7 @@ The updated skill favors minimal product composition, concrete copy, contextual 
 
 V3 gives selected skills explicit authority over composition, navigation, type, geometry, the composer, and motion. The neutral task asks for three distinct concepts before selecting one; art direction lives in the profiles. Modern Interface Craft now commits to a dark tactile studio with substantial rounded controls and contextual history. The new independent Apple Design skill interprets Apple's public material and motion guidance as a light content plane with floating controls and anchored sheets. It is not an official Apple skill and bundles no proprietary Apple assets.
 
-All profiles receive Motion 13.4.4, Geist Variable 5.3.0, and Manrope Variable 5.3.0, locked and bundled offline. No shared theme or component shell is supplied. Font licenses are published in `public/font-licenses.txt`. V1/V2 sources, profile pins, and records remain immutable; their original prompts remain viewable. Rebuilding old results uses the current common build toolchain, not a archived binary artifact.
+All profiles receive Motion 13.4.4, Geist Variable 5.3.0, and Manrope Variable 5.3.0, locked and bundled offline. No shared theme or component shell is supplied. Font licenses are published in `public/font-licenses.txt`. V1/V2 sources, profile pins, and records remain immutable; their original prompts remain viewable. Rebuilding old results uses the current common build toolchain, not an archived binary artifact.
 
 The v3 process allows 30 minutes implementation, two 10-minute design refinement sessions, and one 10-minute objective repair total. The host waits for fonts and resting-state transitions before screenshots, and separately records navigation, add/remove file, send, stop, and retry flows at desktop and mobile. Contact sheets plus targeted accessibility findings enter each refinement session; full recordings are published in Run details. Generating models see temporal samples rather than native video playback. Recordings are evidence for human review, not automated proof of exceptional design.
 
@@ -161,8 +156,10 @@ pnpm generate baseline-v3 --preflight
 pnpm generate baseline-v3
 pnpm generate modern-interface-craft-v3 --preflight
 pnpm generate modern-interface-craft-v3
-pnpm generate apple-design-v3 --preflight
-pnpm generate apple-design-v3
+pnpm generate apple-design-refined-v3 --preflight
+pnpm generate apple-design-refined-v3
 ```
 
-Apple Design source: [`skills/apple-design/SKILL.md`](skills/apple-design/SKILL.md), with [sources and interpretation](skills/apple-design/references/design-language.md). Combine registered skill IDs explicitly as before; `apple-design` is its registry ID, while `apple-design-v3` is the initial single-skill profile. The first v3 batch compares baseline and the two custom directions; earlier upstream-skill runs remain available, and those pinned profiles can also be generated under the new benchmark.
+Apple Design source: [`skills/apple-design/SKILL.md`](skills/apple-design/SKILL.md), with [sources and interpretation](skills/apple-design/references/design-language.md). Combine registered skill IDs explicitly as before; `apple-design-refined` is the current registry ID, while `apple-design-refined-v3` is its single-skill profile. The first Apple attempt remains under `apple-design-v3`: it failed a navigation check because exiting controls remained exposed. The refined skill makes exit semantics explicit and removes uppercase welcome eyebrows. This is a recorded skill revision with a new run, not an overwrite of the failed attempt. See [v3 results and observations](docs/folio-v3.md).
+
+The first v3 batch compares baseline and the two custom directions; earlier upstream-skill runs remain available, and those pinned profiles can also be generated under the new benchmark.

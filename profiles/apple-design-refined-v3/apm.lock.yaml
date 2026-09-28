@@ -1,0 +1,60 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T12:19:17.755058+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: christophbuehler/skill-tester
+  name: skill-tester
+  host: github.com
+  resolved_commit: 98691cb47275bdd60d850bc9864ec8b0effaddba
+  resolved_ref: 98691cb47275bdd60d850bc9864ec8b0effaddba
+  version: unknown
+  virtual_path: skills/apple-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/apple-design
+  - .agents/skills/apple-design/LICENSE.txt
+  - .agents/skills/apple-design/SKILL.md
+  - .agents/skills/apple-design/references/design-language.md
+  deployed_file_hashes:
+    .agents/skills/apple-design/LICENSE.txt: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+    .agents/skills/apple-design/SKILL.md: sha256:6f60fafedd97e7377baa6a66ce9f5c1ba1dc4cd3dd2fd07387e205e8d3633831
+    .agents/skills/apple-design/references/design-language.md: sha256:c983a993026775534396b0770d8fca7640ce3661df6aea1010a55bda7d469ac0
+  content_hash: sha256:d186b95425d93dbdb45a6b32f354076aed23b8a59849d3c40804dd3c88e461d4
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/apple-design
+  active_owner: christophbuehler/skill-tester/skills/apple-design
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/apple-design
+  active_owner: christophbuehler/skill-tester/skills/apple-design
+  content_hash: sha256:7c37e6e622a2c6f291428b01e25053f5f09d4ded9830b5a803b213382899bbc3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/apple-design
+  active_owner: christophbuehler/skill-tester/skills/apple-design
+  content_hash: sha256:6f60fafedd97e7377baa6a66ce9f5c1ba1dc4cd3dd2fd07387e205e8d3633831
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design/references/design-language.md
+  runtime: null
+  scope: project
+  owners:
+  - christophbuehler/skill-tester/skills/apple-design
+  active_owner: christophbuehler/skill-tester/skills/apple-design
+  content_hash: sha256:c983a993026775534396b0770d8fca7640ce3661df6aea1010a55bda7d469ac0

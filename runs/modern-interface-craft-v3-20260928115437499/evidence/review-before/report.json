@@ -1,0 +1,209 @@
+{
+  "captures": [
+    "desktop-welcome.png",
+    "desktop-research.png",
+    "intermediate-welcome.png",
+    "intermediate-research.png",
+    "mobile-welcome.png",
+    "mobile-research.png",
+    "mobile-attachment.png",
+    "mobile-activity.png",
+    "interaction-desktop.png",
+    "interaction-mobile.png"
+  ],
+  "observations": [
+    {
+      "state": "desktop-welcome",
+      "overflow": false
+    },
+    {
+      "state": "desktop-research",
+      "overflow": false
+    },
+    {
+      "state": "intermediate-welcome",
+      "overflow": false
+    },
+    {
+      "state": "intermediate-research",
+      "overflow": false
+    },
+    {
+      "state": "mobile-welcome",
+      "overflow": false
+    },
+    {
+      "state": "mobile-research",
+      "overflow": false
+    },
+    {
+      "state": "mobile-attachment",
+      "overflow": false
+    },
+    {
+      "state": "mobile-activity",
+      "overflow": false
+    },
+    {
+      "state": "cancellation",
+      "retryVisible": true
+    },
+    {
+      "state": "reduced-motion",
+      "composerVisible": true
+    }
+  ],
+  "runtimeErrors": [],
+  "accessibility": [
+    {
+      "viewport": "desktop",
+      "findings": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1,
+          "examples": [
+            {
+              "target": [
+                "html"
+              ],
+              "reason": "Fix all of the following:\n  Page must have a level-one heading"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "intermediate",
+      "findings": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1,
+          "examples": [
+            {
+              "target": [
+                "html"
+              ],
+              "reason": "Fix all of the following:\n  Page must have a level-one heading"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "findings": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1,
+          "examples": [
+            {
+              "target": [
+                "html"
+              ],
+              "reason": "Fix all of the following:\n  Page must have a level-one heading"
+            }
+          ]
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "nodes": 1,
+          "examples": [
+            {
+              "target": [
+                "pre"
+              ],
+              "reason": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recordings": [
+    {
+      "video": "interaction-desktop.webm",
+      "sheet": "interaction-desktop.png",
+      "events": [
+        {
+          "label": "Open history",
+          "ms": 6
+        },
+        {
+          "label": "Dismiss history with Escape",
+          "ms": 744
+        },
+        {
+          "label": "Add local document",
+          "ms": 1250
+        },
+        {
+          "label": "Remove document",
+          "ms": 1866
+        },
+        {
+          "label": "Send first message",
+          "ms": 2485
+        },
+        {
+          "label": "Stop",
+          "ms": 2917
+        },
+        {
+          "label": "Retry",
+          "ms": 3399
+        },
+        {
+          "label": "Completed",
+          "ms": 6401
+        }
+      ],
+      "durationSeconds": 8.2,
+      "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+    },
+    {
+      "video": "interaction-mobile.webm",
+      "sheet": "interaction-mobile.png",
+      "events": [
+        {
+          "label": "Open history",
+          "ms": 5
+        },
+        {
+          "label": "Dismiss history with Escape",
+          "ms": 728
+        },
+        {
+          "label": "Add local document",
+          "ms": 1238
+        },
+        {
+          "label": "Remove document",
+          "ms": 1850
+        },
+        {
+          "label": "Send first message",
+          "ms": 2478
+        },
+        {
+          "label": "Stop",
+          "ms": 2925
+        },
+        {
+          "label": "Retry",
+          "ms": 3404
+        },
+        {
+          "label": "Completed",
+          "ms": 6406
+        }
+      ],
+      "durationSeconds": 8.24,
+      "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+    }
+  ],
+  "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+}

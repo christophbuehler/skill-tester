@@ -1,5 +1,709 @@
 [
   {
+    "id": "direct-v4-20260928154819804",
+    "profile": "direct-v4",
+    "requestedSkills": [
+      "modern-interface-craft-direct",
+      "apple-design-emil",
+      "accessibility",
+      "nested-geometry",
+      "motion-storytelling"
+    ],
+    "label": "Folio / Direct",
+    "skills": [
+      {
+        "id": "modern-interface-craft-direct",
+        "name": "Modern Interface Craft / Direct",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/modern-interface-craft",
+        "commit": "2677ddd7d3b0fd7ccd4290909a0e4868bc1ef791",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "references/light-workspace.md",
+          "references/interaction-recipes.md",
+          "references/research.md",
+          "references/source-audit.json"
+        ]
+      },
+      {
+        "id": "apple-design-emil",
+        "repo": "emilkowalski/skills",
+        "path": "skills/apple-design",
+        "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md"
+        ],
+        "name": "Apple Design (Emil Kowalski)",
+        "sourceURLs": [
+          "https://www.ui-skills.com/skills/emilkowalski/apple-design",
+          "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/apple-design"
+        ]
+      },
+      {
+        "id": "accessibility",
+        "repo": "addyosmani/web-quality-skills",
+        "path": "skills/accessibility",
+        "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "references/A11Y-PATTERNS.md",
+          "references/WCAG.md"
+        ],
+        "name": "Accessibility",
+        "sourceURLs": [
+          "https://www.ui-skills.com/skills/addyosmani/accessibility",
+          "https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility"
+        ]
+      },
+      {
+        "id": "nested-geometry",
+        "name": "Nested Geometry",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/nested-geometry",
+        "commit": "0fdd20bed5a45857c652427a445089b045167413",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "scripts/geometry.mjs"
+        ]
+      },
+      {
+        "id": "motion-storytelling",
+        "name": "Motion Storytelling",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/motion-storytelling",
+        "commit": "046ff46b275cb8aa8414741ad938f912098df872",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "references/brief-template.md"
+        ]
+      }
+    ],
+    "createdAt": "2026-09-28T15:48:21.581Z",
+    "benchmark": "folio-v4",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "promptHash": "93c78854cda813b18d4f77f0af7d3c3ee110cd72d8a5e809eb7998afcd143f8a",
+    "starterHash": "73076abaa79d22db5d11e7d05ec9e95652316ffa8bb94937a77e7eb1fe647966",
+    "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/modern-interface-craft/SKILL.md\n- .agents/skills/apple-design/SKILL.md\n- .agents/skills/accessibility/SKILL.md\n- .agents/skills/nested-geometry/SKILL.md\n- .agents/skills/motion-storytelling/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+    "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+    "cliVersion": "codex-cli 0.153.4",
+    "isolation": {
+      "passed": true,
+      "skills": 5,
+      "promptHash": "00b730d287a41cc11aab78939070e932dd86d8c568d871203bf8843d122c668b"
+    },
+    "repairCount": 1,
+    "refinementCount": 2,
+    "refinementRounds": 2,
+    "taskPrompt": "Build Folio, a fictional research tool for professionals working through questions and documents. Deliver a complete React/Tailwind application with a distinct, coherent product point of view. The useful work is the interface's focus.\n\nPeople need to start and revisit conversations, write multiline questions, attach/remove local documents, read streaming Markdown answers, understand tool activity, stop, retry, and copy useful responses. Use the supplied useChat hook and preserve its fixtures and behavior. Read CONTRACT.md and CAPABILITIES.md for the API, accessible control names, and available resources.\n\nOwn the information architecture, composition, typography, geometry, identity, and interaction design. No navigation layout or composer structure is prescribed. Apply the selected skills thoughtfully: reconcile overlaps, use guidance where it improves a real user action, and explain conflicts. Baseline has no selected skill. Design for light mode in this benchmark. Use Tailwind with semantic color variables: color literals belong only in the centralized token declarations, never in component classes, inline styles, SVG attributes, or scattered CSS rules. Name tokens by purpose rather than hue. If offering an optional dark theme, its canvas must be OLED black; light is the default.\n\nBefore implementation, use DESIGN.md to compare a few genuinely different product approaches and select one. Record decisions as you make them: the alternative actually considered, the exact skill/reference guidance (or your own reasoning for baseline), why it better serves this product, and where it is implemented. Do not invent an earlier intention or claim causal proof from one generation. A skill that did not change a decision should be reported honestly. Keep this process note out of the product UI.\n\nBuild the complete experience, including populated conversations and small screens. Polish should be visible in hierarchy, precise relationships between shapes, and useful interaction feedback. Copy should help someone act or understand a state; do not pad the experience with invented marketing claims. Show necessary demo/privacy information without repeating it throughout the screen. No fake features.\n\nWrite presentation source under src/ except protected src/main.tsx; DESIGN.md is also allowed. Preserve the shared package, fixtures, configuration, tests, versions, and benchmark instructions. No backend, real AI calls, uploads, remote assets, network calls, or new dependencies. Use only selected skills, with their supplied references; no unrelated skills, memory, plugins, subagents, host projects, or web research. The behavioral contract wins on actual behavior conflicts, without prescribing aesthetic choices.\n\nYou have one implementation session, two fresh browser-informed refinement sessions, and at most one objective repair. The runner captures desktop/mobile states and interaction contact sheets outside your sandbox. These are opportunities for substantive product critique, not just adjusting spacing. Run pnpm typecheck and pnpm build --configLoader runner as needed. Do not attempt to bypass sandbox browser restrictions. Finish with working source and honest verification notes; do not commit or publish.\n",
+    "refinementPrompt": "Review the actual interface in the attached settled screenshots and interaction contact sheets. Read source, DESIGN.md, and every selected skill entrypoint again. The report identifies image filenames and objective findings; temporal samples are not smooth video playback.\n\nAct as a critical product designer seeing this implementation for the first time. Find the three most consequential weaknesses before changing anything. Assess the hierarchy of the whole screen, how quickly a person can begin/resume useful work, the continuity between entry and conversation, geometry at actual rendered sizes, readability of long responses, and feedback during real input/navigation/file/streaming actions. Is the skill guidance implemented in these details, or merely repeated in DESIGN.md? Remove elements that do not earn their attention. Preserve deliberate choices that already work.\n\nMake substantive improvements where warranted. Avoid restyling purely for novelty or adding effects to satisfy a checklist. Inspect mobile and populated states with the same care as welcome. Check keyboard/focus, exiting interactive elements, reduced motion, semantic color tokens and responsive corner/inset relationships. Address objective findings without changing protected behavior or files.\n\nUpdate the decision ledger with the actual previous implementation, precise skill guidance used, resulting change, source location, and what the supplied evidence can and cannot verify. State when guidance confirms an existing choice rather than changing it. No invented browsing, causal claim, aesthetic score, commit or publication.\n",
+    "refinementTimeoutMs": 600000,
+    "status": "passed",
+    "elapsedMs": 2267460,
+    "tokenUsage": [
+      {
+        "input_tokens": 701476,
+        "cached_input_tokens": 620416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 35973,
+        "reasoning_output_tokens": 9340
+      },
+      {
+        "input_tokens": 647097,
+        "cached_input_tokens": 587392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4246,
+        "reasoning_output_tokens": 1880
+      },
+      {
+        "input_tokens": 861538,
+        "cached_input_tokens": 784640,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11848,
+        "reasoning_output_tokens": 5196
+      },
+      {
+        "input_tokens": 1164914,
+        "cached_input_tokens": 1081472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13839,
+        "reasoning_output_tokens": 6459
+      }
+    ],
+    "loadedSkills": [
+      ".agents/skills/modern-interface-craft/SKILL.md",
+      ".agents/skills/apple-design/SKILL.md",
+      ".agents/skills/accessibility/SKILL.md",
+      ".agents/skills/nested-geometry/SKILL.md",
+      ".agents/skills/motion-storytelling/SKILL.md"
+    ],
+    "validation": [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      },
+      {
+        "task": "semantic-colors",
+        "passed": true
+      }
+    ],
+    "validationAttempts": [
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": false,
+          "failure": "\n> skill-tester@1.0.0 test:e2e /private<workspace>\n> BENCHMARK_ISOLATED=1 playwright test\n\n\nRunning 5 tests using 4 workers\n\n  ✓  4 tests/variants.spec.ts:60:3 › isolated: attachments, invalid files, send (944ms)\n  ✓  1 tests/interactions.spec.ts:5:23 › isolated: drag and drop, keyboard composer, local-only requests (2.4s)\n  ✘  3 tests/variants.spec.ts:24:3 › isolated: chat, streaming, stop, retry, switch (6.2s)\n  ✘  2 tests/variants.spec.ts:101:3 › isolated: deterministic error recovery (6.5s)\n  ✘  5 tests/variants.spec.ts:120:3 › isolated: responsive screenshots and accessibility report (30.0s)\n\n\n  1) tests/variants.spec.ts:24:3 › isolated: chat, streaming, stop, retry, switch ──────────────────\n\n    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\n    Locator:  getByTestId('messages').locator('table')\n    Expected: visible\n    Received: <element(s) not found>\n    Timeout:  5000ms\n\n    Call log:\n    \u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n    \u001b[2m  - waiting for getByTestId('messages').locator('table')\u001b[22m\n\n\n      18 |   await expect(page.getByTestId('messages')).toContainText('A clearer path');\n      19 |   await page.getByRole('button',{name:'Stop response',exact:true}).click();await page.getByRole('button',{name:'Retry response',exact:true}).click();\n    > 20 |   await expect(page.getByTestId('messages').locator('table')).toBeVisible();await expect(page.getByRole('button',{name:'Stop response',exact:true})).toHaveCount(0);\n         |                                                               ^\n      21 |   await expect(page.getByTestId('messages').locator('pre')).toBeVisible();\n      22 |   await (await reveal(page,'Document review')).click();await expect(page.getByTestId('messages')).toContainText('launch-brief.pdf');\n      23 |   await (await reveal(page,'New chat')).click();await expect(page.getByTestId('messages')).not.toContainText('launch-brief.pdf');expect(errors).toEqual([]);\n        at /private<workspace>/tests/variants.spec.ts:20:63\n\n    Error Context: test-results/variants-isolated-chat-streaming-stop-retry-switch/error-context.md\n\n  2) tests/variants.spec.ts:101:3 › isolated: deterministic error recovery ─────────────────────────\n\n    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\n    Locator:  getByTestId('messages').locator('table')\n    Expected: visible\n    Received: <element(s) not found>\n    Timeout:  5000ms\n\n    Call log:\n    \u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n    \u001b[2m  - waiting for getByTestId('messages').locator('table')\u001b[22m\n\n\n      31 |  });\n      32 |  test(`${run.id}: deterministic error recovery`,async({page})=>{\n    > 33 |   await page.goto(`${route}?scenario=error`);await page.getByRole('textbox',{name:'Message',exact:true}).fill('Hello');await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.getByRole('alert')).toContainText('interrupted');await page.getByRole('button',{name:'Retry response',exact:true}).click();await expect(page.getByTestId('messages').locator('table')).toBeVisible();\n         |                                                                                                                                                                                                                                                                                                                                                                                                         ^\n      34 |  });\n      35 |  test(`${run.id}: responsive screenshots and accessibility report`,async({page},info)=>{\n      36 |   for(const [name,width,height] of [['desktop',1440,1000],['mobile',390,844]] as const) {\n        at /private<workspace>/tests/variants.spec.ts:33:393\n\n    Error Context: test-results/variants-isolated-deterministic-error-recovery/error-context.md\n\n  3) tests/variants.spec.ts:120:3 › isolated: responsive screenshots and accessibility report ──────\n\n    \u001b[31mTest timeout of 30000ms exceeded.\u001b[39m\n\n    Error: locator.click: Test timeout of 30000ms exceeded.\n    Call log:\n    \u001b[2m  - waiting for getByRole('button', { name: 'Open conversations', exact: true })\u001b[22m\n    \u001b[2m    - locator resolved to <button aria-expanded=\"false\" aria-label=\"Open conversations\" aria-controls=\"mobile-conversations\" class=\"icon-button -ml-2 shrink-0 md:hidden\">…</button>\u001b[22m\n    \u001b[2m  - attempting click action\u001b[22m\n    \u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m      - element is visible, enabled and stable\u001b[22m\n    \u001b[2m      - scrolling into view if needed\u001b[22m\n    \u001b[2m      - done scrolling\u001b[22m\n    \u001b[2m      - <a class=\"skip-link\" href=\"#main-content\">Skip to conversation</a> intercepts pointer events\u001b[22m\n    \u001b[2m    - retrying click action\u001b[22m\n    \u001b[2m    - waiting 20ms\u001b[22m\n    \u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m      - element is visible, enabled and stable\u001b[22m\n    \u001b[2m      - scrolling into view if needed\u001b[22m\n    \u001b[2m      - done scrolling\u001b[22m\n    \u001b[2m      - <a class=\"skip-link\" href=\"#main-content\">Skip to conversation</a> intercepts pointer events\u001b[22m\n    \u001b[2m    - retrying click action\u001b[22m\n    \u001b[2m      - waiting 100ms\u001b[22m\n    \u001b[2m    54 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m       - element is visible, enabled and stable\u001b[22m\n    \u001b[2m       - scrolling into view if needed\u001b[22m\n    \u001b[2m       - done scrolling\u001b[22m\n    \u001b[2m       - <a class=\"skip-link\" href=\"#main-content\">Skip to conversation</a> intercepts pointer events\u001b[22m\n    \u001b[2m     - retrying click action\u001b[22m\n    \u001b[2m       - waiting 500ms\u001b[22m\n\n\n      43 |    const a11y=await new AxeBuilder({page}).analyze();await info.attach(`${name}-accessibility`,{body:JSON.stringify(a11y.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length})),null,2),contentType:'application/json'});\n      44 |    await page.keyboard.press('Tab');expect(await page.evaluate(()=>document.activeElement!==document.body)).toBe(true);\n    > 45 |    if(name==='mobile') {const open=page.getByRole('button',{name:'Open conversations',exact:true});if(await open.isVisible())await open.click();await (await reveal(page,'Document review')).click();await expect(page.getByTestId('messages')).toContainText('launch-brief.pdf');}\n         |                                                                                                                                         ^\n      46 |   }\n      47 |  });\n      48 | }\n        at /private<workspace>/tests/variants.spec.ts:45:137\n\n    Error Context: test-results/variants-isolated-responsi-41793-ts-and-accessibility-report/error-context.md\n\n  3 failed\n    tests/variants.spec.ts:24:3 › isolated: chat, streaming, stop, retry, switch ───────────────────\n    tests/variants.spec.ts:101:3 › isolated: deterministic error recovery ──────────────────────────\n    tests/variants.spec.ts:120:3 › isolated: responsive screenshots and accessibility report ───────\n  2 passed (32.2s)\n ELIFECYCLE  Command failed with exit code 1.\n\n(node:20665) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:20671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:20672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:20672) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:20680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20681) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20679) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20681) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:20681) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20682) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:20682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20679) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:20679) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20680) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:20680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ],
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": true
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ],
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": true
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ],
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": true
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ]
+    ],
+    "failure": null,
+    "browserReview": {
+      "before": {
+        "captures": [
+          "desktop-welcome.png",
+          "desktop-research.png",
+          "intermediate-welcome.png",
+          "intermediate-research.png",
+          "mobile-welcome.png",
+          "mobile-research.png",
+          "mobile-attachment.png",
+          "mobile-activity.png",
+          "interaction-desktop.png",
+          "interaction-mobile.png"
+        ],
+        "observations": [
+          {
+            "state": "desktop-welcome",
+            "overflow": false
+          },
+          {
+            "state": "desktop-research",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-welcome",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-welcome",
+            "overflow": false
+          },
+          {
+            "state": "mobile-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-attachment",
+            "overflow": false
+          },
+          {
+            "state": "mobile-activity",
+            "overflow": false
+          },
+          {
+            "state": "cancellation",
+            "retryVisible": true
+          },
+          {
+            "state": "reduced-motion",
+            "composerVisible": true
+          }
+        ],
+        "runtimeErrors": [],
+        "accessibility": [
+          {
+            "viewport": "desktop",
+            "findings": []
+          },
+          {
+            "viewport": "intermediate",
+            "findings": []
+          },
+          {
+            "viewport": "mobile",
+            "findings": []
+          }
+        ],
+        "recordings": [
+          {
+            "video": "interaction-desktop.webm",
+            "sheet": "interaction-desktop.png",
+            "events": [
+              {
+                "label": "Conversation navigation already exposed",
+                "ms": 5
+              },
+              {
+                "label": "Add local document",
+                "ms": 5
+              },
+              {
+                "label": "Remove document",
+                "ms": 623
+              },
+              {
+                "label": "Send first message",
+                "ms": 1247
+              },
+              {
+                "label": "Stop",
+                "ms": 1682
+              },
+              {
+                "label": "Retry",
+                "ms": 2395
+              },
+              {
+                "label": "Completed",
+                "ms": 5415
+              }
+            ],
+            "durationSeconds": 6.16,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          },
+          {
+            "video": "interaction-mobile.webm",
+            "sheet": "interaction-mobile.png",
+            "events": [
+              {
+                "label": "Open history",
+                "ms": 4
+              },
+              {
+                "label": "Dismiss history with Escape",
+                "ms": 740
+              },
+              {
+                "label": "Add local document",
+                "ms": 1250
+              },
+              {
+                "label": "Remove document",
+                "ms": 1862
+              },
+              {
+                "label": "Send first message",
+                "ms": 2496
+              },
+              {
+                "label": "Stop",
+                "ms": 2938
+              },
+              {
+                "label": "Retry",
+                "ms": 3649
+              },
+              {
+                "label": "Completed",
+                "ms": 6669
+              }
+            ],
+            "durationSeconds": 7.84,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          }
+        ],
+        "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+      },
+      "round1": {
+        "captures": [
+          "desktop-welcome.png",
+          "desktop-research.png",
+          "intermediate-welcome.png",
+          "intermediate-research.png",
+          "mobile-welcome.png",
+          "mobile-research.png",
+          "mobile-attachment.png",
+          "mobile-activity.png",
+          "interaction-desktop.png",
+          "interaction-mobile.png"
+        ],
+        "observations": [
+          {
+            "state": "desktop-welcome",
+            "overflow": false
+          },
+          {
+            "state": "desktop-research",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-welcome",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-welcome",
+            "overflow": false
+          },
+          {
+            "state": "mobile-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-attachment",
+            "overflow": false
+          },
+          {
+            "state": "mobile-activity",
+            "overflow": false
+          },
+          {
+            "state": "cancellation",
+            "retryVisible": true
+          },
+          {
+            "state": "reduced-motion",
+            "composerVisible": true
+          }
+        ],
+        "runtimeErrors": [],
+        "accessibility": [
+          {
+            "viewport": "desktop",
+            "findings": []
+          },
+          {
+            "viewport": "intermediate",
+            "findings": []
+          },
+          {
+            "viewport": "mobile",
+            "findings": []
+          }
+        ],
+        "recordings": [
+          {
+            "video": "interaction-desktop.webm",
+            "sheet": "interaction-desktop.png",
+            "events": [
+              {
+                "label": "Conversation navigation already exposed",
+                "ms": 4
+              },
+              {
+                "label": "Add local document",
+                "ms": 4
+              },
+              {
+                "label": "Remove document",
+                "ms": 619
+              },
+              {
+                "label": "Send first message",
+                "ms": 1247
+              },
+              {
+                "label": "Stop",
+                "ms": 1677
+              },
+              {
+                "label": "Retry",
+                "ms": 2140
+              },
+              {
+                "label": "Completed",
+                "ms": 5160
+              }
+            ],
+            "durationSeconds": 5.84,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          },
+          {
+            "video": "interaction-mobile.webm",
+            "sheet": "interaction-mobile.png",
+            "events": [
+              {
+                "label": "Open history",
+                "ms": 4
+              },
+              {
+                "label": "Dismiss history with Escape",
+                "ms": 740
+              },
+              {
+                "label": "Add local document",
+                "ms": 1247
+              },
+              {
+                "label": "Remove document",
+                "ms": 1857
+              },
+              {
+                "label": "Send first message",
+                "ms": 2496
+              },
+              {
+                "label": "Stop",
+                "ms": 2937
+              },
+              {
+                "label": "Retry",
+                "ms": 3398
+              },
+              {
+                "label": "Completed",
+                "ms": 6417
+              }
+            ],
+            "durationSeconds": 7.28,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          }
+        ],
+        "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+      },
+      "after": {
+        "captures": [
+          "desktop-welcome.png",
+          "desktop-research.png",
+          "intermediate-welcome.png",
+          "intermediate-research.png",
+          "mobile-welcome.png",
+          "mobile-research.png",
+          "mobile-attachment.png",
+          "mobile-activity.png",
+          "interaction-desktop.png",
+          "interaction-mobile.png"
+        ],
+        "observations": [
+          {
+            "state": "desktop-welcome",
+            "overflow": false
+          },
+          {
+            "state": "desktop-research",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-welcome",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-welcome",
+            "overflow": false
+          },
+          {
+            "state": "mobile-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-attachment",
+            "overflow": false
+          },
+          {
+            "state": "mobile-activity",
+            "overflow": false
+          },
+          {
+            "state": "cancellation",
+            "retryVisible": true
+          },
+          {
+            "state": "reduced-motion",
+            "composerVisible": true
+          }
+        ],
+        "runtimeErrors": [],
+        "accessibility": [
+          {
+            "viewport": "desktop",
+            "findings": []
+          },
+          {
+            "viewport": "intermediate",
+            "findings": []
+          },
+          {
+            "viewport": "mobile",
+            "findings": []
+          }
+        ],
+        "recordings": [
+          {
+            "video": "interaction-desktop.webm",
+            "sheet": "interaction-desktop.png",
+            "events": [
+              {
+                "label": "Conversation navigation already exposed",
+                "ms": 5
+              },
+              {
+                "label": "Add local document",
+                "ms": 5
+              },
+              {
+                "label": "Remove document",
+                "ms": 623
+              },
+              {
+                "label": "Send first message",
+                "ms": 1245
+              },
+              {
+                "label": "Stop",
+                "ms": 1678
+              },
+              {
+                "label": "Retry",
+                "ms": 2142
+              },
+              {
+                "label": "Completed",
+                "ms": 5161
+              }
+            ],
+            "durationSeconds": 5.72,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          },
+          {
+            "video": "interaction-mobile.webm",
+            "sheet": "interaction-mobile.png",
+            "events": [
+              {
+                "label": "Open history",
+                "ms": 3
+              },
+              {
+                "label": "Dismiss history with Escape",
+                "ms": 735
+              },
+              {
+                "label": "Add local document",
+                "ms": 1243
+              },
+              {
+                "label": "Remove document",
+                "ms": 1851
+              },
+              {
+                "label": "Send first message",
+                "ms": 2491
+              },
+              {
+                "label": "Stop",
+                "ms": 2930
+              },
+              {
+                "label": "Retry",
+                "ms": 3393
+              },
+              {
+                "label": "Completed",
+                "ms": 6412
+              }
+            ],
+            "durationSeconds": 7.32,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          }
+        ],
+        "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+      }
+    },
+    "accessibility": [
+      {
+        "viewport": "desktop-accessibility",
+        "findings": []
+      },
+      {
+        "viewport": "mobile-accessibility",
+        "findings": []
+      }
+    ],
+    "sourceHash": "5b4fdd2081cbe7ccd9c64bf108b8b12177c5b58c65f79a3c089ddd25577bda78"
+  },
+  {
     "id": "quiet-v4-20260928151936526",
     "profile": "quiet-v4",
     "requestedSkills": [

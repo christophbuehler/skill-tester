@@ -71,3 +71,17 @@ test("gallery and run dialog have no automated accessibility violations", async 
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
+
+test('versioned briefs and comparisons preserve benchmark provenance',async({page})=>{
+ await page.goto('/skill-tester/');
+ await page.getByRole('button',{name:'The brief',exact:true}).click();
+ const dialog=page.getByRole('dialog');
+ await expect(dialog).toContainText('folio-v1');
+ await expect(dialog).toContainText('folio-v2');
+ const v1=passed.find(r=>r.benchmark==='folio-v1');
+ const v2=passed.find(r=>r.benchmark==='folio-v2');
+ if(v1 && v2) {
+  await page.goto(`/skill-tester/#compare?left=${v1.id}&right=${v2.id}`);
+  await expect(page.getByText('These runs use different inputs or settings. Check run details before comparing.')).toBeVisible();
+ }
+});

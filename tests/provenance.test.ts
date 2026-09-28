@@ -31,12 +31,24 @@ for (const id of ids)
       );
     }
   });
-test("all launch runs share prompt and starter", () => {
-  const records = ids
-    .map((id) =>
-      JSON.parse(fs.readFileSync(`runs/${id}/metadata.json`, "utf8")),
-    )
-    .filter((r) => r.benchmark === "folio-v1");
-  assert.ok(new Set(records.map((r) => r.promptHash)).size <= 1);
-  assert.ok(new Set(records.map((r) => r.starterHash)).size <= 1);
+test("each benchmark batch shares inputs and exact prompt provenance", () => {
+  const records = ids.map(id => JSON.parse(fs.readFileSync(`runs/${id}/metadata.json`, 'utf8')));
+  for (const version of new Set(records.map(r=>r.benchmark))) {
+    const batch=records.filter(r=>r.benchmark===version);
+    assert.ok(new Set(batch.map(r=>r.promptHash)).size<=1);
+    assert.ok(new Set(batch.map(r=>r.starterHash)).size<=1);
+    assert.ok(new Set(batch.map(r=>r.refinementPrompt)).size<=1);
+    assert.ok(new Set(batch.map(r=>r.refinementTimeoutMs)).size<=1);
+    const current=JSON.parse(fs.readFileSync('benchmark/config.json','utf8')).id;
+    const prompt=fs.readFileSync(version===current?'benchmark/prompt.md':`benchmark/versions/${version}/prompt.md`,'utf8');
+    for(const r of batch) {
+      assert.equal(hash(prompt),r.promptHash);
+      if(r.benchmark==='folio-v2' && r.status==='passed') {
+        assert.equal(r.refinementCount,1);
+        assert.equal(r.taskPrompt,prompt);
+        assert.equal(r.browserReview.before.captures.length,8);
+        assert.equal(r.browserReview.after.captures.length,8);
+      }
+    }
+  }
 });

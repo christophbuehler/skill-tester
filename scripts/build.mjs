@@ -13,7 +13,7 @@ export function catalog() {
         fs.readFileSync(path.join(root, "runs", id, "metadata.json"), "utf8"),
       ),
     )
-    .sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 const runs = catalog();
 fs.mkdirSync(path.join(root, "src/generated"), { recursive: true });
@@ -21,11 +21,19 @@ fs.writeFileSync(
   path.join(root, "src/generated/catalog.json"),
   JSON.stringify(runs, null, 2),
 );
+const currentBenchmark = JSON.parse(
+  fs.readFileSync(path.join(root, "benchmark/config.json"), "utf8"),
+).id;
+const versions = new Set([...runs.map(run => run.benchmark), currentBenchmark]);
+const prompts = Object.fromEntries([...versions].map(id => {
+  const relative = id === currentBenchmark
+    ? "benchmark/prompt.md"
+    : `benchmark/versions/${id}/prompt.md`;
+  return [id, fs.readFileSync(path.join(root, relative), "utf8")];
+}));
 fs.writeFileSync(
   path.join(root, "src/generated/prompt.json"),
-  JSON.stringify(
-    fs.readFileSync(path.join(root, "benchmark/prompt.md"), "utf8"),
-  ),
+  JSON.stringify(prompts, null, 2),
 );
 await build({ root });
 for (const run of runs) {

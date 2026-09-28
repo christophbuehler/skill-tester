@@ -15,7 +15,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import catalog from "./generated/catalog.json";
-import prompt from "./generated/prompt.json";
+import prompts from "./generated/prompt.json";
 import "./styles.css";
 type Run = {
   id: string;
@@ -40,6 +40,9 @@ type Run = {
   }[];
   elapsedMs: number;
   repairCount: number;
+  refinementCount?: number;
+  refinementPrompt?: string;
+  browserReview?: { before?: unknown; after?: unknown };
   promptHash: string;
   starterHash: string;
   validation: { task: string; passed: boolean }[];
@@ -335,7 +338,7 @@ function App() {
                         </span>
                       </div>
                       <p>
-                        {descriptions[run.profile] ||
+                        {run.benchmark} · {descriptions[run.profile] ||
                           run.skills.map((s) => s.name).join(" + ")}
                       </p>
                       <div className="card-bottom">
@@ -421,15 +424,17 @@ function App() {
                 <h2>{details.label}</h2>
                 <p className="muted">{details.id}</p>
                 <dl>
+                  <dt>Benchmark</dt><dd>{details.benchmark}</dd>
                   <dt>Model</dt>
                   <dd>
                     {details.model} / {details.reasoning}
                   </dd>
+                  <dt>Task prompt</dt><dd><details><summary>Read exact prompt</summary><pre className="prompt-text">{(prompts as Record<string,string>)[details.benchmark]}</pre></details></dd>
                   <dt>Generated</dt>
                   <dd>{new Date(details.createdAt).toLocaleString()}</dd>
                   <dt>Outcome</dt>
                   <dd>
-                    {details.status}; {details.repairCount} repair(s)
+                    {details.status}; {details.refinementCount ?? 0} visual refinement(s); {details.repairCount} repair(s)
                   </dd>
                   <dt>Environment</dt>
                   <dd>
@@ -479,6 +484,12 @@ function App() {
                     {details.profileInstruction}
                   </pre>
                 </details>
+                {details.refinementCount ? <section>
+                  <h3>Visual refinement evidence</h3>
+                  <p>Browser captures informed one refinement session. Checks passing is not a design-quality rating.</p>
+                  <details><summary>Exact refinement instruction</summary><pre className="prompt-text">{details.refinementPrompt}</pre></details>
+                  <ul>{['desktop-welcome','desktop-research','intermediate-welcome','intermediate-research','mobile-welcome','mobile-research','mobile-attachment','mobile-activity'].map(state => <li key={state}>{state}: <a href={`${base}evidence/${details.id}/review-before/${state}.png`} target="_blank" rel="noreferrer">Before</a> · {details.browserReview?.after ? <a href={`${base}evidence/${details.id}/review-after/${state}.png`} target="_blank" rel="noreferrer">After</a> : "Final capture unavailable"}</li>)}</ul>
+                </section> : null}
                 <h3>Validation</h3>
                 <ul>
                   {details.validation.map((v) => (
@@ -513,12 +524,11 @@ function App() {
             ) : (
               <>
                 <span className="eyebrow">The constant</span>
-                <h2>One brief for every run.</h2>
+                <h2>One brief per benchmark version.</h2>
                 <p className="muted">
-                  The profile instruction changes; this task prompt stays
-                  identical.
+                  Within each version, all profiles receive the same task prompt. Different versions are separate experiments.
                 </p>
-                <pre className="prompt-text">{prompt}</pre>
+                {Object.entries(prompts).map(([id, text]) => <section key={id}><h3>{id}</h3><pre className="prompt-text">{text}</pre></section>)}
               </>
             )}
           </section>

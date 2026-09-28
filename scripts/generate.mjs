@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { captureReview } from "./capture-review.mjs";
 import path from "node:path";
 import os from "node:os";
 import { execFileSync, spawn } from "node:child_process";
@@ -259,6 +260,10 @@ try {
     cliVersion: exec("codex", ["--version"]).trim(),
     isolation,
     repairCount: 0,
+    refinementCount: 0,
+    taskPrompt: prompt,
+    refinementPrompt: fs.readFileSync(path.join(root, "benchmark/refinement.md"), "utf8"),
+    refinementTimeoutMs: config.refinementTimeoutMs,
     status: "failed",
     elapsedMs: 0,
     tokenUsage: [],
@@ -278,13 +283,14 @@ try {
     process.exitCode = 0;
   } else {
     const started = Date.now();
-    async function invoke(text, timeout, phase) {
+    async function invoke(text, timeout, phase, images = []) {
       const log = fs.openSync(path.join(logDir, `${phase}.jsonl`), "w");
       const err = fs.openSync(path.join(logDir, `${phase}.stderr`), "w");
       const child = spawn(
         "codex",
         [
           "exec",
+          ...images.flatMap(file => ["--image", file]),
           ...flags,
           "--ephemeral",
           "--json",
@@ -403,18 +409,23 @@ try {
     try {
       console.log(`Generating ${runId}; local logs: ${logDir}`);
       await invoke(prompt, config.generationTimeoutMs, "generation");
-      let failures = check();
-      if (failures.length) {
-        metadata.repairCount = 1;
-        await invoke(
-          `${prompt}\n\nRepair only these objective validation failures in your current implementation. Do not redesign or modify protected files.\n${JSON.stringify(failures).slice(0, 24000)}`,
-          config.repairTimeoutMs,
-          "repair",
-        );
-        failures = check();
+      async function validateWithRepair() {
+        let failures = check();
+        if (failures.length && metadata.repairCount === 0) {
+          metadata.repairCount = 1;
+          await invoke(`${prompt}\n\nRepair only these objective validation failures. Preserve your design and protected files.\n${JSON.stringify(failures).slice(0,24000)}`, config.repairTimeoutMs, "repair");
+          failures = check();
+        }
+        if (failures.length) throw Error("Acceptance checks failed after the permitted repair.");
       }
-      if (failures.length)
-        throw Error("Acceptance checks failed after the permitted repair.");
+      await validateWithRepair();
+      const before = path.join(logDir, 'review-before');
+      const review = await captureReview(work, before);
+      metadata.refinementCount = 1;
+      metadata.browserReview = {before: review};
+      await invoke(`${prompt}\n\n${metadata.refinementPrompt}\nBrowser observations:\n${JSON.stringify(review)}`, config.refinementTimeoutMs, 'refinement', review.captures.map(file => path.join(before,file)));
+      await validateWithRepair();
+      metadata.browserReview.after = await captureReview(work, path.join(logDir,'review-after'));
       if (metadata.loadedSkills.length !== selected.length)
         throw Error("Missing successful skill entrypoint read evidence.");
       metadata.status = "passed";
@@ -459,6 +470,9 @@ try {
       };
       collect(r.suites || []);
       metadata.accessibility = violations;
+    }
+    for (const phase of ['review-before','review-after']) {
+      if (fs.existsSync(path.join(logDir,phase))) cp(path.join(logDir,phase),path.join(evidence,phase));
     }
     metadata.sourceHash = hash(JSON.stringify(snapshot(dest)));
     fs.writeFileSync(

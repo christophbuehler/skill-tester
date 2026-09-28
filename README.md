@@ -97,10 +97,10 @@ The harness and comparison website are MIT licensed. Generated samples are inclu
 
 [`skills/modern-interface-craft/SKILL.md`](skills/modern-interface-craft/SKILL.md)
 contains an original design skill created using Anthropic's Skill Creator workflow.
-The current revision provides explicit art direction: a dark creative workspace,
-generous rounded controls, strong variable typography, contextual history, and
-continuous composer and attachment interactions. Earlier neutral revisions remain
-pinned in their original profiles.
+The current revision supplies a light, open work surface, contextual history,
+and a compact input that grows with real work. It delegates motion and detailed
+geometry to separately selected specialist skills. Earlier neutral and dark
+revisions remain pinned in their original profiles.
 
 The [research notes](skills/modern-interface-craft/references/research.md) and
 [source audit](skills/modern-interface-craft/references/source-audit.json) record

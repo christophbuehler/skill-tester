@@ -1,48 +1,55 @@
 ---
 name: modern-interface-craft
-description: Art-direct and build expressive contemporary product interfaces with bold typography, generous rounded geometry, a distinctive composer or control surface, and choreographed microinteractions. Use for an opinionated, designer-led alternative to conventional SaaS dashboards, especially modern web apps and research or creative tools. Not for preserving an existing visual system exactly.
+description: Art-direct clean, expressive product interfaces around a light work surface, confident typography, a distinctive primary input, contextual navigation, and meaningful microinteractions. Use for a designer-led direction for creative, research, and conversational tools; not for preserving an existing visual system exactly.
 ---
 
 # Modern Interface Craft
 
-This is an opinionated art direction, not a checklist of agreeable design advice. Build a tactile creative instrument: an expansive ink-dark canvas, luminous typography, soft substantial controls, and a restrained sharp accent. Its identity should be recognizable with the logo hidden. User-specified branding overrides this direction; otherwise actually commit to it.
+Build a useful creative instrument with a recognizable silhouette: an open light canvas, precise typography, and a compact, tactile primary control. Character comes from proportion, alignment, and how real objects respond. Commit to this direction unless the user's branding or task specifies another one.
 
-## Composition: a studio, not office furniture
+This skill owns **art direction**. When selected together, Apple Design supplies fluid, interruptible spatial behavior; Nested Geometry supplies radius/inset calculations; Beautiful Shadows supplies elevation; Accessibility supplies interaction and contrast detail. Use those skills to realize this composition without importing a second visual shell. Record material conflicts and the chosen interpretation in the project's design note. This skill also works alone: preserve focus, semantics, reduced motion, and immediate state updates using the project's available primitives.
 
-Use a single continuous canvas. Put the work in the center and occasional navigation in a compact top-level conversation/project switcher which expands into a searchable or grouped history surface. Do not default to a permanent left sidebar, a divided header/body/footer shell, or multiple framed panels. A switcher is a real navigable control with focus management, dismissal, and selected state, not merely a decorative pill.
+## One work surface
 
-Give the interface one strong compositional relationship: a generous entry surface becomes a compact working dock when a task starts; a selected object opens in the same spatial location; an activity capsule resolves into the result. Keep that relationship intact on mobile. The empty state and working state should feel like two states of one instrument, not separate landing page and chat templates.
+Use one white or subtly off-white canvas with dark text. Keep most of it unboxed. Reserve material, rounding, and elevation for things people manipulate: the input, a contextual history surface, an attached object. Prefer a small typographic identity to an arbitrary initial, stacked-document mark, or decorative sparkle. The identity and the current-work control need not become a full-width framed header.
 
-Make the composer a designed object. For text tools, use a broad rounded well (roughly 28–36px corners), generous interior spacing, integrated circular attachment/action controls, and auto-growing input. On welcome, place it where attention already is; while working, preserve access through a compact dock. Do not repeat the generic rectangle with an outlined textarea above a horizontal toolbar and a permanent keyboard-help footer. File previews join this object without squeezing the input or scattering actions elsewhere.
+Give useful content a shared left edge within a comfortable reading column. The column may sit centrally in the viewport; its text and controls should feel aligned for work. Avoid stacked centered greetings, slogans, breadcrumbs, session labels, and repeated product descriptions above the task. A short opening invitation is enough. Actual recent work can offer a way back in; invented previews, projects, counts, and document contents cannot.
 
-## The visual voice
+History lives behind a compact current-thread or current-project control. Reveal it near that control with a clear selected state and a direct way to start new work. This direction does not use a permanent colored or bordered sidebar. The contextual surface should earn its space through actual navigation, without decorative sections or duplicate headings.
 
-- Default to near-black graphite, warm off-white text, and a concentrated citron or similarly sharp accent. Use the accent for an active state or decisive action, not every edge. No sage-paper editorial theme, decorative gradients, starbursts, noise, or glass wallpaper.
-- Prefer **Manrope Variable** for the expressive type hierarchy and **Geist Variable** for compact controls if the supplied environment includes them. One family is also valid. Load real local fonts rather than naming unavailable fonts in CSS. Make body text approximately 16–17px with a comfortable reading measure; use deliberate 450/550/650 weights and a confident 40–64px short opening title where it helps. Do not fake sophistication by shrinking metadata to 10px or applying extreme negative tracking.
-- Let substantial rounded silhouettes carry character: outer surface 28–36px, inner items 16–22px, circular or capsule controls. Relate nested radii to inset spacing. Large rounding should appear on the main working object, not just a few tiny buttons.
-- Separate regions with space, tone, and alignment. Choose one surface-defining treatment, not a fill plus an outline plus a shadow on every element. Thin borders may explain a specific interactive state; they are not the default grouping mechanism.
-- Use sentence case and compact factual copy. Prefer a precisely spaced typographic wordmark to an improvised logo. Do not manufacture overlapping document rectangles, a colored dot after the name, or a generic sparkle as a brand identity. Use one custom mark only when its geometry is strong at 16px and belongs to the concept.
+## The primary input is the instrument
 
-These are deliberate preferences of this skill, not universal design laws. When another selected skill has conflicting art direction, make one coherent interpretation and explain the choice in DESIGN.md.
+Start with a compact single-row rounded input, with attachment and send controls embedded at its ends and the writing area between them. Its silhouette should be expressive even with an empty draft. Avoid the large empty textarea rectangle with a separate bottom toolbar. Size to comfortable reading and touch, then let real multiline text and attached objects grow the surface naturally.
 
-## Interaction is part of the identity
+Keep this same input alive as work begins. Its wrapper can become the working dock while the draft, caret, focus, and file identities remain intact. The welcome and working states share one object; they should not read as unrelated templates. Prefer a modest relocation with clear continuity over theatrical travel across the screen.
 
-Read `references/interaction-recipes.md` and implement a small set of connected transitions, not dozens of hover effects. The following relationships are central to this direction:
+For implementation, read [Light workspace](references/light-workspace.md). It covers the expanded input, real attachment continuity, navigation dismissal, and mobile layout. Use [Interaction recipes](references/interaction-recipes.md) for additional state-preservation details when implementing these transitions; interpret its entry surface through this compact light direction.
 
-1. **Entry to work:** the primary entry surface changes size/position continuously as the first message creates the working view. Preserve input focus and the identity of the composer; avoid remounting a focused textarea. A shared-layout transition or measured FLIP is preferable to unrelated fade-ins.
-2. **Context on demand:** history expands from its trigger's vicinity; selected state travels with the chosen item. Opening, selection, dismissal, Escape, and focus restoration all work. An interrupted close/reopen should reverse naturally.
-3. **Objects entering/leaving:** file previews appear and leave while neighbors reflow, retaining the filename and identity when sent. Removal must update immediately even if the exiting visual remains briefly.
-4. **Progress to result:** compact tool activity changes from pending to running to complete, then contracts to an inspectable summary. A send action becomes stop in the same control footprint. Retry preserves the existing message. No animation on every token and no perpetually bouncing decorative shapes.
-5. **Direct feedback:** pressed controls compress subtly; copy becomes a brief confirmed state; tooltips or labels work on keyboard focus too. Hover is supplementary, never the only designed interaction.
+## Typography, geometry, material
 
-Use `motion/react` when available, with restrained springs (for example stiffness around 380–500 and damping 32–40) and short direct-feedback transitions. These are starting points for this art direction, not measured universal constants. Set reduced-motion behavior for both JS and CSS. Animate layout without stretching paragraph glyphs, and keep interaction targets stable. Keep whole-message containers opaque while only a small activity indicator moves.
+Use one well-made font family with a disciplined hierarchy. Prefer an available variable face such as Manrope for a warmer creative voice, or the project's established family; load the real font. A confident short heading, readable body text around 16–17px, and restrained secondary labels do more than a second font or an oversized slogan. Keep body tracking natural and reading measure comfortable. Secondary does not mean tiny or faint.
 
-## The finish standard
+Create generous curves through relationships, not a radius pasted onto every component. For example, a painted 44px circular control has a 22px radius; an actual 10px edge inset can give a surrounding 32px curve. Border thickness, CSS radius clamping, unequal insets, and the expanded input change that relationship. Let Nested Geometry handle the measurements when selected. Preserve the visual inset as controls and content adapt.
 
-Before coding, describe the silhouette, type/geometry relationship, composer transformation, and navigation reveal. If the concept still reads as a tinted sidebar, display headline, suggestion cards, and outlined bottom box, replace the concept rather than polishing its CSS.
+Use a small semantic palette: light canvas, readable foreground, quiet secondary content, and one deliberate accent for a meaningful action or state. A strong dark send control on a light input can supply sufficient emphasis. A restrained material treatment should explain that the input is operable; content paragraphs and every history row do not each need a border, fill, and shadow. If dark mode is requested, use an OLED-black canvas and adapt contrast and surfaces intentionally.
 
-Inspect settled empty and populated views at desktop and mobile, plus actual interaction recordings. Check the point where a document is added, history closes, work starts, stop is pressed, and retry begins. Treat mid-transition frames as temporal evidence, not as faded final text. Do not remove an intentional transition to improve a screenshot taken before it settles.
+## Microinteractions carry the work
 
-The final product should have a recognizable silhouette, a cared-for primary control, legible hierarchy, and continuity through the main flow. Remove any borrowed-looking icon cluster, stock slogan, redundant status badge, or panel that weakens that idea. Confirm the real task stays accessible by touch and keyboard, with adequate contrast and a complete reduced-motion path. Report what the browser actually verified and what still needs a human design judgment.
+Choose a few connected relationships and finish them:
 
-Research provenance remains in `references/research.md` and `references/source-audit.json`; those resources informed earlier work, not a claim that these choices reproduce any particular reference site.
+- **Navigation:** history emerges from its trigger and returns along a related path. Close/reopen is interruptible, selection is immediate, and dismissal restores sensible focus.
+- **Documents:** real attachments retain their filename and identity as they enter, reorder, leave, or become part of the submitted work. Neighbors reflow without stretching text. Removal updates state immediately.
+- **Progress:** tool activity occupies a stable place near its result, then resolves into an inspectable summary without jolting the reading position. Send and stop share a footprint. Retry preserves existing work.
+- **Feedback:** press response begins immediately; copy confirmation stays on the copied object's action. Hover can reveal polish for a pointer, while touch and keyboard retain explicit controls and visible focus.
+
+Let motion follow current on-screen state and user intent; it never gates sending, stopping, deleting, or reopening. Preserve opaque readable content during streaming. Reduced motion keeps the same information and actions with immediate placement or gentle local feedback. Avoid token-by-token animation, ornamental perpetual motion, and layout changes that move a target while it is being used.
+
+## Review the instrument in use
+
+Before implementation, state the content alignment, primary-control silhouette, navigation origin, and one important object transition. If the proposal still consists of a sidebar, centered slogan, suggestion-card grid, and outlined bottom textarea, rethink its composition.
+
+Inspect settled welcome and populated views at desktop and mobile, plus the actual add/remove, open/close/reopen, send/stop/retry, and copy sequences. Check draft/focus continuity, readable intermediate frames, expanded input geometry, long content, and a dock that leaves the final content and actions reachable. On mobile, adapt controls and height to the available viewport and keyboard; do not let a floating surface conceal the work. Report verified behavior separately from aesthetic judgment.
+
+## Sources and interpretation
+
+This is original project art direction, not an official Apple design system or a claim of measured usability improvement. The light composition is a deliberate revision of this skill's earlier dark direction. Existing [research notes](references/research.md) and [source audit](references/source-audit.json) document the earlier research and its limits; this revision adds no new source inspection claims. The separately selected upstream Apple Design skill is an independent interpretation of public Apple material. Its motion principles inform implementation; the light workspace composition and examples here are this project's choices.

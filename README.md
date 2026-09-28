@@ -107,20 +107,20 @@ all 555 external resources and designer URLs discovered across Designeer's pages
 Coverage includes 454 readable pages, 64 limited shells, and 37 unavailable or
 blocked responses; it is not a claim of 555 rendered usability reviews.
 
-Use the pinned single-skill profile:
+Use the current pinned single-skill profile (the unsuffixed profile retains the old skill revision):
 
 ```sh
-pnpm generate modern-interface-craft --preflight
-pnpm generate modern-interface-craft
+pnpm generate modern-interface-craft-v2 --preflight
+pnpm generate modern-interface-craft-v2
 ```
 
 Or explicitly combine it with the existing three skills in one new variant:
 
 ```sh
-pnpm run profile add all-four frontend-design impeccable ui-ux-pro-max modern-interface-craft
-(cd profiles/all-four && apm install)
-pnpm generate all-four --preflight
-pnpm generate all-four
+pnpm run profile add all-four-v2 frontend-design impeccable ui-ux-pro-max modern-interface-craft-v2
+(cd profiles/all-four-v2 && apm install)
+pnpm generate all-four-v2 --preflight
+pnpm generate all-four-v2
 ```
 
 Registering a profile does not generate a result or change existing runs. The

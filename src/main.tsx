@@ -153,7 +153,7 @@ function App() {
             <section className="intro">
               <div className="intro-copy">
                 <div className="experiment-label">
-                  <span className="live-dot" /> Experiment 001 / Folio
+                  <span className="live-dot" /> Folio / Versioned experiments
                 </div>
                 <h1>
                   One brief.
@@ -216,7 +216,7 @@ function App() {
                     </div>
                   ))}
                 </div>
-                <p>Only the skill profile changes.</p>
+                <p>Within each version, only the skill profile changes.</p>
               </div>
             </section>
             <section className="method-strip" aria-label="Benchmark settings">
@@ -339,7 +339,7 @@ function App() {
                       </div>
                       <p>
                         {run.benchmark} · {descriptions[run.profile] ||
-                          run.skills.map((s) => s.name).join(" + ")}
+                          (run.skills.length ? run.skills.map((s) => s.name).join(" + ") : "No design skill.")}
                       </p>
                       <div className="card-bottom">
                         <span>

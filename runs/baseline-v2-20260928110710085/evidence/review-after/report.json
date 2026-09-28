@@ -1,0 +1,56 @@
+{
+  "captures": [
+    "desktop-welcome.png",
+    "desktop-research.png",
+    "intermediate-welcome.png",
+    "intermediate-research.png",
+    "mobile-welcome.png",
+    "mobile-research.png",
+    "mobile-attachment.png",
+    "mobile-activity.png"
+  ],
+  "observations": [
+    {
+      "state": "desktop-welcome",
+      "overflow": false
+    },
+    {
+      "state": "desktop-research",
+      "overflow": false
+    },
+    {
+      "state": "intermediate-welcome",
+      "overflow": false
+    },
+    {
+      "state": "intermediate-research",
+      "overflow": false
+    },
+    {
+      "state": "mobile-welcome",
+      "overflow": false
+    },
+    {
+      "state": "mobile-research",
+      "overflow": false
+    },
+    {
+      "state": "mobile-attachment",
+      "overflow": false
+    },
+    {
+      "state": "mobile-activity",
+      "overflow": false
+    },
+    {
+      "state": "cancellation",
+      "retryVisible": true
+    },
+    {
+      "state": "reduced-motion",
+      "composerVisible": true
+    }
+  ],
+  "runtimeErrors": [],
+  "motion": "Static captures and reduced-motion state check; motion quality requires interactive human review."
+}

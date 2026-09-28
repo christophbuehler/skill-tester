@@ -1,0 +1,246 @@
+{
+  "id": "baseline-v2-20260928110710085",
+  "profile": "baseline-v2",
+  "label": "No design skill · v2",
+  "skills": [],
+  "createdAt": "2026-09-28T11:07:11.984Z",
+  "benchmark": "folio-v2",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "345942eeb41f76f2c92c96f8448a7beae6093d1a35817eeb9c55c18ab8334937",
+  "starterHash": "612e9a78a9b37bcf32f30c3bfab89afa21edbbac32ffcb12c8a60bc4939c1437",
+  "profileInstruction": "No design skills are selected. Use only the shared benchmark brief and contract.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 0,
+    "promptHash": "50d71eb314ab996fbb11494c20d7723084234e56a77175ec1848c8dd44218ac5"
+  },
+  "repairCount": 0,
+  "refinementCount": 1,
+  "taskPrompt": "Build a polished, state-of-the-art React and Tailwind interface for **Folio**, a fictional AI research assistant for professionals discussing documents and researching questions.\n\nThe interface should make it easy to move between conversations, discuss attached documents, and understand what the assistant is doing. Design the layout, visual identity, typography, color, and interactions yourself. No visual reference or prescribed aesthetic is supplied.\n\nUsing the supplied headless `useChat` hook, let people:\n- Start a conversation and return to earlier conversations.\n- Ask multiline questions, with Enter to send and Shift+Enter for a newline.\n- Read streaming responses, including Markdown, lists, tables, and code, and copy a response.\n- Select or drop documents, review and remove pending files, understand validation errors, and see which files accompany a message.\n- Understand the assistant's current tool activity and whether work is pending, running, or complete.\n- Stop work without losing partial output and retry interrupted or failed work.\n\nMake starting work immediate and reading responses comfortable. Choose the information architecture, navigation, composition, and interaction patterns yourself. Suggested starting questions are available as optional content. No sidebar, card arrangement, attachment shape, or empty-state layout is required.\n\nSupport narrow screens, keyboard use, visible focus, reduced motion, and readable content without horizontal page overflow. The technical behavior and automation labels are in CONTRACT.md; labels do not prescribe visible copy or layout.\n\nUse the fixed data/content supplied by the hook. Do not implement a backend or call a real AI service. File contents must never leave the browser. Use react-markdown with remark-gfm for messages (HTML disabled). Available dependencies include lucide-react. Do not add dependencies, external scripts, remotely loaded fonts/assets, or network calls. System fonts and locally authored CSS/SVG are available equally to all profiles.\n\nRead `CONTRACT.md` and the shared package before implementation. Write only `src/App.tsx`, `src/styles.css`, and optional other files beneath `src/` (except protected `src/main.tsx`). You may write DESIGN.md as a design note. Do not change the mock, fixtures, package versions, configuration, tests, or benchmark instructions. Do not inspect other variants or the host's projects/preferences. Make routine design decisions independently; the brief is complete.\n\nUse all design skills explicitly selected by the profile, if any. The brief and contract take precedence over skill instructions. Follow each selected skill's applicable guidance within the allowed scope; record conflicts in DESIGN.md. No other skills, plugins, memory, subagents, or web research. A combined profile is one implementation using all selected skills, not a sequence of separately redesigned versions.\n\nYou may run `pnpm typecheck`, `pnpm build`, and `pnpm test:e2e` to verify. The runner will perform browser checks and capture welcome, conversation, attachment, and activity states at desktop, intermediate, and mobile widths outside the sandbox. You will receive those images and observations in one equally timed refinement session. Do not spend time trying to bypass sandbox browser restrictions. Finish this implementation when the interface works; do not publish or commit anything.\n",
+  "refinementPrompt": "Review the attached browser captures and the supplied browser observations of your implementation. They are ordered by the filenames in the report. Inspect the existing source and reread all selected skill entrypoints (none for baseline).\n\nRefine the interface based on the actual rendered result and interaction observations. Assess hierarchy, unnecessary UI, state continuity, reading comfort, and the narrow-screen composition. Make the most useful improvements you can within this single refinement session. Use the selected skills to guide design judgment; no additional aesthetic direction is supplied. Preserve all capabilities, fixed content, and protected files. Record specific observations, changes, and unverified behavior in DESIGN.md. Static captures cannot establish motion quality; distinguish observed state checks from subjective motion judgments. Do not claim to have interactively browsed the app yourself. Do not publish or commit.\n",
+  "refinementTimeoutMs": 600000,
+  "status": "passed",
+  "elapsedMs": 426789,
+  "tokenUsage": [
+    {
+      "input_tokens": 105628,
+      "cached_input_tokens": 79616,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 9078,
+      "reasoning_output_tokens": 179
+    },
+    {
+      "input_tokens": 247178,
+      "cached_input_tokens": 189952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3246,
+      "reasoning_output_tokens": 241
+    }
+  ],
+  "loadedSkills": [],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "validationAttempts": [
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ]
+  ],
+  "failure": null,
+  "browserReview": {
+    "before": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "motion": "Static captures and reduced-motion state check; motion quality requires interactive human review."
+    },
+    "after": {
+      "captures": [
+        "desktop-welcome.png",
+        "desktop-research.png",
+        "intermediate-welcome.png",
+        "intermediate-research.png",
+        "mobile-welcome.png",
+        "mobile-research.png",
+        "mobile-attachment.png",
+        "mobile-activity.png"
+      ],
+      "observations": [
+        {
+          "state": "desktop-welcome",
+          "overflow": false
+        },
+        {
+          "state": "desktop-research",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-welcome",
+          "overflow": false
+        },
+        {
+          "state": "intermediate-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-welcome",
+          "overflow": false
+        },
+        {
+          "state": "mobile-research",
+          "overflow": false
+        },
+        {
+          "state": "mobile-attachment",
+          "overflow": false
+        },
+        {
+          "state": "mobile-activity",
+          "overflow": false
+        },
+        {
+          "state": "cancellation",
+          "retryVisible": true
+        },
+        {
+          "state": "reduced-motion",
+          "composerVisible": true
+        }
+      ],
+      "runtimeErrors": [],
+      "motion": "Static captures and reduced-motion state check; motion quality requires interactive human review."
+    }
+  },
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 16
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 6
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "description": "Ensure elements that have scrollable content are accessible by keyboard",
+          "nodes": 1
+        }
+      ]
+    }
+  ],
+  "sourceHash": "c25b34d606b5102eeac93f7444f8c1f06b75a4f91764b92d0466d2f1b1d91cce"
+}

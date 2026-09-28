@@ -8,6 +8,10 @@ Build around the active work and its next action. A clearly worded input can be 
 
 The content column should hold both the input and the principal reading edge. Modest asymmetry can give it character: a compact identity near the top and a current-work control near the reading area create a recognizable composition without filling the sides. Keep the input invitation subordinate to existing work. Do not duplicate the current thread name in a breadcrumb, heading, and status strip.
 
+## Keep the type system small
+
+Use a shared medium-weight body/control style throughout the UI. An item title and its supporting description use exactly the same font size, weight, line height and tracking; secondary tone supplies the distinction. Do not compensate for reduced type styles with excessive bold, uppercase metadata or pale text. Use the same principle for sidebar rows, attachments, activity summaries, buttons and disclosure content. Keep only a few justified exceptions for content headings, code and the input invitation. Preserve real Markdown semantics and readable hierarchy inside answers. A type-token inventory should reveal a small system, not a new style for every component.
+
 ## Design the input in all its shapes
 
 Keep one input across these states:
@@ -37,13 +41,15 @@ An attachment should retain its stable identifier and filename from the draft in
 
 Progress belongs close to the work it explains. Keep its label and footprint stable while status changes; if it reveals steps, collapse them with controlled reflow after completion rather than replacing the whole response region. Preserve the reader's position when content arrives. Copy success changes the local action label or icon briefly with an accessible confirmation, without a distant toast competing for attention.
 
-## Make contextual navigation dependable
+## Keep frequent navigation directly available
 
-Place history's origin at the current-work control. A desktop popover can expand into available space; on mobile, a bounded anchored surface may use more width while keeping its origin legible. Size it for long labels and a scrollable list rather than allowing it to cover the input indefinitely.
+For Folio on desktop, use a persistent history rail: one activation opens a visible past conversation, without an intermediate menu. Let real history scroll in its own area and support filtering by title when the list grows. Keep the new-conversation action available independently of list scroll. Long names need an accessible full title. Preserve the selected item and keyboard focus when filtering; an empty filter result must offer an obvious way back. Do not add fake conversations to the shipped fixture set.
+
+Use the same white canvas where practical, separating navigation and reading through space. A sidebar does not automatically need a colored panel, permanent border or section-label hierarchy. On narrow screens collapse history into an accessible disclosure with a scrollable list; the space-saving affordance should not govern desktop navigation.
 
 Choose semantics according to behavior. A nonmodal disclosure leaves the work available and dismisses on Escape and appropriate outside interaction. A genuinely modal surface manages focus and background interaction as a dialog. Avoid mixing modal focus trapping with supposedly available background controls. Closing removes interactive descendants from the active navigation path immediately, even if a visual exit remains. If reopened during that exit, retarget the current presentation without flashing the closed state. Return focus to the trigger on dismissal; selection may instead move focus intentionally into the selected task.
 
-Apple Design, when selected, supplies the mechanics of interruptibility and spatial motion. Here the design decision is the relationship: navigation belongs to its initiating control, and returning to work should feel immediate.
+Apple Design, when selected, supplies the mechanics of interruptibility and spatial motion. Here the design decision is direct access on desktop and predictable disclosure on small screens. Returning to work should feel immediate.
 
 ## Adapt to real input methods
 

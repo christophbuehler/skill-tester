@@ -248,5 +248,5 @@ test('curated follow-up exposes its parent and additional review instructions',a
  await card.getByRole('button',{name:'Run details'}).click();
  await expect(page.getByRole('dialog')).toContainText('Curated follow-up (extra review, not a fresh benchmark run)');
  await expect(page.getByRole('dialog')).toContainText(run.parentRunId);
- await expect(page.getByRole('dialog')).toContainText('Outer page scrolling is broken.');
+ await expect(page.getByRole('dialog')).toContainText(run.reviewInstruction);
 });

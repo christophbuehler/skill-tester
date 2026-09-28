@@ -1,0 +1,8 @@
+name: interaction-design-v4
+version: 1.0.0
+description: Skill Tester profile interaction-design-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - wshobson/agents/plugins/ui-design/skills/interaction-design#9b15b34b0bfc13a815cbfc2366e14ea549e09422

@@ -1,0 +1,13 @@
+{
+  "id": "adapt-v4",
+  "label": "Adapt (Impeccable mode)",
+  "skills": [
+    "impeccable"
+  ],
+  "requestedSkills": [
+    "adapt"
+  ],
+  "profileInstructions": [
+    "Impeccable Adapt mode is explicitly selected. Read reference/adapt.md within the installed impeccable skill and apply its responsive refinement guidance as part of the unified skill."
+  ]
+}

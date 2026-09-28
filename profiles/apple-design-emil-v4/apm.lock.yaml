@@ -1,0 +1,38 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:19.021788+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: emilkowalski/skills
+  name: skills
+  host: github.com
+  resolved_commit: d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+  resolved_ref: d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+  version: unknown
+  virtual_path: skills/apple-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/apple-design
+  - .agents/skills/apple-design/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/apple-design/SKILL.md: sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7
+  content_hash: sha256:0190417d092a0df447b000154e39733ea6d97efad6d3bec8a6ce3845aeb88914
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills/skills/apple-design
+  active_owner: emilkowalski/skills/skills/apple-design
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/apple-design/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills/skills/apple-design
+  active_owner: emilkowalski/skills/skills/apple-design
+  content_hash: sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7

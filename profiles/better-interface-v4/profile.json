@@ -1,0 +1,16 @@
+{
+  "id": "better-interface-v4",
+  "label": "Better Interface",
+  "skills": [
+    "better-interface",
+    "better-accessibility",
+    "better-layout",
+    "better-writing",
+    "better-typography",
+    "better-colors",
+    "better-ui"
+  ],
+  "requestedSkills": [
+    "better-interface"
+  ]
+}

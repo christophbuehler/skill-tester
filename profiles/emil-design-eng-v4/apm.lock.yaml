@@ -1,0 +1,38 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:21.409440+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: emilkowalski/skills
+  name: skills
+  host: github.com
+  resolved_commit: d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+  resolved_ref: d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128
+  version: unknown
+  virtual_path: skills/emil-design-eng
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/emil-design-eng
+  - .agents/skills/emil-design-eng/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/emil-design-eng/SKILL.md: sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939
+  content_hash: sha256:51f2537e04d15911b41d78e2de24c36a0e26d41beae15e82a954fe5496a5eda9
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/emil-design-eng
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills/skills/emil-design-eng
+  active_owner: emilkowalski/skills/skills/emil-design-eng
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/emil-design-eng/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilkowalski/skills/skills/emil-design-eng
+  active_owner: emilkowalski/skills/skills/emil-design-eng
+  content_hash: sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939

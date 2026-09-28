@@ -118,7 +118,7 @@ export function validateProfilePins(profile, registry, manifest, lock) {
     if (
       !blocks.some(
         (b) =>
-          b.repo === skill.repo &&
+          b.repo?.toLowerCase() === skill.repo.toLowerCase() &&
           b.path === skill.path &&
           b.commit === skill.commit,
       )

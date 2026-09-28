@@ -144,3 +144,84 @@ test('failed runs retain their outcome and review evidence', async ({page}) => {
   const recordingCount = Object.values(run.browserReview ?? {}).reduce((sum: number, phase: any) => sum + (phase.recordings?.length ?? 0), 0);
   await expect(page.getByRole('dialog').locator('a[download][href$=".mp4"]')).toHaveCount(recordingCount);
 });
+
+test('variant chooser lists every activated skill and preserves comparison state', async ({page}) => {
+  test.skip(passed.length < 2, 'Need two passing runs');
+  await page.goto(`/skill-tester/#compare?left=${passed[0].id}&right=${passed[1].id}&viewport=mobile&scenario=welcome`);
+  const trigger = page.getByRole('button', {name: /^Left variant:/});
+  await trigger.click();
+  const list = page.getByRole('listbox', {name: 'Left variant', exact: true});
+  await expect(list.getByRole('option')).toHaveCount(passed.length);
+  for (const run of passed) {
+    const option = list.getByRole('option').filter({has: page.getByText(run.id, {exact: true})});
+    await expect(option).toContainText(run.benchmark);
+    await expect(option).toContainText('Passed');
+    for (const skill of run.skills) await expect(option.locator(".chooser-skills").getByText(skill.name, {exact: true})).toBeVisible();
+    if (!run.skills.length) await expect(option).toContainText('Baseline · No design skills activated');
+  }
+  for (const run of runs.filter(r => r.status !== 'passed')) await expect(list.getByText(run.id, {exact: true})).toHaveCount(0);
+  const choice = passed.find(r => r.skills.length > 1 && r.id !== passed[0].id) ?? passed[1];
+  await list.getByRole('option').filter({has: page.getByText(choice.id, {exact: true})}).click();
+  await expect(trigger).toBeFocused();
+  await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+  expect(new URLSearchParams(new URL(page.url()).hash.split('?')[1]).get('left')).toBe(choice.id);
+  await expect(page).toHaveURL(/viewport=mobile&scenario=welcome/);
+  for (const skill of choice.skills) await expect(trigger.locator(".chooser-skills").getByText(skill.name, {exact: true})).toBeVisible();
+  await expect(page.locator('iframe').first()).toHaveAttribute('src', new RegExp(`${choice.id}/\\?scenario=welcome`));
+  await page.reload();
+  await expect(trigger).toContainText(choice.label);
+});
+
+test('variant chooser supports keyboard, dismissal, and accessible light presentation', async ({page}) => {
+  await page.goto('/skill-tester/#compare');
+  const trigger = page.getByRole('button', {name: /^Left variant:/});
+  await trigger.focus();
+  await page.keyboard.press('ArrowDown');
+  const list = page.getByRole('listbox', {name: 'Left variant', exact: true});
+  await expect(list.getByRole('option', {selected: true})).toBeFocused();
+  await page.keyboard.press('End');
+  await expect(list.getByRole('option').last()).toBeFocused();
+  await page.keyboard.press('ArrowDown');
+  await expect(list.getByRole('option').first()).toBeFocused();
+  await page.keyboard.press('ArrowUp');
+  await expect(list.getByRole('option').last()).toBeFocused();
+  await page.keyboard.press('Home');
+  await expect(list.getByRole('option').first()).toBeFocused();
+  const { default: AxeBuilder } = await import('@axe-core/playwright');
+  expect((await new AxeBuilder({page}).include('.variant-chooser').analyze()).violations).toEqual([]);
+  await page.keyboard.press('Escape');
+  await expect(trigger).toBeFocused();
+  await expect(list).toHaveCount(0);
+  await trigger.click();
+  await page.keyboard.press('End');
+  const selectedLabel = await list.getByRole('option').last().locator('strong').innerText();
+  await page.keyboard.press('Enter');
+  await expect(trigger).toContainText(selectedLabel);
+  await trigger.click();
+  await page.keyboard.press('Tab');
+  await expect(list).toHaveCount(0);
+  await trigger.click();
+  await page.getByRole('heading', {name: 'See the difference.'}).click();
+  await expect(list).toHaveCount(0);
+  await page.emulateMedia({colorScheme: 'dark'});
+  await expect(page.locator('html')).toHaveCSS('color-scheme', 'light');
+  await page.setViewportSize({width: 390, height: 844});
+  await trigger.click();
+  await expect(list).toBeVisible();
+  const menuBounds = await page.locator(".chooser-popover").boundingBox();
+  expect(menuBounds!.y + menuBounds!.height).toBeLessThanOrEqual(844);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('combined and single-skill headers keep desktop canvases aligned', async ({ page }) => {
+  const combined = runs.find(run => run.status === 'passed' && run.skills.length > 1);
+  const single = runs.find(run => run.status === 'passed' && run.skills.length === 1);
+  test.skip(!combined || !single, 'No committed combination yet');
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(`/skill-tester/#compare?left=${combined!.id}&right=${single!.id}&viewport=desktop&scenario=welcome`);
+  const viewports = page.locator('.viewport-container');
+  await expect(viewports).toHaveCount(2);
+  const first = await viewports.nth(0).boundingBox();
+  const second = await viewports.nth(1).boundingBox();
+  expect(Math.abs(first!.y-second!.y)).toBeLessThan(1);
+});

@@ -1,0 +1,15 @@
+Build **Folio**, a fictional research workspace for professionals asking questions and discussing documents. Deliver a complete React/Tailwind product interface, not a marketing page.
+
+People need to start and revisit conversations, write multiline questions, attach/remove local documents, read streaming Markdown answers, understand tool activity, stop work, retry interruptions, and copy useful responses. Use the supplied `useChat` hook for that behavior. Keep its fixture content and logic intact.
+
+Own the product's information architecture and visual/interaction design. The selected design skills are the art direction: translate their opinions into the navigation model, silhouette, typography, primary input, material, and motion. They are allowed to make strong decisions. The shared contract fixes capabilities and automation names only; it does not prescribe layout, palette, surface treatment, radii, a logo, or composer structure. Baseline has no selected design skill and chooses its own direction.
+
+Before implementation, write three structurally different concepts in DESIGN.md, choose the strongest under the selected skills, and state the concrete decisions the skill changes. A palette swap is not a different concept. Then implement one coherent design. Treat the composer and the transitions into/out of work as product design problems, not stock form controls. Optional suggestions need not become cards. Brand expression may be a carefully set wordmark; no decorative logo is required. Do not add fake functionality to make the screen appear richer.
+
+Read CONTRACT.md, CAPABILITIES.md, and the shared package. Write presentation source under src/ except protected src/main.tsx; DESIGN.md is also allowed. Preserve the shared mock, fixtures, package versions, configuration, tests, and benchmark instructions. No real backend, AI service, uploads, remote assets, network calls, or new dependencies. Use the supplied offline fonts, icons, and animation tools as appropriate. No shared component theme is provided.
+
+Use every explicitly selected skill, and no unrelated skills, memory, plugins, subagents, host projects, or web research. The behavioral contract wins only on actual behavioral conflicts; it does not override the skill's aesthetic direction. Make routine decisions independently. A combined profile makes one coherent implementation from all selected skills.
+
+The runner gives every profile the same implementation budget, two browser-informed design refinement sessions, and at most one objective repair. It captures settled desktop/mobile states, navigation and work interactions, temporal contact sheets, and videos outside the sandbox. Refinement can change the composition substantially while preserving behavior. Be critical of a merely competent first draft. Keep accessibility, keyboard/touch use, responsiveness, and reduced motion intact.
+
+You may run pnpm typecheck and pnpm build. Browser launch is provided by the runner; don't spend the generation budget working around sandbox restrictions. Finish with working source and an honest design/verification note. Do not commit or publish.

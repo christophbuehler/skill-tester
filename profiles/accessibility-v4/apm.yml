@@ -1,0 +1,8 @@
+name: accessibility-v4
+version: 1.0.0
+description: Skill Tester profile accessibility-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - addyosmani/web-quality-skills/skills/accessibility#afa8da942115f2961fdbfa80807ea0b232ff6c00

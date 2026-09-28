@@ -101,5 +101,312 @@
       "LICENSE.txt",
       "references/design-language.md"
     ]
+  },
+  "apple-design-emil": {
+    "repo": "emilkowalski/skills",
+    "path": "skills/apple-design",
+    "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md"
+    ],
+    "name": "Apple Design (Emil Kowalski)",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/emilkowalski/apple-design",
+      "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/apple-design"
+    ]
+  },
+  "emil-design-eng": {
+    "repo": "emilkowalski/skills",
+    "path": "skills/emil-design-eng",
+    "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md"
+    ],
+    "name": "Emil Design Engineering",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/emilkowalski/emil-design-eng",
+      "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/emil-design-eng"
+    ]
+  },
+  "beautiful-shadows": {
+    "repo": "MengTo/Skills",
+    "path": "agent-skills/web-design/beautiful-shadows",
+    "commit": "798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md"
+    ],
+    "name": "Beautiful Shadows",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/mengto/beautiful-shadows",
+      "https://github.com/MengTo/Skills/tree/798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d/agent-skills/web-design/beautiful-shadows"
+    ]
+  },
+  "better-accessibility": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-accessibility",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "focus-and-keyboard.md",
+      "forms.md",
+      "hit-areas.md",
+      "motion-and-zoom.md",
+      "screen-readers.md",
+      "semantics-and-aria.md"
+    ],
+    "name": "Better Accessibility"
+  },
+  "better-layout": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-layout",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "grouping-and-alignment.md",
+      "spacing-and-adaptivity.md"
+    ],
+    "name": "Better Layout"
+  },
+  "better-writing": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-writing",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md"
+    ],
+    "name": "Better Writing"
+  },
+  "better-typography": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-typography",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "choosing-fonts.md",
+      "css-cheat-sheet.md",
+      "details-and-accessibility.md",
+      "spacing-and-sizing.md",
+      "variable-fonts-and-opentype.md",
+      "wrapping-and-punctuation.md"
+    ],
+    "name": "Better Typography"
+  },
+  "better-colors": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-colors",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "color-formats.md",
+      "color-usage.md",
+      "contrast.md",
+      "palette-generation.md",
+      "palette-structure.md",
+      "token-naming.md"
+    ],
+    "name": "Better Colors"
+  },
+  "better-ui": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-ui",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "animations.md",
+      "enter-exit.md",
+      "icon-transitions.md",
+      "icons.md",
+      "performance.md",
+      "surfaces.md"
+    ],
+    "name": "Better Ui"
+  },
+  "better-interface": {
+    "repo": "jakubkrehel/skills",
+    "path": "skills/better-interface",
+    "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "review-format.md",
+      "../better-accessibility/SKILL.md",
+      "../better-layout/SKILL.md",
+      "../better-writing/SKILL.md",
+      "../better-typography/SKILL.md",
+      "../better-colors/SKILL.md",
+      "../better-ui/SKILL.md"
+    ],
+    "name": "Better Interface",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/jakubkrehel/better-interface",
+      "https://github.com/jakubkrehel/skills/tree/267330e1adfc66a718fb65fa6918c1f06d0a689e/skills/better-interface"
+    ],
+    "dependencies": [
+      "better-accessibility",
+      "better-layout",
+      "better-writing",
+      "better-typography",
+      "better-colors",
+      "better-ui"
+    ]
+  },
+  "design-review": {
+    "repo": "Superfuture/design-review",
+    "path": "design-review/skills/design-review",
+    "commit": "d4d2609b53fccb475d11490e2c6261e5eb2f0c5d",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "checklist.md"
+    ],
+    "name": "Design Review",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/superfuture/design-review",
+      "https://github.com/Superfuture/design-review/tree/d4d2609b53fccb475d11490e2c6261e5eb2f0c5d/design-review/skills/design-review"
+    ],
+    "blockedReason": "Upstream includes silent telemetry and optional remote artifact upload; incompatible with isolated local generation. License is declared MIT but no license file was found."
+  },
+  "accessibility": {
+    "repo": "addyosmani/web-quality-skills",
+    "path": "skills/accessibility",
+    "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "references/A11Y-PATTERNS.md",
+      "references/WCAG.md"
+    ],
+    "name": "Accessibility",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/addyosmani/accessibility",
+      "https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility"
+    ]
+  },
+  "shadcn": {
+    "repo": "shadcn-ui/ui",
+    "path": "skills/shadcn",
+    "commit": "db2db460a26fa84fb65c8d903b213925fbdee9ed",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "agents/openai.yml",
+      "assets/shadcn-small.png",
+      "assets/shadcn.png",
+      "cli.md",
+      "customization.md",
+      "evals/evals.json",
+      "mcp.md",
+      "registry.md",
+      "rules/base-vs-radix.md",
+      "rules/chat.md",
+      "rules/composition.md",
+      "rules/forms.md",
+      "rules/icons.md",
+      "rules/styling.md"
+    ],
+    "name": "shadcn",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/shadcn-ui/shadcn",
+      "https://github.com/shadcn-ui/ui/tree/db2db460a26fa84fb65c8d903b213925fbdee9ed/skills/shadcn"
+    ],
+    "blockedReason": "Requires a prepared shadcn component ecosystem and online registry/CLI documentation. The current offline blank starter does not provide these dependencies."
+  },
+  "interaction-design": {
+    "repo": "wshobson/agents",
+    "path": "plugins/ui-design/skills/interaction-design",
+    "commit": "9b15b34b0bfc13a815cbfc2366e14ea549e09422",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "references/animation-libraries.md",
+      "references/microinteraction-patterns.md",
+      "references/scroll-animations.md"
+    ],
+    "name": "Interaction Design",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/wshobson/interaction-design",
+      "https://github.com/wshobson/agents/tree/9b15b34b0bfc13a815cbfc2366e14ea549e09422/plugins/ui-design/skills/interaction-design"
+    ]
+  },
+  "web-design-engineer": {
+    "repo": "ConardLi/garden-skills",
+    "path": "skills/web-design-engineer",
+    "commit": "aaf9a82f5efd73e87cc0998edc398e75bfc35901",
+    "license": "MIT",
+    "requiredResources": [
+      "README.md",
+      "README.zh-CN.md",
+      "SKILL.md",
+      "agents/openai.yaml",
+      "manifest.json",
+      "references/advanced-patterns.md",
+      "references/block-library.md",
+      "references/browser-acceptance.md",
+      "references/critique-guide.md",
+      "references/design-calibration.md",
+      "references/design-directions.md",
+      "references/failure-patterns.md",
+      "references/redesign-protocol.md",
+      "references/style-recipes/INDEX.md",
+      "references/style-recipes/active-theory.md",
+      "references/style-recipes/aesop.md",
+      "references/style-recipes/apple-hig.md",
+      "references/style-recipes/are-na.md",
+      "references/style-recipes/balenciaga-post-2017.md",
+      "references/style-recipes/bloomberg-businessweek-turley.md",
+      "references/style-recipes/bloomberg-terminal.md",
+      "references/style-recipes/dieter-rams-braun.md",
+      "references/style-recipes/field-io.md",
+      "references/style-recipes/headspace-meditation.md",
+      "references/style-recipes/linear.md",
+      "references/style-recipes/mailchimp-freddie.md",
+      "references/style-recipes/mid-century-modern.md",
+      "references/style-recipes/monocle-magazine.md",
+      "references/style-recipes/muji-kenya-hara.md",
+      "references/style-recipes/notion-pre-ai.md",
+      "references/style-recipes/nyt-the-daily.md",
+      "references/style-recipes/pentagram.md",
+      "references/style-recipes/raycast.md",
+      "references/style-recipes/resn-storytelling.md",
+      "references/style-recipes/stripe-press.md",
+      "references/style-recipes/tufte-dataink.md",
+      "references/style-recipes/vercel-mesh.md",
+      "references/style-recipes/vignelli-swiss-helvetica.md",
+      "references/style-recipes/y2k-retrofuturism.md"
+    ],
+    "name": "Web Design Engineer",
+    "sourceURLs": [
+      "https://github.com/ConardLi/garden-skills/tree/aaf9a82f5efd73e87cc0998edc398e75bfc35901/skills/web-design-engineer"
+    ]
+  },
+  "adapt": {
+    "name": "Adapt (Impeccable mode)",
+    "aliasOf": "impeccable",
+    "profileInstruction": "Impeccable Adapt mode is explicitly selected. Read reference/adapt.md within the installed impeccable skill and apply its responsive refinement guidance as part of the unified skill.",
+    "sourceURLs": [
+      "https://www.ui-skills.com/skills/pbakaus/adapt",
+      "https://github.com/pbakaus/impeccable/blob/9d715cc4f5564a990ca8345abfdd5df6dc9b41c8/.agents/skills/impeccable/reference/adapt.md"
+    ]
+  },
+  "nested-geometry": {
+    "name": "Nested Geometry",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/nested-geometry",
+    "commit": "0fdd20bed5a45857c652427a445089b045167413",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "scripts/geometry.mjs"
+    ]
   }
 }

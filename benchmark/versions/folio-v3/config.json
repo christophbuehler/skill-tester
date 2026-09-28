@@ -1,7 +1,7 @@
 {
-  "id": "folio-v4",
+  "id": "folio-v3",
   "model": "gpt-6-astra",
-  "reasoning": "xhigh",
+  "reasoning": "medium",
   "generationTimeoutMs": 1800000,
   "repairTimeoutMs": 600000,
   "maxRepairs": 1,

@@ -1,0 +1,8 @@
+name: web-design-engineer-v4
+version: 1.0.0
+description: Skill Tester profile web-design-engineer-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - ConardLi/garden-skills/skills/web-design-engineer#aaf9a82f5efd73e87cc0998edc398e75bfc35901

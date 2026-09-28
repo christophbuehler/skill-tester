@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { auditPresentation } from "./audit-presentation.mjs";
 import { captureReview } from "./capture-review.mjs";
 import path from "node:path";
 import os from "node:os";
@@ -23,6 +24,12 @@ const profile = JSON.parse(
   fs.readFileSync(path.join(profileDir, "profile.json"), "utf8"),
 );
 const reg = registry();
+for (const id of profile.skills) {
+  if (reg[id]?.blockedReason) throw Error(`Skill ${id} is unavailable for generation: ${reg[id].blockedReason}`);
+  if (reg[id]?.aliasOf) throw Error(`Unresolved skill alias: ${id}. Register a new expanded profile.`);
+  for (const dependency of reg[id]?.dependencies || [])
+    if (!profile.skills.includes(dependency)) throw Error(`Missing skill dependency: ${id} requires ${dependency}`);
+}
 const config = JSON.parse(
   fs.readFileSync(path.join(root, "benchmark/config.json"), "utf8"),
 );
@@ -201,9 +208,9 @@ try {
     path.join(root, "benchmark/prompt.md"),
     "utf8",
   );
-  const profileInstruction = selected.length
+  const profileInstruction = (selected.length
     ? `Selected design skills (read every entrypoint before implementing):\n${selected.map((f) => "- " + path.relative(work, f)).join("\n")}\nApply all of them. The shared benchmark brief takes precedence. No additional skills.`
-    : "No design skills are selected. Use only the shared benchmark brief and contract.";
+    : "No design skills are selected. Use only the shared benchmark brief and contract.") + (profile.profileInstructions?.length ? "\nProfile modes:\n" + profile.profileInstructions.join("\n") : "");
   fs.writeFileSync(path.join(work, "AGENTS.md"), profileInstruction + "\n");
   const baseConfig = `model = ${JSON.stringify(config.model)}\nmodel_reasoning_effort = ${JSON.stringify(config.reasoning)}\napproval_policy = "never"\nsandbox_mode = "workspace-write"\nweb_search = "disabled"\n[sandbox_workspace_write]\nnetwork_access = false\n`;
   fs.writeFileSync(path.join(home, "config.toml"), baseConfig);
@@ -249,6 +256,7 @@ try {
   const metadata = {
     id: runId,
     profile: profileId,
+    requestedSkills: profile.requestedSkills || profile.skills,
     label: profile.label,
     skills: profile.skills.map((id) => ({ id, ...reg[id] })),
     createdAt: new Date().toISOString(),
@@ -388,6 +396,10 @@ try {
             output: (e.stdout || "") + "\n" + (e.stderr || ""),
           });
         }
+      }
+      if (config.id === 'folio-v4') {
+        const findings = auditPresentation(work);
+        results.push({ task: 'semantic-colors', passed: findings.length === 0, output: findings.join('\n') });
       }
       metadata.validation = results.map(({ task, passed }) => ({
         task,

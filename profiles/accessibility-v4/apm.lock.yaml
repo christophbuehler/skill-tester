@@ -1,0 +1,60 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:26.279673+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: addyosmani/web-quality-skills
+  name: web-quality-skills
+  host: github.com
+  resolved_commit: afa8da942115f2961fdbfa80807ea0b232ff6c00
+  resolved_ref: afa8da942115f2961fdbfa80807ea0b232ff6c00
+  version: unknown
+  virtual_path: skills/accessibility
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/accessibility
+  - .agents/skills/accessibility/SKILL.md
+  - .agents/skills/accessibility/references/A11Y-PATTERNS.md
+  - .agents/skills/accessibility/references/WCAG.md
+  deployed_file_hashes:
+    .agents/skills/accessibility/SKILL.md: sha256:267fb2a0707d6142f2871f22688203a42ba21291a2aa200fb740936e41362b5d
+    .agents/skills/accessibility/references/A11Y-PATTERNS.md: sha256:f10e238dd4dd3c4f51134c2056bc02d3dd4f8fb6ccc9145c2c1ba7aab4d58140
+    .agents/skills/accessibility/references/WCAG.md: sha256:16683e025e3833d931c9d880645d98a448827f97e10189b6c8f12c832e7a2361
+  content_hash: sha256:48861fac56e62fd43f9c3a173cef9e35a1545637445c6bdb64c18f083af84a44
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: sha256:267fb2a0707d6142f2871f22688203a42ba21291a2aa200fb740936e41362b5d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility/references/A11Y-PATTERNS.md
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: sha256:f10e238dd4dd3c4f51134c2056bc02d3dd4f8fb6ccc9145c2c1ba7aab4d58140
+- kind: project-relative
+  target: agents
+  value: .agents/skills/accessibility/references/WCAG.md
+  runtime: null
+  scope: project
+  owners:
+  - addyosmani/web-quality-skills/skills/accessibility
+  active_owner: addyosmani/web-quality-skills/skills/accessibility
+  content_hash: sha256:16683e025e3833d931c9d880645d98a448827f97e10189b6c8f12c832e7a2361

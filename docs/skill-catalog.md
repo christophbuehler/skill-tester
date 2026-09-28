@@ -1,0 +1,58 @@
+# Skill catalog and selection
+
+Audited 28 September 2026. The [machine-readable audit](skill-source-audit.json) records immutable upstream commits, resource inventories, licenses, source links, and compatibility findings. Directory descriptions were checked against the actual source; no global `npx skills add` installations were used. The requested ADHX post could not be fetched, so no claims are based on it.
+
+## The v4 combination
+
+**Folio / Considered** uses five skills in this order:
+
+| Skill | Job in this combination | Concrete guidance worth testing |
+|---|---|---|
+| [Frontend Design](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design) | Composition, typography, useful copy | Spend visual boldness in one place; remove labels that do not help someone act; choose a product-specific structure. |
+| [Emil Design Engineering](https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/emil-design-eng) | Interaction decisions and implementation detail | Frequent keyboard actions should be immediate; occasional surfaces can animate from their trigger; transitions must survive interruption. |
+| [Beautiful Shadows](https://github.com/MengTo/Skills/tree/798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d/agent-skills/web-design/beautiful-shadows) | Limited functional elevation | Layered neutral shadows separate floating controls without raising every transcript element. Move color constants into semantic tokens to honor the benchmark requirement. |
+| [Accessibility](https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility) | Keyboard, focus, names/states, motion alternatives | A visually closed surface must stop owning focus and interaction. Automated findings supplement manual checks. Use WCAG's actual text-size thresholds, not the skill's px/pt typo. |
+| [Nested Geometry](../skills/nested-geometry/SKILL.md) | Measurable shape relationships | Derive child curves from the parent radius minus the actual border-box inset. A circle tucked into a corner must share its center, or be deliberately separated. |
+
+This is a fit judgment, not a measured ranking. A self-reported decision ledger is not causal proof. Each generated DESIGN.md records real alternatives and changes; screenshots, source and interaction recordings let readers check the claims.
+
+## All requested skills
+
+| Registry ID | Status and reason |
+|---|---|
+| `frontend-design` | Available; selected as the visual lead. Existing exact pin retained. |
+| `apple-design-emil` | Available; the actual Emil Kowalski upstream. Excluded from this combination because much of its physical-motion guidance overlaps Emil Design Engineering and its materials could impose a second direction. Distinct from the older independent `apple-design` skill. |
+| `beautiful-shadows` | Available; selected for narrow surface craft. |
+| `accessibility` | Available; selected for operability. |
+| `design-review` | Catalogued, blocked from generation. Audited upstream instructs silent usage telemetry, home-directory identity storage, and optional license lookup/remote artifact uploads. None was executed. MIT declared by upstream, but no license file was found. Use local review instead. |
+| `emil-design-eng` | Available; selected for motion and interaction judgment. |
+| `shadcn` | Catalogued, blocked for this starter. It requires its real component/configuration/registry ecosystem and online CLI/docs. Reading the skill alone cannot supply that ecosystem; a dedicated shared starter is needed for a faithful experiment. |
+| `adapt` | Supported alias/mode of current Impeccable. Registration resolves it to the unified skill and records the explicit Adapt reference instruction. It is not a separate upstream SKILL.md at this revision. |
+| `better-interface` | Available with six explicit pinned sibling skills: accessibility, layout, writing, typography, colors, UI. Registration expands dependencies and the chooser displays them. An APM probe proved installing only the coordinator loses those references. Excluded here to avoid seven extra overlapping voices; useful for a dedicated review profile. |
+| `interaction-design` | Available; excluded because Emil already supplies the selected motion framework. Its examples need translation from framer-motion imports to the supplied motion/react package. |
+| `web-design-engineer` | Available; excluded because its interactive approval/v0/Tweaks workflow and inline/CDN prototype assumptions do not fit this autonomous bundled app experiment. The brief would override those conflicting workflow choices. |
+| `impeccable` | Available, includes Adapt. A credible alternative lead, rather than an extra layer atop Frontend Design. Its launcher has a documented reference fallback in this offline environment. |
+| `ui-ux-pro-max` | Existing available profile retained. Not selected: the broad style database would add another art-direction source without a distinct job in this combination. |
+| `modern-interface-craft-v3`, `apple-design-refined` | Historical custom directions retained. Not selected: they are the directions being reconsidered, not hidden influences on the new attempt. |
+
+All upstream instructions remain at their original pinned source. APM fetches them for the requested profile. The repository does not silently rewrite unsafe or incompatible upstream skills and claim the original was used. Blocked packages fail registration/preflight with their reason. Registering a package is distinct from generating a sample.
+
+## New common requirements
+
+Folio v4 uses the same headless behavior, blank starter and offline dependencies, but a revised brief: light by default, semantic Tailwind color tokens, decision provenance, and no prescribed navigation/composer layout. Any optional dark canvas must be OLED black. The model remains `gpt-6-astra`; reasoning is raised from medium to xhigh. Implementation/refinement/repair time limits remain 30/10/10 minutes, with two refinements and at most one objective repair.
+
+Every implementation and refinement is a fresh ephemeral CLI session in an isolated temporary workspace. It receives the brief, source from its own attempt, its selected skills and (for refinement) captured evidence. It receives no parent conversation, other variants, memory or unrelated plugins/skills. Human coordination and source research happen outside that workspace. Old runs are immutable and remain viewable. Cross-version comparisons change more than skill selection and are labelled accordingly.
+
+## Commands
+
+```sh
+pnpm generate considered-v4 --preflight
+pnpm generate considered-v4
+pnpm generate apple-design-emil-v4
+pnpm run profile add my-combination frontend-design apple-design-emil nested-geometry
+(cd profiles/my-combination && apm install)
+pnpm generate my-combination --preflight
+pnpm generate my-combination
+```
+
+The eight new individual profiles have APM lockfiles and passed exact-pin, entrypoint-count and required-resource checks. This verifies installation completeness, not generated UI quality. Only requested combinations/samples are generated; adding a skill does not generate ten new interfaces automatically.

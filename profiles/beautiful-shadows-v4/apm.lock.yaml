@@ -1,0 +1,93 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:23.857213+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: mengto/skills
+  name: skills
+  host: github.com
+  resolved_commit: 798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d
+  resolved_ref: 798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d
+  version: unknown
+  virtual_path: agent-skills/web-design/beautiful-shadows
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/beautiful-shadows
+  - .agents/skills/beautiful-shadows/SKILL.md
+  - .agents/skills/beautiful-shadows/demo/PROMPT.md
+  - .agents/skills/beautiful-shadows/demo/assets/source-preview.jpg
+  - .agents/skills/beautiful-shadows/demo/index.html
+  - .agents/skills/beautiful-shadows/demo/preview.jpg
+  - .agents/skills/beautiful-shadows/demo/source.json
+  deployed_file_hashes:
+    .agents/skills/beautiful-shadows/SKILL.md: sha256:10b6cc0964919118218ffe0845e4a00954f39788d89d4ec29827d100f254e135
+    .agents/skills/beautiful-shadows/demo/PROMPT.md: sha256:b466829825dc77354b05c3ec6e21da024ca8494b8e2468dafee470b63490f5c6
+    .agents/skills/beautiful-shadows/demo/assets/source-preview.jpg: sha256:cea85a39224a0cac5523629063a71ff13a173ffce2d347f029ea567e994472a6
+    .agents/skills/beautiful-shadows/demo/index.html: sha256:21f51f52256cc0c08deb82e954ba0418fa8319ed9a36277902c005842b105b96
+    .agents/skills/beautiful-shadows/demo/preview.jpg: sha256:b5ab94f9f1b16aa7b52d7ef9d9168ad696b9eb0ad53a812ff8517a33c3af4903
+    .agents/skills/beautiful-shadows/demo/source.json: sha256:05cc0ff186d5c3990033a2f00a08bb1bc19805998984be7a74a0e6be0a100585
+  content_hash: sha256:847d03bb9f2abb80f81cce901fdc460b64b1ea56423fddc99948818748b5a513
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: sha256:10b6cc0964919118218ffe0845e4a00954f39788d89d4ec29827d100f254e135
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows/demo/PROMPT.md
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: sha256:b466829825dc77354b05c3ec6e21da024ca8494b8e2468dafee470b63490f5c6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows/demo/assets/source-preview.jpg
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: sha256:cea85a39224a0cac5523629063a71ff13a173ffce2d347f029ea567e994472a6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows/demo/index.html
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: sha256:21f51f52256cc0c08deb82e954ba0418fa8319ed9a36277902c005842b105b96
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows/demo/preview.jpg
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: sha256:b5ab94f9f1b16aa7b52d7ef9d9168ad696b9eb0ad53a812ff8517a33c3af4903
+- kind: project-relative
+  target: agents
+  value: .agents/skills/beautiful-shadows/demo/source.json
+  runtime: null
+  scope: project
+  owners:
+  - mengto/skills/agent-skills/web-design/beautiful-shadows
+  active_owner: mengto/skills/agent-skills/web-design/beautiful-shadows
+  content_hash: sha256:05cc0ff186d5c3990033a2f00a08bb1bc19805998984be7a74a0e6be0a100585

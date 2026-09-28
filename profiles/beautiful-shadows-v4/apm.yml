@@ -1,0 +1,8 @@
+name: beautiful-shadows-v4
+version: 1.0.0
+description: Skill Tester profile beautiful-shadows-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - MengTo/Skills/agent-skills/web-design/beautiful-shadows#798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d

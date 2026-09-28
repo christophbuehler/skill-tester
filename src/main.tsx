@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   ArrowLeft,
   Check,
+  ChevronDown,
   Columns2,
   Monitor,
   Smartphone,
@@ -54,9 +55,10 @@ type Run = {
   loadedSkills: string[];
 };
 const runs = catalog as Run[];
+const designNotes = import.meta.glob("../runs/*/DESIGN.md", { query: "?raw", import: "default" });
 const base = import.meta.env.BASE_URL;
 const repo = "https://github.com/christophbuehler/skill-tester";
-const accent = ["#5973a9", "#b17b45", "#578f7b", "#8f729d"];
+const accent = ["var(--series-baseline)", "var(--series-design)", "var(--series-craft)", "var(--series-ux)"];
 const descriptions: Record<string, string> = {
   baseline: "The starting point. Same model and brief, without a design skill.",
   "frontend-design":
@@ -138,6 +140,7 @@ function App() {
         </a>
         <nav>
           <button onClick={openPrompt}>The brief</button>
+          <a href={`${repo}/blob/main/docs/skill-catalog.md`} target="_blank" rel="noreferrer">The skills</a>
           <a href={repo} target="_blank" rel="noreferrer">
             <Github size={16} />
             <span>Source</span>
@@ -223,7 +226,7 @@ function App() {
               <div>
                 <span>Model</span>
                 <strong>
-                  {runs[0]?.model || "gpt-6-astra"} <small>/ medium</small>
+                  {runs[0]?.model || "gpt-6-astra"} <small>/ {runs[0]?.reasoning || "xhigh"}</small>
                 </strong>
               </div>
               <div>
@@ -530,6 +533,9 @@ function App() {
                 ) : (
                   <p>No report available.</p>
                 )}
+                {designNotes[`../runs/${details.id}/DESIGN.md`] && <p><a href={`${repo}/blob/main/runs/${details.id}/DESIGN.md`}>
+                  Read design decisions <ArrowUpRight size={14} />
+                </a></p>}
                 <a href={`${repo}/tree/main/runs/${details.id}`}>
                   View source and metadata <ArrowUpRight size={14} />
                 </a>
@@ -590,7 +596,7 @@ function Compare({
       <div className="compare-heading">
         <div>
           <h1>See the difference.</h1>
-          <p>
+          <p className={identical ? undefined : "comparison-warning"}>
             {identical
               ? "Independent interfaces. Identical conditions."
               : "These runs use different inputs or settings. Check run details before comparing."}
@@ -641,19 +647,12 @@ function Compare({
             r && (
               <div className="comparison-pane" key={i}>
                 <div className="pane-toolbar">
-                  <select
-                    aria-label={i ? "Right variant" : "Left variant"}
-                    value={r.id}
-                    onChange={(e) =>
-                      update(i ? "right" : "left", e.target.value)
-                    }
-                  >
-                    {passed.map((v) => (
-                      <option key={v.id} value={v.id}>
-                        {v.label}
-                      </option>
-                    ))}
-                  </select>
+                  <VariantChooser
+                    side={i ? "Right" : "Left"}
+                    selected={r}
+                    options={passed}
+                    onSelect={(id) => update(i ? "right" : "left", id)}
+                  />
                   <button onClick={() => onDetails(r)}>Details</button>
                   <a
                     aria-label={`Open ${r.label} standalone`}
@@ -679,6 +678,99 @@ function Compare({
         )}
       </div>
     </section>
+  );
+}
+function VariantChooser({ side, selected, options, onSelect }: {
+  side: string;
+  selected: Run;
+  options: Run[];
+  onSelect: (id: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const optionRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const listId = `${side.toLowerCase()}-variants`;
+  const selectedIndex = options.findIndex(run => run.id === selected.id);
+  const [active, setActive] = useState(selectedIndex);
+  function close(restoreFocus = false) {
+    setOpen(false);
+    if (restoreFocus) trigger.current?.focus();
+  }
+  useEffect(() => {
+    if (!open) return;
+    const dismiss = (event: PointerEvent) => {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  }, [open]);
+  useEffect(() => {
+    if (open) optionRefs.current[active]?.focus({ preventScroll: true });
+    if (open) optionRefs.current[active]?.scrollIntoView({ block: "nearest" });
+  }, [open, active]);
+  const skills = (run: Run) => run.skills.length
+    ? <span className="chooser-skills">{run.skills.map(skill => <span key={skill.id}>{skill.name}</span>)}</span>
+    : <span className="chooser-baseline">Baseline · No design skills activated</span>;
+  return (
+    <div className="variant-chooser" ref={root} onBlur={(event) => {
+      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) close();
+    }}>
+      <button
+        ref={trigger}
+        className="chooser-trigger"
+        aria-label={`${side} variant: ${selected.label}`}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-controls={open ? listId : undefined}
+        onClick={() => { setActive(selectedIndex); setOpen(!open); }}
+        onKeyDown={(event) => {
+          if (["ArrowDown", "ArrowUp"].includes(event.key)) {
+            event.preventDefault();
+            setActive(selectedIndex);
+            setOpen(true);
+          }
+        }}
+      >
+        <span className="chooser-summary">
+          <span className="chooser-caption">{side} variant · {selected.benchmark}</span>
+          <strong>{selected.label}</strong>
+          {skills(selected)}
+        </span>
+        <ChevronDown size={16} aria-hidden="true" />
+      </button>
+      {open && <div className="chooser-popover">
+        <div className="chooser-heading">Choose an interface <span>{options.length} passing runs</span></div>
+        <div id={listId} role="listbox" aria-label={`${side} variant`} className="chooser-options"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); close(true); }
+            const next = event.key === "ArrowDown" ? (active + 1) % options.length
+              : event.key === "ArrowUp" ? (active - 1 + options.length) % options.length
+              : event.key === "Home" ? 0 : event.key === "End" ? options.length - 1 : null;
+            if (next !== null) { event.preventDefault(); setActive(next); }
+          }}>
+          {options.map((run, index) => <button
+            key={run.id}
+            ref={(element) => { optionRefs.current[index] = element; }}
+            type="button"
+            role="option"
+            aria-selected={run.id === selected.id}
+            tabIndex={index === active ? 0 : -1}
+            className="chooser-option"
+            onFocus={() => setActive(index)}
+            onClick={() => { onSelect(run.id); close(true); }}
+          >
+            <span className="chooser-summary">
+              <span className="chooser-option-title"><strong>{run.label}</strong>{run.id === selected.id && <Check size={15} aria-hidden="true" />}</span>
+              <span className="chooser-caption">{run.benchmark} · <span className="chooser-passed">Passed</span> · {run.skills.length} {run.skills.length === 1 ? "skill" : "skills"}</span>
+              {skills(run)}
+              <span className="chooser-run-id">{run.id}</span>
+            </span>
+          </button>)}
+        </div>
+        <p className="chooser-footnote">All activated skills are listed. Failed runs remain in the gallery.</p>
+      </div>}
+    </div>
   );
 }
 function Viewport({

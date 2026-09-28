@@ -1,0 +1,7 @@
+name: baseline-v4
+version: 1.0.0
+description: Skill Tester profile baseline-v4
+targets:
+  - codex
+dependencies:
+  apm: []

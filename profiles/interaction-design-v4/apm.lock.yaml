@@ -1,0 +1,71 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:37.274559+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: wshobson/agents
+  name: agents
+  host: github.com
+  resolved_commit: 9b15b34b0bfc13a815cbfc2366e14ea549e09422
+  resolved_ref: 9b15b34b0bfc13a815cbfc2366e14ea549e09422
+  version: unknown
+  virtual_path: plugins/ui-design/skills/interaction-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/interaction-design
+  - .agents/skills/interaction-design/SKILL.md
+  - .agents/skills/interaction-design/references/animation-libraries.md
+  - .agents/skills/interaction-design/references/microinteraction-patterns.md
+  - .agents/skills/interaction-design/references/scroll-animations.md
+  deployed_file_hashes:
+    .agents/skills/interaction-design/SKILL.md: sha256:87f2765ed1deeef3f1c06f9e4338ff103c391c6c4adcdffc885f3516b7c34ff2
+    .agents/skills/interaction-design/references/animation-libraries.md: sha256:92da251d881a6a0647f09b83c9cf8cbdfb5d408d54e1098097bb0eda336e6d0f
+    .agents/skills/interaction-design/references/microinteraction-patterns.md: sha256:c276b03468bacacf7a7d8d95c70114d9724854ac2e084ad63f0b6e1ef00a948a
+    .agents/skills/interaction-design/references/scroll-animations.md: sha256:34f32ef74c4f44bf57a721f95cd523b63dd1d02711f16ccb8472d1d7a4f78a35
+  content_hash: sha256:7d680bfa634fee2b22de66a0d900f03d6f22c0d59969255e19f23f0c6d0d6b3b
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/interaction-design
+  runtime: null
+  scope: project
+  owners:
+  - wshobson/agents/plugins/ui-design/skills/interaction-design
+  active_owner: wshobson/agents/plugins/ui-design/skills/interaction-design
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/interaction-design/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - wshobson/agents/plugins/ui-design/skills/interaction-design
+  active_owner: wshobson/agents/plugins/ui-design/skills/interaction-design
+  content_hash: sha256:87f2765ed1deeef3f1c06f9e4338ff103c391c6c4adcdffc885f3516b7c34ff2
+- kind: project-relative
+  target: agents
+  value: .agents/skills/interaction-design/references/animation-libraries.md
+  runtime: null
+  scope: project
+  owners:
+  - wshobson/agents/plugins/ui-design/skills/interaction-design
+  active_owner: wshobson/agents/plugins/ui-design/skills/interaction-design
+  content_hash: sha256:92da251d881a6a0647f09b83c9cf8cbdfb5d408d54e1098097bb0eda336e6d0f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/interaction-design/references/microinteraction-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - wshobson/agents/plugins/ui-design/skills/interaction-design
+  active_owner: wshobson/agents/plugins/ui-design/skills/interaction-design
+  content_hash: sha256:c276b03468bacacf7a7d8d95c70114d9724854ac2e084ad63f0b6e1ef00a948a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/interaction-design/references/scroll-animations.md
+  runtime: null
+  scope: project
+  owners:
+  - wshobson/agents/plugins/ui-design/skills/interaction-design
+  active_owner: wshobson/agents/plugins/ui-design/skills/interaction-design
+  content_hash: sha256:34f32ef74c4f44bf57a721f95cd523b63dd1d02711f16ccb8472d1d7a4f78a35

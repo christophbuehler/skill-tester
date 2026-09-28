@@ -1,0 +1,610 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:32.844080+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-accessibility
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-accessibility
+  - .agents/skills/better-accessibility/SKILL.md
+  - .agents/skills/better-accessibility/agents/openai.yaml
+  - .agents/skills/better-accessibility/focus-and-keyboard.md
+  - .agents/skills/better-accessibility/forms.md
+  - .agents/skills/better-accessibility/hit-areas.md
+  - .agents/skills/better-accessibility/motion-and-zoom.md
+  - .agents/skills/better-accessibility/screen-readers.md
+  - .agents/skills/better-accessibility/semantics-and-aria.md
+  deployed_file_hashes:
+    .agents/skills/better-accessibility/SKILL.md: sha256:59a0d8ad310be843566a18bfd839a38f46335110aa31673c4468c9e0172c5350
+    .agents/skills/better-accessibility/agents/openai.yaml: sha256:98699206d4fb00b72bcaf69bb446f541644cc0cc3d23967e266731e100a55563
+    .agents/skills/better-accessibility/focus-and-keyboard.md: sha256:9ba63027fa8f1b53e4947ee3341e0580347121f3ccb7698f2936d33563ffa4ba
+    .agents/skills/better-accessibility/forms.md: sha256:b08451ee17861cae49553ba71a122be80c21197087efcc43137862a1db2c5c34
+    .agents/skills/better-accessibility/hit-areas.md: sha256:8c0982229cc01aee419e9c80a4085d5c59a0e7b2b16a4f616a12e9fa0fa094f5
+    .agents/skills/better-accessibility/motion-and-zoom.md: sha256:3efc88394bc958a6e88ecbc8c8e37999df7de0e19730e5784d0e9e5efda696ee
+    .agents/skills/better-accessibility/screen-readers.md: sha256:a35b69db4568e74351a28606328505773f9a1e9ec370e92fbfb2117543c3637a
+    .agents/skills/better-accessibility/semantics-and-aria.md: sha256:e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6
+  content_hash: sha256:77d3a1ef96ffb88fcf1b46a81fed7065ef67042a4afbc7e1d19ea4ca4d9f8553
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-colors
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-colors
+  - .agents/skills/better-colors/SKILL.md
+  - .agents/skills/better-colors/agents/openai.yaml
+  - .agents/skills/better-colors/color-formats.md
+  - .agents/skills/better-colors/color-usage.md
+  - .agents/skills/better-colors/contrast.md
+  - .agents/skills/better-colors/palette-generation.md
+  - .agents/skills/better-colors/palette-structure.md
+  - .agents/skills/better-colors/token-naming.md
+  deployed_file_hashes:
+    .agents/skills/better-colors/SKILL.md: sha256:cde9dd40cb183b383514e1a2c76bf74c9d914f5f6722ee6079d3f9cd121862c1
+    .agents/skills/better-colors/agents/openai.yaml: sha256:9568572146c8d7d1dc2e12536c2b8ea63480f83f2f2ebfcf2f9a500a56830d4a
+    .agents/skills/better-colors/color-formats.md: sha256:e68fffec8f7b8e1036c295fce8d65785764f33aead5d292389c47451e79d7129
+    .agents/skills/better-colors/color-usage.md: sha256:dbaa4a4cb10b8118165fca4531b3c35b409c79185f15a2812a34f118293dba9f
+    .agents/skills/better-colors/contrast.md: sha256:f9a2f8ca2fd7966ea0002a9dd58b9d392fbb14fc6f4365534c488046337e5971
+    .agents/skills/better-colors/palette-generation.md: sha256:f3e3f9fc84fd834cfffd9e0c951f28c3f24c3c4a4492d86b697d3258f500fb85
+    .agents/skills/better-colors/palette-structure.md: sha256:82b22d74ead2a551a2a505347273025020d84dcde4a0170ea2fd14290dc10387
+    .agents/skills/better-colors/token-naming.md: sha256:198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a
+  content_hash: sha256:757f469b024eef58f944733067250caa15cdaf4303caf4ef970be67e3eaa08be
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-interface
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-interface
+  - .agents/skills/better-interface/SKILL.md
+  - .agents/skills/better-interface/agents/openai.yaml
+  - .agents/skills/better-interface/review-format.md
+  deployed_file_hashes:
+    .agents/skills/better-interface/SKILL.md: sha256:57412a685bd1a654f81def820099481b7df6ddf8f4bc06989a1b875b1d01c036
+    .agents/skills/better-interface/agents/openai.yaml: sha256:541c5d823f474543d4f3a314a9292215f8c90c152249e72411ff3e3632cf55bc
+    .agents/skills/better-interface/review-format.md: sha256:99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108
+  content_hash: sha256:3c0f2010e6e024c461028e46fc0f9661a47e3665bb26d15512f3fe98e34a7ead
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-layout
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-layout
+  - .agents/skills/better-layout/SKILL.md
+  - .agents/skills/better-layout/agents/openai.yaml
+  - .agents/skills/better-layout/grouping-and-alignment.md
+  - .agents/skills/better-layout/spacing-and-adaptivity.md
+  deployed_file_hashes:
+    .agents/skills/better-layout/SKILL.md: sha256:f04c8d870fca110c8003aa8c0c82a7e121642a18443dfb114ee3d774d466c141
+    .agents/skills/better-layout/agents/openai.yaml: sha256:d51a2ca663c9331f8f23b7a550e5f848f83e81361e21f2280cc384e99cc0ae15
+    .agents/skills/better-layout/grouping-and-alignment.md: sha256:027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1
+    .agents/skills/better-layout/spacing-and-adaptivity.md: sha256:bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77
+  content_hash: sha256:1357c6f415529d6962d52213416d287f1fb6eb64b19e94b7981a2b18a82cec18
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-typography
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-typography
+  - .agents/skills/better-typography/SKILL.md
+  - .agents/skills/better-typography/agents/openai.yaml
+  - .agents/skills/better-typography/choosing-fonts.md
+  - .agents/skills/better-typography/css-cheat-sheet.md
+  - .agents/skills/better-typography/details-and-accessibility.md
+  - .agents/skills/better-typography/spacing-and-sizing.md
+  - .agents/skills/better-typography/variable-fonts-and-opentype.md
+  - .agents/skills/better-typography/wrapping-and-punctuation.md
+  deployed_file_hashes:
+    .agents/skills/better-typography/SKILL.md: sha256:717f615910470bd2b7c662cce2af2ebd11cd887379a6ea93455c45f3c5ba378d
+    .agents/skills/better-typography/agents/openai.yaml: sha256:01d8b8f835112e97ba0e4d97a07775e919407ebb5aab0cce9b4fa280e66b19b8
+    .agents/skills/better-typography/choosing-fonts.md: sha256:d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9
+    .agents/skills/better-typography/css-cheat-sheet.md: sha256:45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb
+    .agents/skills/better-typography/details-and-accessibility.md: sha256:d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e
+    .agents/skills/better-typography/spacing-and-sizing.md: sha256:e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82
+    .agents/skills/better-typography/variable-fonts-and-opentype.md: sha256:2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0
+    .agents/skills/better-typography/wrapping-and-punctuation.md: sha256:7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe
+  content_hash: sha256:04630028f789199de2ce595ea1444192d2cb335e36e5f07a48846fabddeafb10
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-ui
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-ui
+  - .agents/skills/better-ui/SKILL.md
+  - .agents/skills/better-ui/agents/openai.yaml
+  - .agents/skills/better-ui/animations.md
+  - .agents/skills/better-ui/enter-exit.md
+  - .agents/skills/better-ui/icon-transitions.md
+  - .agents/skills/better-ui/icons.md
+  - .agents/skills/better-ui/performance.md
+  - .agents/skills/better-ui/surfaces.md
+  deployed_file_hashes:
+    .agents/skills/better-ui/SKILL.md: sha256:2482b7b89d851a3128d36edf5367f3223e113a4ef421b7358c7e6de3f2c83faf
+    .agents/skills/better-ui/agents/openai.yaml: sha256:799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871
+    .agents/skills/better-ui/animations.md: sha256:5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846
+    .agents/skills/better-ui/enter-exit.md: sha256:8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea
+    .agents/skills/better-ui/icon-transitions.md: sha256:60098242d33133a35a675719c447129b8931aecfbf05d58a6e2aa01e7894694e
+    .agents/skills/better-ui/icons.md: sha256:74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b
+    .agents/skills/better-ui/performance.md: sha256:e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e
+    .agents/skills/better-ui/surfaces.md: sha256:5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048
+  content_hash: sha256:0ff51d865f7ce2d2a10cde45a0aab9b69d897f670cfc64b040b618c3139449cf
+- repo_url: jakubkrehel/skills
+  name: skills
+  host: github.com
+  resolved_commit: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  resolved_ref: 267330e1adfc66a718fb65fa6918c1f06d0a689e
+  version: unknown
+  virtual_path: skills/better-writing
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/better-writing
+  - .agents/skills/better-writing/SKILL.md
+  - .agents/skills/better-writing/agents/openai.yaml
+  deployed_file_hashes:
+    .agents/skills/better-writing/SKILL.md: sha256:d53163382a058f06e00ac0b36312189108b006aa0b05869c71a70f5c213c44ae
+    .agents/skills/better-writing/agents/openai.yaml: sha256:a5aec7e0cbc87930962f139eff4341dcf87e83fd19b9447e3f614db2bc71de67
+  content_hash: sha256:4d05e6d9d609a9e3e3c90240a7d8f30106fec7e117fe9703cd72dcebdaed4b65
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:59a0d8ad310be843566a18bfd839a38f46335110aa31673c4468c9e0172c5350
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:98699206d4fb00b72bcaf69bb446f541644cc0cc3d23967e266731e100a55563
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/focus-and-keyboard.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:9ba63027fa8f1b53e4947ee3341e0580347121f3ccb7698f2936d33563ffa4ba
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/forms.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:b08451ee17861cae49553ba71a122be80c21197087efcc43137862a1db2c5c34
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/hit-areas.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:8c0982229cc01aee419e9c80a4085d5c59a0e7b2b16a4f616a12e9fa0fa094f5
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/motion-and-zoom.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:3efc88394bc958a6e88ecbc8c8e37999df7de0e19730e5784d0e9e5efda696ee
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/screen-readers.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:a35b69db4568e74351a28606328505773f9a1e9ec370e92fbfb2117543c3637a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-accessibility/semantics-and-aria.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-accessibility
+  active_owner: jakubkrehel/skills/skills/better-accessibility
+  content_hash: sha256:e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:cde9dd40cb183b383514e1a2c76bf74c9d914f5f6722ee6079d3f9cd121862c1
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:9568572146c8d7d1dc2e12536c2b8ea63480f83f2f2ebfcf2f9a500a56830d4a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/color-formats.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:e68fffec8f7b8e1036c295fce8d65785764f33aead5d292389c47451e79d7129
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/color-usage.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:dbaa4a4cb10b8118165fca4531b3c35b409c79185f15a2812a34f118293dba9f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/contrast.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:f9a2f8ca2fd7966ea0002a9dd58b9d392fbb14fc6f4365534c488046337e5971
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/palette-generation.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:f3e3f9fc84fd834cfffd9e0c951f28c3f24c3c4a4492d86b697d3258f500fb85
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/palette-structure.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:82b22d74ead2a551a2a505347273025020d84dcde4a0170ea2fd14290dc10387
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-colors/token-naming.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-colors
+  active_owner: jakubkrehel/skills/skills/better-colors
+  content_hash: sha256:198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-interface
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-interface
+  active_owner: jakubkrehel/skills/skills/better-interface
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-interface/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-interface
+  active_owner: jakubkrehel/skills/skills/better-interface
+  content_hash: sha256:57412a685bd1a654f81def820099481b7df6ddf8f4bc06989a1b875b1d01c036
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-interface/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-interface
+  active_owner: jakubkrehel/skills/skills/better-interface
+  content_hash: sha256:541c5d823f474543d4f3a314a9292215f8c90c152249e72411ff3e3632cf55bc
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-interface/review-format.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-interface
+  active_owner: jakubkrehel/skills/skills/better-interface
+  content_hash: sha256:99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-layout
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-layout
+  active_owner: jakubkrehel/skills/skills/better-layout
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-layout/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-layout
+  active_owner: jakubkrehel/skills/skills/better-layout
+  content_hash: sha256:f04c8d870fca110c8003aa8c0c82a7e121642a18443dfb114ee3d774d466c141
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-layout/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-layout
+  active_owner: jakubkrehel/skills/skills/better-layout
+  content_hash: sha256:d51a2ca663c9331f8f23b7a550e5f848f83e81361e21f2280cc384e99cc0ae15
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-layout/grouping-and-alignment.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-layout
+  active_owner: jakubkrehel/skills/skills/better-layout
+  content_hash: sha256:027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-layout/spacing-and-adaptivity.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-layout
+  active_owner: jakubkrehel/skills/skills/better-layout
+  content_hash: sha256:bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:717f615910470bd2b7c662cce2af2ebd11cd887379a6ea93455c45f3c5ba378d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:01d8b8f835112e97ba0e4d97a07775e919407ebb5aab0cce9b4fa280e66b19b8
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/choosing-fonts.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/css-cheat-sheet.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/details-and-accessibility.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/spacing-and-sizing.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/variable-fonts-and-opentype.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-typography/wrapping-and-punctuation.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-typography
+  active_owner: jakubkrehel/skills/skills/better-typography
+  content_hash: sha256:7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:2482b7b89d851a3128d36edf5367f3223e113a4ef421b7358c7e6de3f2c83faf
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/animations.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/enter-exit.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/icon-transitions.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:60098242d33133a35a675719c447129b8931aecfbf05d58a6e2aa01e7894694e
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/icons.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/performance.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-ui/surfaces.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-ui
+  active_owner: jakubkrehel/skills/skills/better-ui
+  content_hash: sha256:5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-writing
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-writing
+  active_owner: jakubkrehel/skills/skills/better-writing
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-writing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-writing
+  active_owner: jakubkrehel/skills/skills/better-writing
+  content_hash: sha256:d53163382a058f06e00ac0b36312189108b006aa0b05869c71a70f5c213c44ae
+- kind: project-relative
+  target: agents
+  value: .agents/skills/better-writing/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - jakubkrehel/skills/skills/better-writing
+  active_owner: jakubkrehel/skills/skills/better-writing
+  content_hash: sha256:a5aec7e0cbc87930962f139eff4341dcf87e83fd19b9447e3f614db2bc71de67

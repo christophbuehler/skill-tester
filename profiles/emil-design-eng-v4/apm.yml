@@ -1,0 +1,8 @@
+name: emil-design-eng-v4
+version: 1.0.0
+description: Skill Tester profile emil-design-eng-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - emilkowalski/skills/skills/emil-design-eng#d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128

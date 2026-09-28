@@ -1,0 +1,456 @@
+lockfile_version: '1'
+generated_at: '2026-09-28T13:08:41.694499+00:00'
+apm_version: 0.25.0
+dependencies:
+- repo_url: conardli/garden-skills
+  name: garden-skills
+  host: github.com
+  resolved_commit: aaf9a82f5efd73e87cc0998edc398e75bfc35901
+  resolved_ref: aaf9a82f5efd73e87cc0998edc398e75bfc35901
+  version: unknown
+  virtual_path: skills/web-design-engineer
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/web-design-engineer
+  - .agents/skills/web-design-engineer/README.md
+  - .agents/skills/web-design-engineer/README.zh-CN.md
+  - .agents/skills/web-design-engineer/SKILL.md
+  - .agents/skills/web-design-engineer/agents/openai.yaml
+  - .agents/skills/web-design-engineer/manifest.json
+  - .agents/skills/web-design-engineer/references/advanced-patterns.md
+  - .agents/skills/web-design-engineer/references/block-library.md
+  - .agents/skills/web-design-engineer/references/browser-acceptance.md
+  - .agents/skills/web-design-engineer/references/critique-guide.md
+  - .agents/skills/web-design-engineer/references/design-calibration.md
+  - .agents/skills/web-design-engineer/references/design-directions.md
+  - .agents/skills/web-design-engineer/references/failure-patterns.md
+  - .agents/skills/web-design-engineer/references/redesign-protocol.md
+  - .agents/skills/web-design-engineer/references/style-recipes/INDEX.md
+  - .agents/skills/web-design-engineer/references/style-recipes/active-theory.md
+  - .agents/skills/web-design-engineer/references/style-recipes/aesop.md
+  - .agents/skills/web-design-engineer/references/style-recipes/apple-hig.md
+  - .agents/skills/web-design-engineer/references/style-recipes/are-na.md
+  - .agents/skills/web-design-engineer/references/style-recipes/balenciaga-post-2017.md
+  - .agents/skills/web-design-engineer/references/style-recipes/bloomberg-businessweek-turley.md
+  - .agents/skills/web-design-engineer/references/style-recipes/bloomberg-terminal.md
+  - .agents/skills/web-design-engineer/references/style-recipes/dieter-rams-braun.md
+  - .agents/skills/web-design-engineer/references/style-recipes/field-io.md
+  - .agents/skills/web-design-engineer/references/style-recipes/headspace-meditation.md
+  - .agents/skills/web-design-engineer/references/style-recipes/linear.md
+  - .agents/skills/web-design-engineer/references/style-recipes/mailchimp-freddie.md
+  - .agents/skills/web-design-engineer/references/style-recipes/mid-century-modern.md
+  - .agents/skills/web-design-engineer/references/style-recipes/monocle-magazine.md
+  - .agents/skills/web-design-engineer/references/style-recipes/muji-kenya-hara.md
+  - .agents/skills/web-design-engineer/references/style-recipes/notion-pre-ai.md
+  - .agents/skills/web-design-engineer/references/style-recipes/nyt-the-daily.md
+  - .agents/skills/web-design-engineer/references/style-recipes/pentagram.md
+  - .agents/skills/web-design-engineer/references/style-recipes/raycast.md
+  - .agents/skills/web-design-engineer/references/style-recipes/resn-storytelling.md
+  - .agents/skills/web-design-engineer/references/style-recipes/stripe-press.md
+  - .agents/skills/web-design-engineer/references/style-recipes/tufte-dataink.md
+  - .agents/skills/web-design-engineer/references/style-recipes/vercel-mesh.md
+  - .agents/skills/web-design-engineer/references/style-recipes/vignelli-swiss-helvetica.md
+  - .agents/skills/web-design-engineer/references/style-recipes/y2k-retrofuturism.md
+  deployed_file_hashes:
+    .agents/skills/web-design-engineer/README.md: sha256:78a907bd5afdaee5a6212d6a4824a6a9dc74cf84b5ae3f63f61c7bbf21e6f5e7
+    .agents/skills/web-design-engineer/README.zh-CN.md: sha256:4ff1546955bb54c3fc0bc6fb69976d7abc39bbbe420e057bac1bdd64f737a826
+    .agents/skills/web-design-engineer/SKILL.md: sha256:00633aa430281e9921c35bb181ab233879d2a21e999d605fc330258a54e26df1
+    .agents/skills/web-design-engineer/agents/openai.yaml: sha256:783ab8fa074706aa2adb2168ab0e8a0a58014c9f3b5c93328f8654ca63ce92ac
+    .agents/skills/web-design-engineer/manifest.json: sha256:d777b1d11b64d50f2b9f6de08529abf7a79f039d40c8fbab0f7119e393451a52
+    .agents/skills/web-design-engineer/references/advanced-patterns.md: sha256:e25a37f18e9c578ce24c90ba7b95025eb28c2c75bb03df91b365af9fb8f304d8
+    .agents/skills/web-design-engineer/references/block-library.md: sha256:b24ebc20fb171c0462dfebc7a180598c3f9009d64bb692811109ae61375929c8
+    .agents/skills/web-design-engineer/references/browser-acceptance.md: sha256:59b6bd23d41f8ae1fa05b6dece2384c1195f5c3ccae7ff2c2aae94930a963751
+    .agents/skills/web-design-engineer/references/critique-guide.md: sha256:2f57cce5a9d65be8a24978080d9e99f6d0c7929279f142ca86bde0cca1c23dcb
+    .agents/skills/web-design-engineer/references/design-calibration.md: sha256:754086f26f7f880cb23559a16b446847c72673a8428087bc539da2d9137fd8e3
+    .agents/skills/web-design-engineer/references/design-directions.md: sha256:6ca039cdb5452c3ecdf95b7f846cf949c601d4cb8ea20854d0ccf0cd7fcd94d4
+    .agents/skills/web-design-engineer/references/failure-patterns.md: sha256:7c87f57f090180d1731c974f5f9a45b8704b9a134f482b883a021ab4a88ea66d
+    .agents/skills/web-design-engineer/references/redesign-protocol.md: sha256:3c79fc6fde3bed3ca046f43d99ca58be74e36e9c69b7076a7322f8140a980294
+    .agents/skills/web-design-engineer/references/style-recipes/INDEX.md: sha256:2eac072037914205fcf219228e68683d1882a525ff5776dcd4ecb52ce4b62435
+    .agents/skills/web-design-engineer/references/style-recipes/active-theory.md: sha256:3bca2379cbe0fcf1be9f84de5b0291f1a6d4aeede42fe97e4b682cb29371d170
+    .agents/skills/web-design-engineer/references/style-recipes/aesop.md: sha256:94a5d2f1d0613953d7390646322e907bf8139816dd7669916bb73f4ed532146d
+    .agents/skills/web-design-engineer/references/style-recipes/apple-hig.md: sha256:94f511fabd22f65591679b7dfa101b96973f3c2060516adbecdfbb1f4f7e36cc
+    .agents/skills/web-design-engineer/references/style-recipes/are-na.md: sha256:623804a342c853774bb824bb281e5df3d515dcef3cc9e77c7914ed5d6547ce94
+    .agents/skills/web-design-engineer/references/style-recipes/balenciaga-post-2017.md: sha256:21412888d7e6225e70bad89c8b0b2ed69da0730a7c560359f61490f293ee8b16
+    .agents/skills/web-design-engineer/references/style-recipes/bloomberg-businessweek-turley.md: sha256:42d3beaf6892e2299e73190e2645b14e25acd8bc89b35e9403194151c854fb37
+    .agents/skills/web-design-engineer/references/style-recipes/bloomberg-terminal.md: sha256:1ec2e502b3f1137ae0c85f24848f8387b95bed1428fcbbdaff1e77d5d1a84b9d
+    .agents/skills/web-design-engineer/references/style-recipes/dieter-rams-braun.md: sha256:ab2eb763c711877601c1c672b9e3c3a980fe3d0512197c83e05f942941f4cdd3
+    .agents/skills/web-design-engineer/references/style-recipes/field-io.md: sha256:c765ad82f53d440a8cda70df8dd0c8e799d194da4d6d2fd73e1839c49ccc357f
+    .agents/skills/web-design-engineer/references/style-recipes/headspace-meditation.md: sha256:4940e6ee8f132b7695b719b4eb894dbeef8369294e53c9434e12e49ad8197f4a
+    .agents/skills/web-design-engineer/references/style-recipes/linear.md: sha256:06c554638918c6ebcc0ff2d9b0841fe6d6077bccbcc71051aef5ad1f7fa576be
+    .agents/skills/web-design-engineer/references/style-recipes/mailchimp-freddie.md: sha256:1b06325763809c4b0656527f3ce6c25f3160c001c6fd2ab94de6af300150e3e0
+    .agents/skills/web-design-engineer/references/style-recipes/mid-century-modern.md: sha256:281f5acfca37d69bd02cdc37f33e3b2f5dbf3390c57a2629fb24e4ba3db0a0c9
+    .agents/skills/web-design-engineer/references/style-recipes/monocle-magazine.md: sha256:df9c7c4713dd84725fe544fb8335377ef841e9371359d133efbdbef3bc4075b2
+    .agents/skills/web-design-engineer/references/style-recipes/muji-kenya-hara.md: sha256:a447bfbea3db9ec5bea0dc55c6aa3c4426fc4d4d018f1b1f893957a1701a8a1b
+    .agents/skills/web-design-engineer/references/style-recipes/notion-pre-ai.md: sha256:1b85ae5aa77ee1b0a523b3557045678c022e748f6bd427248f19052d00f8cbe1
+    .agents/skills/web-design-engineer/references/style-recipes/nyt-the-daily.md: sha256:d7a3b8a3969b62b19a917fc1e0e0602acdfeb6f16dfdb4c9d4d6a208261c300a
+    .agents/skills/web-design-engineer/references/style-recipes/pentagram.md: sha256:e42a40687b0b7f06ac23ecd747cfe0fa902c60e2d6b3b553ab2ab7996fa75a7f
+    .agents/skills/web-design-engineer/references/style-recipes/raycast.md: sha256:b22651b5b35a67b2ec06217d1554c193912177c2eb56406fe6dafc171f3304c6
+    .agents/skills/web-design-engineer/references/style-recipes/resn-storytelling.md: sha256:88602c9962d8630d0c06ac4e72b732bc4dbedd8e4ef9ed4fe9cac0dbfea0ac1e
+    .agents/skills/web-design-engineer/references/style-recipes/stripe-press.md: sha256:f5b3863bc4f8fcd7b803eedbb8884f8b97c76a2e082c2627d635605d779a5644
+    .agents/skills/web-design-engineer/references/style-recipes/tufte-dataink.md: sha256:28d0503016076db52508cb1d05406939f8c765e58fe13e57806f0417b9f9bcc9
+    .agents/skills/web-design-engineer/references/style-recipes/vercel-mesh.md: sha256:04b8710a6ffe26619ac53804f2c5fd59c2641727b9ed8e638cbb52d75b16be5d
+    .agents/skills/web-design-engineer/references/style-recipes/vignelli-swiss-helvetica.md: sha256:c249bc06c32d6fa8daeee4c9e51dfb587f0a88726d6afc6679767d8e9300e203
+    .agents/skills/web-design-engineer/references/style-recipes/y2k-retrofuturism.md: sha256:0f9495838f2477ade046e092bbbedf04c83f82f48ce89505ff514546ef69ef2b
+  content_hash: sha256:e647878cfe40ae1c5254f10b3ed5420dc3b1abc35722977fcf8f2975132b016c
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/README.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:78a907bd5afdaee5a6212d6a4824a6a9dc74cf84b5ae3f63f61c7bbf21e6f5e7
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/README.zh-CN.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:4ff1546955bb54c3fc0bc6fb69976d7abc39bbbe420e057bac1bdd64f737a826
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:00633aa430281e9921c35bb181ab233879d2a21e999d605fc330258a54e26df1
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:783ab8fa074706aa2adb2168ab0e8a0a58014c9f3b5c93328f8654ca63ce92ac
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/manifest.json
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:d777b1d11b64d50f2b9f6de08529abf7a79f039d40c8fbab0f7119e393451a52
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/advanced-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:e25a37f18e9c578ce24c90ba7b95025eb28c2c75bb03df91b365af9fb8f304d8
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/block-library.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:b24ebc20fb171c0462dfebc7a180598c3f9009d64bb692811109ae61375929c8
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/browser-acceptance.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:59b6bd23d41f8ae1fa05b6dece2384c1195f5c3ccae7ff2c2aae94930a963751
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/critique-guide.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:2f57cce5a9d65be8a24978080d9e99f6d0c7929279f142ca86bde0cca1c23dcb
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/design-calibration.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:754086f26f7f880cb23559a16b446847c72673a8428087bc539da2d9137fd8e3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/design-directions.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:6ca039cdb5452c3ecdf95b7f846cf949c601d4cb8ea20854d0ccf0cd7fcd94d4
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/failure-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:7c87f57f090180d1731c974f5f9a45b8704b9a134f482b883a021ab4a88ea66d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/redesign-protocol.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:3c79fc6fde3bed3ca046f43d99ca58be74e36e9c69b7076a7322f8140a980294
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/INDEX.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:2eac072037914205fcf219228e68683d1882a525ff5776dcd4ecb52ce4b62435
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/active-theory.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:3bca2379cbe0fcf1be9f84de5b0291f1a6d4aeede42fe97e4b682cb29371d170
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/aesop.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:94a5d2f1d0613953d7390646322e907bf8139816dd7669916bb73f4ed532146d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/apple-hig.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:94f511fabd22f65591679b7dfa101b96973f3c2060516adbecdfbb1f4f7e36cc
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/are-na.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:623804a342c853774bb824bb281e5df3d515dcef3cc9e77c7914ed5d6547ce94
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/balenciaga-post-2017.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:21412888d7e6225e70bad89c8b0b2ed69da0730a7c560359f61490f293ee8b16
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/bloomberg-businessweek-turley.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:42d3beaf6892e2299e73190e2645b14e25acd8bc89b35e9403194151c854fb37
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/bloomberg-terminal.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:1ec2e502b3f1137ae0c85f24848f8387b95bed1428fcbbdaff1e77d5d1a84b9d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/dieter-rams-braun.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:ab2eb763c711877601c1c672b9e3c3a980fe3d0512197c83e05f942941f4cdd3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/field-io.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:c765ad82f53d440a8cda70df8dd0c8e799d194da4d6d2fd73e1839c49ccc357f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/headspace-meditation.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:4940e6ee8f132b7695b719b4eb894dbeef8369294e53c9434e12e49ad8197f4a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/linear.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:06c554638918c6ebcc0ff2d9b0841fe6d6077bccbcc71051aef5ad1f7fa576be
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/mailchimp-freddie.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:1b06325763809c4b0656527f3ce6c25f3160c001c6fd2ab94de6af300150e3e0
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/mid-century-modern.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:281f5acfca37d69bd02cdc37f33e3b2f5dbf3390c57a2629fb24e4ba3db0a0c9
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/monocle-magazine.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:df9c7c4713dd84725fe544fb8335377ef841e9371359d133efbdbef3bc4075b2
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/muji-kenya-hara.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:a447bfbea3db9ec5bea0dc55c6aa3c4426fc4d4d018f1b1f893957a1701a8a1b
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/notion-pre-ai.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:1b85ae5aa77ee1b0a523b3557045678c022e748f6bd427248f19052d00f8cbe1
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/nyt-the-daily.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:d7a3b8a3969b62b19a917fc1e0e0602acdfeb6f16dfdb4c9d4d6a208261c300a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/pentagram.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:e42a40687b0b7f06ac23ecd747cfe0fa902c60e2d6b3b553ab2ab7996fa75a7f
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/raycast.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:b22651b5b35a67b2ec06217d1554c193912177c2eb56406fe6dafc171f3304c6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/resn-storytelling.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:88602c9962d8630d0c06ac4e72b732bc4dbedd8e4ef9ed4fe9cac0dbfea0ac1e
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/stripe-press.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:f5b3863bc4f8fcd7b803eedbb8884f8b97c76a2e082c2627d635605d779a5644
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/tufte-dataink.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:28d0503016076db52508cb1d05406939f8c765e58fe13e57806f0417b9f9bcc9
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/vercel-mesh.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:04b8710a6ffe26619ac53804f2c5fd59c2641727b9ed8e638cbb52d75b16be5d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/vignelli-swiss-helvetica.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:c249bc06c32d6fa8daeee4c9e51dfb587f0a88726d6afc6679767d8e9300e203
+- kind: project-relative
+  target: agents
+  value: .agents/skills/web-design-engineer/references/style-recipes/y2k-retrofuturism.md
+  runtime: null
+  scope: project
+  owners:
+  - conardli/garden-skills/skills/web-design-engineer
+  active_owner: conardli/garden-skills/skills/web-design-engineer
+  content_hash: sha256:0f9495838f2477ade046e092bbbedf04c83f82f48ce89505ff514546ef69ef2b

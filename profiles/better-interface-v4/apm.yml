@@ -1,0 +1,14 @@
+name: better-interface-v4
+version: 1.0.0
+description: Skill Tester profile better-interface-v4
+targets:
+  - codex
+dependencies:
+  apm:
+    - jakubkrehel/skills/skills/better-interface#267330e1adfc66a718fb65fa6918c1f06d0a689e
+    - jakubkrehel/skills/skills/better-accessibility#267330e1adfc66a718fb65fa6918c1f06d0a689e
+    - jakubkrehel/skills/skills/better-layout#267330e1adfc66a718fb65fa6918c1f06d0a689e
+    - jakubkrehel/skills/skills/better-writing#267330e1adfc66a718fb65fa6918c1f06d0a689e
+    - jakubkrehel/skills/skills/better-typography#267330e1adfc66a718fb65fa6918c1f06d0a689e
+    - jakubkrehel/skills/skills/better-colors#267330e1adfc66a718fb65fa6918c1f06d0a689e
+    - jakubkrehel/skills/skills/better-ui#267330e1adfc66a718fb65fa6918c1f06d0a689e

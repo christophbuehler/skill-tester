@@ -10,12 +10,30 @@ export const registry = () =>
   JSON.parse(
     fs.readFileSync(path.join(root, "profiles/registry.json"), "utf8"),
   );
+export function resolveSkills(skills, entries) {
+  const requestedSkills = [...skills];
+  const resolved = [], profileInstructions = [];
+  function include(id, stack = []) {
+    const entry = entries[id];
+    if (!entry) throw Error(`Unknown skill: ${id}`);
+    if (stack.includes(id)) throw Error(`Cyclic skill dependency: ${id}`);
+    if (entry.blockedReason) throw Error(`Skill ${id} is unavailable for generation: ${entry.blockedReason}`);
+    if (entry.profileInstruction && !profileInstructions.includes(entry.profileInstruction)) profileInstructions.push(entry.profileInstruction);
+    if (entry.aliasOf) return include(entry.aliasOf, [...stack, id]);
+    if (!resolved.includes(id)) resolved.push(id);
+    for (const dependency of entry.dependencies || []) include(dependency, [...stack, id]);
+  }
+  for (const id of skills) include(id);
+  return { skills: resolved, requestedSkills, profileInstructions };
+}
 export function register(id, skills, label = id) {
   if (!/^[a-z0-9][a-z0-9-]*$/.test(id))
     throw Error("Profile ID must be lowercase letters, digits, and hyphens.");
   if (new Set(skills).size !== skills.length) throw Error("Duplicate skills.");
   const entries = registry();
-  for (const s of skills) if (!entries[s]) throw Error(`Unknown skill: ${s}`);
+  const selection = resolveSkills(skills, entries);
+  skills = selection.skills;
+  const { requestedSkills, profileInstructions } = selection;
   const dir = path.join(root, "profiles", id);
   if (fs.existsSync(dir))
     throw Error(
@@ -24,7 +42,7 @@ export function register(id, skills, label = id) {
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(
     path.join(dir, "profile.json"),
-    JSON.stringify({ id, label, skills }, null, 2) + "\n",
+    JSON.stringify({ id, label, skills, requestedSkills, ...(profileInstructions.length ? { profileInstructions } : {}) }, null, 2) + "\n",
   );
   const deps = skills
     .map(

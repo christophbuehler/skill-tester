@@ -163,3 +163,19 @@ pnpm generate apple-design-refined-v3
 Apple Design source: [`skills/apple-design/SKILL.md`](skills/apple-design/SKILL.md), with [sources and interpretation](skills/apple-design/references/design-language.md). Combine registered skill IDs explicitly as before; `apple-design-refined` is the current registry ID, while `apple-design-refined-v3` is its single-skill profile. The first Apple attempt remains under `apple-design-v3`: it failed a navigation check because exiting controls remained exposed. The refined skill makes exit semantics explicit and removes uppercase welcome eyebrows. This is a recorded skill revision with a new run, not an overwrite of the failed attempt. See [v3 results and observations](docs/folio-v3.md).
 
 The first v3 batch compares baseline and the two custom directions; earlier upstream-skill runs remain available, and those pinned profiles can also be generated under the new benchmark.
+
+## Folio v4: complementary skills and explicit decisions
+
+See the [complete requested skill catalog and selection rationale](docs/skill-catalog.md).
+The new `considered-v4` combination selects Frontend Design, Emil Design Engineering,
+Beautiful Shadows, Accessibility, and the new Nested Geometry skill. The shared brief
+requires light mode and semantic Tailwind color tokens; optional dark canvases must be
+OLED black. Reasoning is xhigh on the same model, so earlier medium runs are not a
+controlled skill-only comparison. V3 inputs are preserved in `benchmark/versions/folio-v3`.
+
+Aliases and required sibling skills resolve into explicit profile selections. `adapt`
+is an Impeccable mode; `better-interface` expands its six required domain skills.
+Blocked source/tooling configurations fail with an explanation. No global skills are
+installed. Every active skill is shown by name in the comparison chooser, and run
+notes link to the generated decision ledger rather than claiming file loading proves
+useful influence.

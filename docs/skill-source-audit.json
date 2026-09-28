@@ -1,0 +1,673 @@
+{
+  "auditedAt": "2026-09-28",
+  "skills": [
+    {
+      "id": "emilkowalski/apple-design",
+      "repo": "emilkowalski/skills",
+      "path": "skills/apple-design",
+      "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/emilkowalski/apple-design",
+        "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/apple-design"
+      ],
+      "usefulness": "Physical interactions, velocity-aware interruptible springs, anchored overlays, materials, typography and accessibility. Complements general composition skills.",
+      "conflicts": [
+        "Overlaps Emil motion guidance; Apple materializes blur despite transform/opacity-only performance advice.",
+        "Default system font conflicts with distinctive custom-font art direction.",
+        "Apple says inline validation while better-accessibility says validate on submit.",
+        "Initial-response-only clause is conditional on no specific question, so does not block a concrete generation brief."
+      ],
+      "availability": "available"
+    },
+    {
+      "id": "emilkowalski/emil-design-eng",
+      "repo": "emilkowalski/skills",
+      "path": "skills/emil-design-eng",
+      "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/emilkowalski/emil-design-eng",
+        "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/emil-design-eng"
+      ],
+      "usefulness": "Frequency-sensitive motion, button feedback, popover origin, tooltip delay groups, performance and animation debugging.",
+      "conflicts": [
+        "Press scale .97 versus better-ui mandatory .96.",
+        "Never animate keyboard actions; preserve static state feedback.",
+        "UI timing under 300ms conflicts with its own 200\u2013500ms modal range; scope by interaction.",
+        "Never ease-in conflicts with Superfuture exit ease-in.",
+        "Must use Before/After/Why table when reviewing."
+      ],
+      "availability": "available"
+    },
+    {
+      "id": "mengto/beautiful-shadows",
+      "repo": "MengTo/Skills",
+      "path": "agent-skills/web-design/beautiful-shadows",
+      "commit": "798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/mengto/beautiful-shadows",
+        "https://github.com/MengTo/Skills/tree/798db0a3ee4429ac8ed6bc5f4a59b6d45e7a914d/agent-skills/web-design/beautiful-shadows"
+      ],
+      "usefulness": "Narrow reusable layer of three exact neutral Tailwind shadow recipes; useful on light elevated controls and popovers.",
+      "conflicts": [
+        "Do not stack default Tailwind shadow utilities or alternative better-ui shadow recipes on same element.",
+        "Dark surfaces need structural borders; black layered shadows alone do little.",
+        "Large shadow unsuitable for dense lists; shadow skill does not supply composition."
+      ],
+      "availability": "available"
+    },
+    {
+      "id": "jakubkrehel/better-interface",
+      "repo": "jakubkrehel/skills",
+      "path": "skills/better-interface",
+      "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md",
+        "review-format.md",
+        "../better-accessibility/SKILL.md",
+        "../better-layout/SKILL.md",
+        "../better-writing/SKILL.md",
+        "../better-typography/SKILL.md",
+        "../better-colors/SKILL.md",
+        "../better-ui/SKILL.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/jakubkrehel/better-interface",
+        "https://github.com/jakubkrehel/skills/tree/267330e1adfc66a718fb65fa6918c1f06d0a689e/skills/better-interface"
+      ],
+      "usefulness": "Evidence-based consolidated review across six domains with explicit coverage, root-cause grouping, ranked concrete fixes and verification.",
+      "conflicts": [
+        "Orchestrator only: all six sibling skills must be explicitly included; otherwise domains are Not reviewed.",
+        "Screen reviews only; change reviews routed to user-invoked interface-review.",
+        "Review is read-only unless implementation requested.",
+        "Sibling better-ui has exact animation values that conflict with Emil; preserve explicit profile precedence or report conflict."
+      ],
+      "availability": "available-with-explicit-dependencies",
+      "dependencyEntries": [
+        {
+          "id": "jakubkrehel/better-accessibility",
+          "repo": "jakubkrehel/skills",
+          "path": "skills/better-accessibility",
+          "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+          "license": "MIT",
+          "requiredResources": [
+            "SKILL.md",
+            "focus-and-keyboard.md",
+            "forms.md",
+            "hit-areas.md",
+            "motion-and-zoom.md",
+            "screen-readers.md",
+            "semantics-and-aria.md"
+          ]
+        },
+        {
+          "id": "jakubkrehel/better-layout",
+          "repo": "jakubkrehel/skills",
+          "path": "skills/better-layout",
+          "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+          "license": "MIT",
+          "requiredResources": [
+            "SKILL.md",
+            "grouping-and-alignment.md",
+            "spacing-and-adaptivity.md"
+          ]
+        },
+        {
+          "id": "jakubkrehel/better-writing",
+          "repo": "jakubkrehel/skills",
+          "path": "skills/better-writing",
+          "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+          "license": "MIT",
+          "requiredResources": [
+            "SKILL.md"
+          ]
+        },
+        {
+          "id": "jakubkrehel/better-typography",
+          "repo": "jakubkrehel/skills",
+          "path": "skills/better-typography",
+          "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+          "license": "MIT",
+          "requiredResources": [
+            "SKILL.md",
+            "choosing-fonts.md",
+            "css-cheat-sheet.md",
+            "details-and-accessibility.md",
+            "spacing-and-sizing.md",
+            "variable-fonts-and-opentype.md",
+            "wrapping-and-punctuation.md"
+          ]
+        },
+        {
+          "id": "jakubkrehel/better-colors",
+          "repo": "jakubkrehel/skills",
+          "path": "skills/better-colors",
+          "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+          "license": "MIT",
+          "requiredResources": [
+            "SKILL.md",
+            "color-formats.md",
+            "color-usage.md",
+            "contrast.md",
+            "palette-generation.md",
+            "palette-structure.md",
+            "token-naming.md"
+          ]
+        },
+        {
+          "id": "jakubkrehel/better-ui",
+          "repo": "jakubkrehel/skills",
+          "path": "skills/better-ui",
+          "commit": "267330e1adfc66a718fb65fa6918c1f06d0a689e",
+          "license": "MIT",
+          "requiredResources": [
+            "SKILL.md",
+            "animations.md",
+            "enter-exit.md",
+            "icon-transitions.md",
+            "icons.md",
+            "performance.md",
+            "surfaces.md"
+          ]
+        }
+      ],
+      "packagingEvidence": "APM local probe installed only the requested subdir, both in .agents and apm_modules. Use seven explicit profile entries at the same pin; no fabricated single-skill completeness."
+    },
+    {
+      "id": "superfuture/design-review",
+      "repo": "Superfuture/design-review",
+      "path": "design-review/skills/design-review",
+      "commit": "d4d2609b53fccb475d11490e2c6261e5eb2f0c5d",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md",
+        "checklist.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/superfuture/design-review",
+        "https://github.com/Superfuture/design-review/tree/d4d2609b53fccb475d11490e2c6261e5eb2f0c5d/design-review/skills/design-review"
+      ],
+      "usefulness": "Concise ten-dimension critique with concrete measured fixes; useful as audited research or explicit review after policy decisions.",
+      "conflicts": [
+        "Mandatory silent telemetry writes ~/.design-review/id and POSTs external metrics.",
+        "Pro branch reads local license key and uploads artifact/code/observations to remote service; unsuitable for isolated offline generation.",
+        "Unlicensed run includes marketing upsell and additional telemetry.",
+        "Review implementation asks confirmation for subjective restructure; source is review-oriented rather than generation-oriented.",
+        "Exit ease-in conflicts with Emil and better-ui ease-out."
+      ],
+      "availability": "blocked-for-local-generation",
+      "blockReason": "Telemetry, home-directory state, automatic license lookup and optional remote artifact upload conflict with isolated benchmark. Do not silently modify upstream and claim original skill.",
+      "licenseEvidence": "MIT declared in README and design-review/.claude-plugin/plugin.json; no LICENSE file in current checkout."
+    },
+    {
+      "id": "accessibility",
+      "repo": "addyosmani/web-quality-skills",
+      "path": "skills/accessibility",
+      "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "requiredResources": [
+        "SKILL.md",
+        "references/A11Y-PATTERNS.md",
+        "references/WCAG.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/addyosmani/accessibility",
+        "https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility"
+      ],
+      "usefulness": "Strong complement: semantic HTML, names/roles/states, focus, keyboard, reduced motion and evidence-led axe/Lighthouse plus manual checks.",
+      "conflicts": [
+        "Accessibility table incorrectly labels large-text thresholds in px rather than pt; use authoritative WCAG thresholds, not its table literally. Screen reader/device evidence remains separate from automated score."
+      ],
+      "resourceHashes": {
+        "SKILL.md": "267fb2a0707d6142f2871f22688203a42ba21291a2aa200fb740936e41362b5d",
+        "references/A11Y-PATTERNS.md": "f10e238dd4dd3c4f51134c2056bc02d3dd4f8fb6ccc9145c2c1ba7aab4d58140",
+        "references/WCAG.md": "16683e025e3833d931c9d880645d98a448827f97e10189b6c8f12c832e7a2361"
+      }
+    },
+    {
+      "id": "shadcn",
+      "repo": "shadcn-ui/ui",
+      "path": "skills/shadcn",
+      "commit": "db2db460a26fa84fb65c8d903b213925fbdee9ed",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE.md"
+      ],
+      "requiredResources": [
+        "SKILL.md",
+        "agents/openai.yml",
+        "assets/shadcn-small.png",
+        "assets/shadcn.png",
+        "cli.md",
+        "customization.md",
+        "evals/evals.json",
+        "mcp.md",
+        "registry.md",
+        "rules/base-vs-radix.md",
+        "rules/chat.md",
+        "rules/composition.md",
+        "rules/forms.md",
+        "rules/icons.md",
+        "rules/styling.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/shadcn-ui/shadcn",
+        "https://github.com/shadcn-ui/ui/tree/db2db460a26fa84fb65c8d903b213925fbdee9ed/skills/shadcn"
+      ],
+      "usefulness": "Useful semantic Tailwind and established component implementation workflow only if benchmark intentionally ships shadcn components, configuration, docs and dependencies. Current version contains explicit chat primitives.",
+      "conflicts": [
+        "Requires CLI info/docs/search/add and fetching docs; offline bare starter cannot faithfully execute. Mandates MessageScroller/Message/Bubble/Attachment/Marker and variants-first styling, restricting topology and conflicting with hand-rolled UI skills. It is not aesthetic art direction."
+      ],
+      "resourceHashes": {
+        "SKILL.md": "deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4",
+        "agents/openai.yml": "35db91b1eef58b2abe01da9b88577de5a44e233b740cd93d692ddeeadd2afe4d",
+        "assets/shadcn-small.png": "0ecc62d682727f68fc4937eed19960c706714fa084d44f63028d611ae02bf3d7",
+        "assets/shadcn.png": "7d60ad6fec4d89a0d44ba5a3c9283d2fea0047af5467f9227040e20d927d39b7",
+        "cli.md": "a381e35bf36fe7bb851952c13707e01e82434fd7a4a4e53f6df26c6370838904",
+        "customization.md": "84c1d47168c4b8adb5840e4af30a4e373ae3377c1110478c8974f398dd63f5ba",
+        "evals/evals.json": "58aca2760b0cc5265bb575f76cd8eed344b88544314b8cb2cd53e0b8007dc936",
+        "mcp.md": "8d696b4e45b7d0e337367248513bd9acebe8f3bcfd7b748c775e5a337c8f38c8",
+        "registry.md": "4f239be36bd2b58e17047db1ca80ab7da00e15a8b73242e5e4d50d113c4caa05",
+        "rules/base-vs-radix.md": "2b2deb47d004285220c1fc6b38bb2edc2d0ccbcdafd031b0b189d5d8ed0d1ba8",
+        "rules/chat.md": "de29c12524a27578a59ecf8c95ea939278c1a3572a3706bfc99f6f92cb770b7b",
+        "rules/composition.md": "f282df828d83a91132a846ddb62eea149a7c7c94822e9ca88cfddf85af01aa41",
+        "rules/forms.md": "29593e14381e34626f8e0e9c15c59f3394b92a0623af6a6ec94585400123853c",
+        "rules/icons.md": "d4a58266648872d9ee07d0c2368843a1cb88b8253b7f528dd7bda9d68b6c2535",
+        "rules/styling.md": "f88fbd72dff862805b786dc7d7e4c74c83030fc278c5b97c993e4e665001798c"
+      }
+    },
+    {
+      "id": "impeccable",
+      "repo": "pbakaus/impeccable",
+      "path": ".agents/skills/impeccable",
+      "commit": "9d715cc4f5564a990ca8345abfdd5df6dc9b41c8",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "requiredResources": [
+        "SKILL.md",
+        "agents/impeccable_asset_producer.toml",
+        "agents/impeccable_documenter.toml",
+        "agents/impeccable_finish_reviewer.toml",
+        "agents/impeccable_manual_edit_applier.toml",
+        "agents/openai.yaml",
+        "reference/adapt.md",
+        "reference/adapt.native.md",
+        "reference/android.md",
+        "reference/animate.md",
+        "reference/audit.md",
+        "reference/audit.native.md",
+        "reference/bolder.md",
+        "reference/clarify.md",
+        "reference/colorize.md",
+        "reference/component-review.md",
+        "reference/craft-floor.md",
+        "reference/craft.md",
+        "reference/critique.md",
+        "reference/degraded/asset-producer.md",
+        "reference/degraded/documenter.md",
+        "reference/degraded/finish-reviewer.md",
+        "reference/degraded/manual-edit-applier.md",
+        "reference/delight.md",
+        "reference/distill.md",
+        "reference/doctor.md",
+        "reference/document.md",
+        "reference/extract.md",
+        "reference/generate.md",
+        "reference/harden.md",
+        "reference/hooks.md",
+        "reference/init.md",
+        "reference/ios.md",
+        "reference/layout.md",
+        "reference/live-setup.md",
+        "reference/live.md",
+        "reference/new-work.md",
+        "reference/onboard.md",
+        "reference/operate.md",
+        "reference/optimize.md",
+        "reference/overdrive.md",
+        "reference/polish.md",
+        "reference/quieter.md",
+        "reference/region-map.md",
+        "reference/routing.md",
+        "reference/shape.md",
+        "reference/typeset.md",
+        "reference/visualize.md",
+        "scripts/VERSION",
+        "scripts/command-metadata.json",
+        "scripts/data/font-index-failures.json",
+        "scripts/data/font-index.json",
+        "scripts/impeccable",
+        "scripts/impeccable.cmd",
+        "scripts/live-browser-dom.js",
+        "scripts/live-browser-ignores.js",
+        "scripts/live-browser-session.js",
+        "scripts/live-browser.js",
+        "scripts/modern-screenshot.umd.js"
+      ],
+      "sourceURLs": [
+        "https://github.com/pbakaus/impeccable/tree/9d715cc4f5564a990ca8345abfdd5df6dc9b41c8/.agents/skills/impeccable"
+      ],
+      "usefulness": "Strong unified lead if using Operate plus Read mode: familiar task UI, restrained semantic states, fixed rem typography, short purposeful motion; includes adapt and extensive craft guidance.",
+      "conflicts": [
+        "Large overlap with frontend-design and interaction-design. Launcher may download binary; new-work demands concept-seed/decision workflow; constrained benchmark must explicitly document unavailable tooling and use allowed fallback. Same commit as existing registry, not a new upstream revision."
+      ],
+      "resourceHashes": {
+        "SKILL.md": "6eeec6ef2028388a17de9f17a56c9cb7dbc7c8e7e1a8c15b831b0ba3e42168ac",
+        "agents/impeccable_asset_producer.toml": "690a5e08a9b848ab3057014b75c101fe23a5c81f251b6e7a5844bb9cd4184d37",
+        "agents/impeccable_documenter.toml": "2feb3768125ba6469c92a50d516727e6d42f44579165ddfd33409948e2a3803d",
+        "agents/impeccable_finish_reviewer.toml": "d57c3e0453f601ad688911fca4471057c7b46b561fcd42a1e12a581101c5186c",
+        "agents/impeccable_manual_edit_applier.toml": "6c9ce3e27ec4520ead001da3aad2a2ebba481c4e5cd22873db8890259ee579fe",
+        "agents/openai.yaml": "cbd8bd68fa00935dd0f179adb169252629cf7ee443ea9dc7db77e7ef2cf77446",
+        "reference/adapt.md": "871a8e4d749b807c693ebabd83defbd6c76e1bd2a0f53a28a460cb1308ba8634",
+        "reference/adapt.native.md": "6acc0bf221a4ddc6e5c6438348920b2ca2393b29c4314dbde2cdc23f2b1a9639",
+        "reference/android.md": "058f81f256134841875fd3183e06b37a023de0c877fd2b9eecd97011640791fe",
+        "reference/animate.md": "d658c48ffbe0031e8e3b318996cad6ceafe29e40aa50d5bb25e4bf1d6839dc7c",
+        "reference/audit.md": "d5f83912eda93d42f93522bb74aeff0ea04d9c559577ec52fcccc130dd03166d",
+        "reference/audit.native.md": "960cb922bc934adbf9192e9428ff6bec1f382038166f02a785939c93b7391067",
+        "reference/bolder.md": "f964506c0fae87b3c2c1db7016ddc9be9ef970bbcf5548d684b997b5d5991586",
+        "reference/clarify.md": "173dd66abe65633910dcb04a51f40d6ff2a793f87088f022a02fc4cad24dd133",
+        "reference/colorize.md": "bc5f71f1129d0f2c310d913d07c8dc609a1d25644121bd78c308f42d52a0b9e9",
+        "reference/component-review.md": "37edf9fbedb2bc609341e009b14588f46022fd7aace9399b5cb8f1c8325f81fe",
+        "reference/craft-floor.md": "e802e4f7bdc89050a9c0f2ca506e1d493a2316e6e810c0336c57aa073717ef3e",
+        "reference/craft.md": "9205e222bc6565b37fb504ceec93233c2d2a456802b69d16e6b1c44723907c4c",
+        "reference/critique.md": "cb8caddbb3919e5bf7f252143b519fb16db28a244642d937b186cb89962d9201",
+        "reference/degraded/asset-producer.md": "a690f011420ba486f268d790bb088e9a58c1be503d7ab17d68cd819ddf0f75bb",
+        "reference/degraded/documenter.md": "bcc05ea92faebb5c74037a9d4263a5ce9a56f5ab07c8ab3c59ee704d8cade745",
+        "reference/degraded/finish-reviewer.md": "275dd1b6e63bbd30d2713227c4f79b880a8bc4e01cc48d392068bb86939d3afa",
+        "reference/degraded/manual-edit-applier.md": "5fae7f8a2fc3ddd49ad0a413446dc44daedef5b6b7de5eb935bd2fbfad646d58",
+        "reference/delight.md": "098a891028ce59c212b747d3c70468dd750aff7053a703d1336045ed31e0da7c",
+        "reference/distill.md": "ea8432c90c30ecb0426662a681ead5c0941113079704e1a766cda09e85b15b4f",
+        "reference/doctor.md": "a98b397cedeeaa1da57f3395b3d9b6c1fc477f4247fb9dc13e4da3da588283ff",
+        "reference/document.md": "3673248740bcdd1122ccc610093ba2fe52f3943a61ce0b7170b74dc49e5b6098",
+        "reference/extract.md": "31b90048c0b540daec46762a10c2b6b6434737a89af005054d8b848d829d003b",
+        "reference/generate.md": "53628d05b7eff0d4f48b95e48fad40266452fe1b42f398bd88dd9328353e0dd8",
+        "reference/harden.md": "16ba7fca1973c5faf53dd2ca523559129c0fe9e5f8d50b645f527afa78186cd2",
+        "reference/hooks.md": "56cc1bba51e6805de370160ce4a9399fef3740571204f13c3c751725870305e5",
+        "reference/init.md": "bb069b43c09109d7031b0374e31955749fec657b252d39782f11e8985aca2b51",
+        "reference/ios.md": "40c87038b5f75147a5952a96237acf312a327bf70c1bcd8e0a5f064625ae9668",
+        "reference/layout.md": "0bc7d7971b3edf2acd0580e847458dc6d84129d90715b452799ace3bed815c7c",
+        "reference/live-setup.md": "2b5b2fbf5f658f34ea1997fb1aeebe01604d05187f75c6a4f1f55a5bc78520a4",
+        "reference/live.md": "68c5636a7858dd0b5137a9229c15e25fdc2ee40a0f8a4e9d809f78e809256262",
+        "reference/new-work.md": "af95e45318c9235de676cf1075840518cdd3a924b8bde952b5161d72caf3b290",
+        "reference/onboard.md": "ef2dde00030580ed2765cbf7be9b2ea4a6f64cb915b804fd6f6abcf38051c7b9",
+        "reference/operate.md": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d",
+        "reference/optimize.md": "f672ef8251a3ed4051a053d30819664951b17540b2899acd27d20e500c234abc",
+        "reference/overdrive.md": "fce6688138d2ceb1e3d2cde5231f54b1d8dc8748b4c95a7919aa83b6f924cf96",
+        "reference/polish.md": "81666fc7f783b4e3514db6554e713dc0479bd9cdedb06e93d15f8b579aae869a",
+        "reference/quieter.md": "190a4e642ca362d7499f3c3ab123e21f18f75457d11f072b545a183f296e6495",
+        "reference/region-map.md": "980fa8280907591eeb0b382c4edd2653405e548d66c5b670e5581ee521db8111",
+        "reference/routing.md": "77ae09542fbc10aa4e8b119d6fd19359908a47c13c30068d6a150bfdb50e3e10",
+        "reference/shape.md": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23",
+        "reference/typeset.md": "442749aed338f51c1a3ccfb182c6ade9b74b90590b67984062ac94a5b100e914",
+        "reference/visualize.md": "896da399bafcffb0623bdd81bb18709d6eab25c9d5917e739c8798f31ff0d076",
+        "scripts/VERSION": "1f2110568627307becae713f8b808f3d9d912d4b2a24ed6a78605f03f7437d3c",
+        "scripts/command-metadata.json": "e8720f3aa41135211cc58cc299a39eeda86c75651f4279cc1ede8db10dcc0584",
+        "scripts/data/font-index-failures.json": "835f19a0a3812f3652dd6979a2ce5597f654fd01f26e1b420b92d5f42b997ce4",
+        "scripts/data/font-index.json": "47edbdfaf27073c47033d1ac7dfee881be49e2dcbda7671d1157300481dde6da",
+        "scripts/impeccable": "39d9600489073e227e4f4d55c451ce4252a6632ed7ae37923efbbcbc91f16d07",
+        "scripts/impeccable.cmd": "759bab1d8adc071fdde2efcf6e2157aa4026f3c2b4f3c342a8070bf328011616",
+        "scripts/live-browser-dom.js": "de1b7404f4cdfd7b515196afb17b74b1980f0bc88cb8681ae93a76ca48ec7bdb",
+        "scripts/live-browser-ignores.js": "c1cb6877ca99a0c1b38ba0c7d59f32702d3022f6821d8045f7133f7c40b6362f",
+        "scripts/live-browser-session.js": "edddeb3fad88adec9a055b1bf9d5c75418cbe97a13b1a7f6765e73249e482563",
+        "scripts/live-browser.js": "f68a3d68ac92606e91aa8878e003d9432ddd09aa97ca01c6b3ce46c937dca316",
+        "scripts/modern-screenshot.umd.js": "bb36665889124a0b6e15f16045265737449c3bdcf2712cdb08af3cfa01563e2b"
+      }
+    },
+    {
+      "id": "interaction-design",
+      "repo": "wshobson/agents",
+      "path": "plugins/ui-design/skills/interaction-design",
+      "commit": "9b15b34b0bfc13a815cbfc2366e14ea549e09422",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "requiredResources": [
+        "SKILL.md",
+        "references/animation-libraries.md",
+        "references/microinteraction-patterns.md",
+        "references/scroll-animations.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/wshobson/interaction-design",
+        "https://github.com/wshobson/agents/tree/9b15b34b0bfc13a815cbfc2366e14ea549e09422/plugins/ui-design/skills/interaction-design"
+      ],
+      "usefulness": "Compact complement to art direction: state continuity, timing, interruptibility, loading feedback, transform/opacity, reduced motion.",
+      "conflicts": [
+        "Examples import framer-motion but benchmark has motion/react. Samples use raw Tailwind hues and handcrafted controls, incompatible verbatim with shadcn semantic/component requirements. PageTransition key prop is an illustrative anti-pattern since React key is not received as a prop. Do not copy examples mechanically."
+      ],
+      "resourceHashes": {
+        "SKILL.md": "87f2765ed1deeef3f1c06f9e4338ff103c391c6c4adcdffc885f3516b7c34ff2",
+        "references/animation-libraries.md": "92da251d881a6a0647f09b83c9cf8cbdfb5d408d54e1098097bb0eda336e6d0f",
+        "references/microinteraction-patterns.md": "c276b03468bacacf7a7d8d95c70114d9724854ac2e084ad63f0b6e1ef00a948a",
+        "references/scroll-animations.md": "34f32ef74c4f44bf57a721f95cd523b63dd1d02711f16ccb8472d1d7a4f78a35"
+      }
+    },
+    {
+      "id": "frontend-design",
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "commit": "33375500bcea98d610eb30ce10ac4e59b89c390d",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "skills/frontend-design/LICENSE.txt"
+      ],
+      "requiredResources": [
+        "LICENSE.txt",
+        "SKILL.md"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/anthropics/frontend-design",
+        "https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design"
+      ],
+      "usefulness": "Best compact visual lead: subject-specific token plan, deliberate type/layout, one memorable detail, restrained decoration, useful plain copy. User-pinned light palette takes precedence.",
+      "conflicts": [
+        "Does not supply semantic Tailwind infrastructure or deep app behavior. Overlaps with Impeccable; choose one lead to reduce duplicated art-direction mandates. Current revision equals existing registry pin."
+      ],
+      "resourceHashes": {
+        "LICENSE.txt": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "SKILL.md": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+      }
+    },
+    {
+      "id": "web-design-engineer",
+      "repo": "ConardLi/garden-skills",
+      "path": "skills/web-design-engineer",
+      "commit": "aaf9a82f5efd73e87cc0998edc398e75bfc35901",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "requiredResources": [
+        "README.md",
+        "README.zh-CN.md",
+        "SKILL.md",
+        "agents/openai.yaml",
+        "manifest.json",
+        "references/advanced-patterns.md",
+        "references/block-library.md",
+        "references/browser-acceptance.md",
+        "references/critique-guide.md",
+        "references/design-calibration.md",
+        "references/design-directions.md",
+        "references/failure-patterns.md",
+        "references/redesign-protocol.md",
+        "references/style-recipes/INDEX.md",
+        "references/style-recipes/active-theory.md",
+        "references/style-recipes/aesop.md",
+        "references/style-recipes/apple-hig.md",
+        "references/style-recipes/are-na.md",
+        "references/style-recipes/balenciaga-post-2017.md",
+        "references/style-recipes/bloomberg-businessweek-turley.md",
+        "references/style-recipes/bloomberg-terminal.md",
+        "references/style-recipes/dieter-rams-braun.md",
+        "references/style-recipes/field-io.md",
+        "references/style-recipes/headspace-meditation.md",
+        "references/style-recipes/linear.md",
+        "references/style-recipes/mailchimp-freddie.md",
+        "references/style-recipes/mid-century-modern.md",
+        "references/style-recipes/monocle-magazine.md",
+        "references/style-recipes/muji-kenya-hara.md",
+        "references/style-recipes/notion-pre-ai.md",
+        "references/style-recipes/nyt-the-daily.md",
+        "references/style-recipes/pentagram.md",
+        "references/style-recipes/raycast.md",
+        "references/style-recipes/resn-storytelling.md",
+        "references/style-recipes/stripe-press.md",
+        "references/style-recipes/tufte-dataink.md",
+        "references/style-recipes/vercel-mesh.md",
+        "references/style-recipes/vignelli-swiss-helvetica.md",
+        "references/style-recipes/y2k-retrofuturism.md"
+      ],
+      "sourceURLs": [
+        "https://github.com/ConardLi/garden-skills/tree/aaf9a82f5efd73e87cc0998edc398e75bfc35901/skills/web-design-engineer"
+      ],
+      "usefulness": "Rich design-calibration, preservation protocols, style recipes and failure patterns; useful for interactive exploratory prototyping.",
+      "conflicts": [
+        "Explicit checkpoints require design system approval, v0 approval and further decision approval. Assumes inline Babel/CDN React, window exports, Tweaks controls and at least three variants; conflicts with fixed React/TypeScript bundled benchmark and one interface. Prefers handwritten CSS and discourages Tailwind CDN; no reason to insert Tweaks into research chatbot. Better as separately adapted experiment than core combined stack."
+      ],
+      "resourceHashes": {
+        "README.md": "78a907bd5afdaee5a6212d6a4824a6a9dc74cf84b5ae3f63f61c7bbf21e6f5e7",
+        "README.zh-CN.md": "4ff1546955bb54c3fc0bc6fb69976d7abc39bbbe420e057bac1bdd64f737a826",
+        "SKILL.md": "00633aa430281e9921c35bb181ab233879d2a21e999d605fc330258a54e26df1",
+        "agents/openai.yaml": "783ab8fa074706aa2adb2168ab0e8a0a58014c9f3b5c93328f8654ca63ce92ac",
+        "manifest.json": "d777b1d11b64d50f2b9f6de08529abf7a79f039d40c8fbab0f7119e393451a52",
+        "references/advanced-patterns.md": "e25a37f18e9c578ce24c90ba7b95025eb28c2c75bb03df91b365af9fb8f304d8",
+        "references/block-library.md": "b24ebc20fb171c0462dfebc7a180598c3f9009d64bb692811109ae61375929c8",
+        "references/browser-acceptance.md": "59b6bd23d41f8ae1fa05b6dece2384c1195f5c3ccae7ff2c2aae94930a963751",
+        "references/critique-guide.md": "2f57cce5a9d65be8a24978080d9e99f6d0c7929279f142ca86bde0cca1c23dcb",
+        "references/design-calibration.md": "754086f26f7f880cb23559a16b446847c72673a8428087bc539da2d9137fd8e3",
+        "references/design-directions.md": "6ca039cdb5452c3ecdf95b7f846cf949c601d4cb8ea20854d0ccf0cd7fcd94d4",
+        "references/failure-patterns.md": "7c87f57f090180d1731c974f5f9a45b8704b9a134f482b883a021ab4a88ea66d",
+        "references/redesign-protocol.md": "3c79fc6fde3bed3ca046f43d99ca58be74e36e9c69b7076a7322f8140a980294",
+        "references/style-recipes/INDEX.md": "2eac072037914205fcf219228e68683d1882a525ff5776dcd4ecb52ce4b62435",
+        "references/style-recipes/active-theory.md": "3bca2379cbe0fcf1be9f84de5b0291f1a6d4aeede42fe97e4b682cb29371d170",
+        "references/style-recipes/aesop.md": "94a5d2f1d0613953d7390646322e907bf8139816dd7669916bb73f4ed532146d",
+        "references/style-recipes/apple-hig.md": "94f511fabd22f65591679b7dfa101b96973f3c2060516adbecdfbb1f4f7e36cc",
+        "references/style-recipes/are-na.md": "623804a342c853774bb824bb281e5df3d515dcef3cc9e77c7914ed5d6547ce94",
+        "references/style-recipes/balenciaga-post-2017.md": "21412888d7e6225e70bad89c8b0b2ed69da0730a7c560359f61490f293ee8b16",
+        "references/style-recipes/bloomberg-businessweek-turley.md": "42d3beaf6892e2299e73190e2645b14e25acd8bc89b35e9403194151c854fb37",
+        "references/style-recipes/bloomberg-terminal.md": "1ec2e502b3f1137ae0c85f24848f8387b95bed1428fcbbdaff1e77d5d1a84b9d",
+        "references/style-recipes/dieter-rams-braun.md": "ab2eb763c711877601c1c672b9e3c3a980fe3d0512197c83e05f942941f4cdd3",
+        "references/style-recipes/field-io.md": "c765ad82f53d440a8cda70df8dd0c8e799d194da4d6d2fd73e1839c49ccc357f",
+        "references/style-recipes/headspace-meditation.md": "4940e6ee8f132b7695b719b4eb894dbeef8369294e53c9434e12e49ad8197f4a",
+        "references/style-recipes/linear.md": "06c554638918c6ebcc0ff2d9b0841fe6d6077bccbcc71051aef5ad1f7fa576be",
+        "references/style-recipes/mailchimp-freddie.md": "1b06325763809c4b0656527f3ce6c25f3160c001c6fd2ab94de6af300150e3e0",
+        "references/style-recipes/mid-century-modern.md": "281f5acfca37d69bd02cdc37f33e3b2f5dbf3390c57a2629fb24e4ba3db0a0c9",
+        "references/style-recipes/monocle-magazine.md": "df9c7c4713dd84725fe544fb8335377ef841e9371359d133efbdbef3bc4075b2",
+        "references/style-recipes/muji-kenya-hara.md": "a447bfbea3db9ec5bea0dc55c6aa3c4426fc4d4d018f1b1f893957a1701a8a1b",
+        "references/style-recipes/notion-pre-ai.md": "1b85ae5aa77ee1b0a523b3557045678c022e748f6bd427248f19052d00f8cbe1",
+        "references/style-recipes/nyt-the-daily.md": "d7a3b8a3969b62b19a917fc1e0e0602acdfeb6f16dfdb4c9d4d6a208261c300a",
+        "references/style-recipes/pentagram.md": "e42a40687b0b7f06ac23ecd747cfe0fa902c60e2d6b3b553ab2ab7996fa75a7f",
+        "references/style-recipes/raycast.md": "b22651b5b35a67b2ec06217d1554c193912177c2eb56406fe6dafc171f3304c6",
+        "references/style-recipes/resn-storytelling.md": "88602c9962d8630d0c06ac4e72b732bc4dbedd8e4ef9ed4fe9cac0dbfea0ac1e",
+        "references/style-recipes/stripe-press.md": "f5b3863bc4f8fcd7b803eedbb8884f8b97c76a2e082c2627d635605d779a5644",
+        "references/style-recipes/tufte-dataink.md": "28d0503016076db52508cb1d05406939f8c765e58fe13e57806f0417b9f9bcc9",
+        "references/style-recipes/vercel-mesh.md": "04b8710a6ffe26619ac53804f2c5fd59c2641727b9ed8e638cbb52d75b16be5d",
+        "references/style-recipes/vignelli-swiss-helvetica.md": "c249bc06c32d6fa8daeee4c9e51dfb587f0a88726d6afc6679767d8e9300e203",
+        "references/style-recipes/y2k-retrofuturism.md": "0f9495838f2477ade046e092bbbedf04c83f82f48ce89505ff514546ef69ef2b"
+      }
+    },
+    {
+      "id": "adapt",
+      "repo": "pbakaus/impeccable",
+      "path": ".agents/skills/impeccable",
+      "commit": "9d715cc4f5564a990ca8345abfdd5df6dc9b41c8",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "entrypoint": "reference/adapt.md",
+      "standaloneSkill": false,
+      "requiredResources": [
+        "SKILL.md",
+        "agents/impeccable_asset_producer.toml",
+        "agents/impeccable_documenter.toml",
+        "agents/impeccable_finish_reviewer.toml",
+        "agents/impeccable_manual_edit_applier.toml",
+        "agents/openai.yaml",
+        "reference/adapt.md",
+        "reference/adapt.native.md",
+        "reference/android.md",
+        "reference/animate.md",
+        "reference/audit.md",
+        "reference/audit.native.md",
+        "reference/bolder.md",
+        "reference/clarify.md",
+        "reference/colorize.md",
+        "reference/component-review.md",
+        "reference/craft-floor.md",
+        "reference/craft.md",
+        "reference/critique.md",
+        "reference/degraded/asset-producer.md",
+        "reference/degraded/documenter.md",
+        "reference/degraded/finish-reviewer.md",
+        "reference/degraded/manual-edit-applier.md",
+        "reference/delight.md",
+        "reference/distill.md",
+        "reference/doctor.md",
+        "reference/document.md",
+        "reference/extract.md",
+        "reference/generate.md",
+        "reference/harden.md",
+        "reference/hooks.md",
+        "reference/init.md",
+        "reference/ios.md",
+        "reference/layout.md",
+        "reference/live-setup.md",
+        "reference/live.md",
+        "reference/new-work.md",
+        "reference/onboard.md",
+        "reference/operate.md",
+        "reference/optimize.md",
+        "reference/overdrive.md",
+        "reference/polish.md",
+        "reference/quieter.md",
+        "reference/region-map.md",
+        "reference/routing.md",
+        "reference/shape.md",
+        "reference/typeset.md",
+        "reference/visualize.md",
+        "scripts/VERSION",
+        "scripts/command-metadata.json",
+        "scripts/data/font-index-failures.json",
+        "scripts/data/font-index.json",
+        "scripts/impeccable",
+        "scripts/impeccable.cmd",
+        "scripts/live-browser-dom.js",
+        "scripts/live-browser-ignores.js",
+        "scripts/live-browser-session.js",
+        "scripts/live-browser.js",
+        "scripts/modern-screenshot.umd.js"
+      ],
+      "sourceURLs": [
+        "https://www.ui-skills.com/skills/pbakaus/adapt",
+        "https://github.com/pbakaus/impeccable/blob/9d715cc4f5564a990ca8345abfdd5df6dc9b41c8/.agents/skills/impeccable/reference/adapt.md"
+      ],
+      "usefulness": "Responsive refinement playbook: preserve core functionality, content-driven breakpoints, safe areas, input-method queries, progressive disclosure and real gesture checks.",
+      "conflicts": [
+        "Directory lists adapt as installable standalone skill but current upstream exposes only unified impeccable SKILL.md. Do not invent nonexistent path or silently extract a reference as a new upstream skill. Selecting impeccable already includes adapt. Desktop persistent sidebar/mobile bottom navigation are suggested patterns subordinate to explicit brief."
+      ]
+    }
+  ],
+  "adhx": "Requested post could not be fetched; no claims derived from it."
+}

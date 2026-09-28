@@ -1,0 +1,35 @@
+{
+  "skill_name": "modern-interface-craft",
+  "evals": [
+    {
+      "id": 1,
+      "name": "notification-settings",
+      "prompt": "Build a polished notification-settings panel for a professional planning app called Orbit. Deliver a standalone index.html with inline CSS and JavaScript, no external dependencies or assets. Include three labeled notification toggles, a daily-summary time field, save feedback, a simulated save failure with retry, and a cancel/reset action. Make it usable on desktop and mobile. Use fictional content and local state only. Include a short DESIGN.md explaining choices and any unverified behavior. Do not browse or use unrelated skills.",
+      "expected_output": "Working responsive settings UI with coherent design, complete save/recovery flow, keyboard controls and thoughtful motion.",
+      "files": [],
+      "assertions": [
+        "No external network assets or runtime dependencies are required.",
+        "At 390px and 1280px the page has no horizontal overflow or runtime errors.",
+        "Every interactive control has an accessible name; automated serious/critical accessibility findings are absent.",
+        "A reduced-motion preference disables nonessential spatial motion.",
+        "Three notification controls and a labeled summary-time field can be changed; reset restores saved values.",
+        "Simulated save failure is visible, retry reaches success, and the interface remains usable."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "document-explorer",
+      "prompt": "Build a polished document explorer for a research app called Index. Deliver standalone index.html with inline CSS and JavaScript, no external dependencies or assets. Show six fictional documents, a search field, category filters, selectable document details, and an empty-results reset action. Make the selected document and its details usable on desktop and mobile. Use local state only. Include a short DESIGN.md explaining choices and any unverified behavior. Do not browse or use unrelated skills.",
+      "expected_output": "Distinctive responsive document discovery UI with search, filter, selection, recoverable empty state, accessible controls and purposeful transitions.",
+      "files": [],
+      "assertions": [
+        "No external network assets or runtime dependencies are required.",
+        "At 390px and 1280px the page has no horizontal overflow or runtime errors.",
+        "Every interactive control has an accessible name; automated serious/critical accessibility findings are absent.",
+        "A reduced-motion preference disables nonessential spatial motion.",
+        "Search and category filtering change the displayed documents; no-results offers a working reset.",
+        "Selecting a document exposes its details at desktop and mobile widths."
+      ]
+    }
+  ]
+}

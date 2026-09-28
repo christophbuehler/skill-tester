@@ -244,7 +244,7 @@ test('curated follow-up exposes its parent and additional review instructions',a
  const run=runs.find(r=>r.mode==='curated-followup');
  test.skip(!run,'No curated follow-up imported');
  await page.goto('/skill-tester/');
- const card=page.locator('article.variant-card').filter({has:page.getByRole('heading',{name:run.label,exact:true})});
+ const card=page.locator(`article.variant-card[data-run-id="${run.id}"]`);
  await card.getByRole('button',{name:'Run details'}).click();
  await expect(page.getByRole('dialog')).toContainText('Curated follow-up (extra review, not a fresh benchmark run)');
  await expect(page.getByRole('dialog')).toContainText(run.parentRunId);

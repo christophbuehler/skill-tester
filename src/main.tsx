@@ -274,6 +274,7 @@ function App() {
                 {runs.map((run, i) => (
                   <article
                     key={run.id}
+                    data-run-id={run.id}
                     className={`variant-card ${selected.includes(run.id) ? "selected" : ""}`}
                     style={
                       {

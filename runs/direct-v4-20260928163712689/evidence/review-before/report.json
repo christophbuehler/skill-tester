@@ -1,0 +1,150 @@
+{
+  "captures": [
+    "desktop-welcome.png",
+    "desktop-research.png",
+    "intermediate-welcome.png",
+    "intermediate-research.png",
+    "mobile-welcome.png",
+    "mobile-research.png",
+    "mobile-attachment.png",
+    "mobile-activity.png",
+    "interaction-desktop.png",
+    "interaction-mobile.png"
+  ],
+  "observations": [
+    {
+      "state": "desktop-welcome",
+      "overflow": false
+    },
+    {
+      "state": "desktop-research",
+      "overflow": false
+    },
+    {
+      "state": "intermediate-welcome",
+      "overflow": false
+    },
+    {
+      "state": "intermediate-research",
+      "overflow": false
+    },
+    {
+      "state": "mobile-welcome",
+      "overflow": false
+    },
+    {
+      "state": "mobile-research",
+      "overflow": false
+    },
+    {
+      "state": "mobile-attachment",
+      "overflow": false
+    },
+    {
+      "state": "mobile-activity",
+      "overflow": false
+    },
+    {
+      "state": "cancellation",
+      "retryVisible": true
+    },
+    {
+      "state": "reduced-motion",
+      "composerVisible": true
+    }
+  ],
+  "runtimeErrors": [],
+  "accessibility": [
+    {
+      "viewport": "desktop",
+      "findings": []
+    },
+    {
+      "viewport": "intermediate",
+      "findings": []
+    },
+    {
+      "viewport": "mobile",
+      "findings": []
+    }
+  ],
+  "recordings": [
+    {
+      "video": "interaction-desktop.webm",
+      "sheet": "interaction-desktop.png",
+      "events": [
+        {
+          "label": "Conversation navigation already exposed",
+          "ms": 4
+        },
+        {
+          "label": "Add local document",
+          "ms": 4
+        },
+        {
+          "label": "Remove document",
+          "ms": 619
+        },
+        {
+          "label": "Send first message",
+          "ms": 1240
+        },
+        {
+          "label": "Stop",
+          "ms": 1671
+        },
+        {
+          "label": "Retry",
+          "ms": 2134
+        },
+        {
+          "label": "Completed",
+          "ms": 5152
+        }
+      ],
+      "durationSeconds": 5.76,
+      "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+    },
+    {
+      "video": "interaction-mobile.webm",
+      "sheet": "interaction-mobile.png",
+      "events": [
+        {
+          "label": "Open history",
+          "ms": 3
+        },
+        {
+          "label": "Dismiss history with Escape",
+          "ms": 739
+        },
+        {
+          "label": "Add local document",
+          "ms": 1245
+        },
+        {
+          "label": "Remove document",
+          "ms": 1863
+        },
+        {
+          "label": "Send first message",
+          "ms": 2495
+        },
+        {
+          "label": "Stop",
+          "ms": 2938
+        },
+        {
+          "label": "Retry",
+          "ms": 3400
+        },
+        {
+          "label": "Completed",
+          "ms": 6418
+        }
+      ],
+      "durationSeconds": 7.44,
+      "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+    }
+  ],
+  "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+}

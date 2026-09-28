@@ -1,5 +1,831 @@
 [
   {
+    "id": "direct-v4-20260928164801943",
+    "profile": "direct-v4",
+    "requestedSkills": [
+      "modern-interface-craft-direct",
+      "apple-design-emil",
+      "accessibility",
+      "nested-geometry",
+      "motion-storytelling"
+    ],
+    "label": "Folio / Direct / Reviewed",
+    "mode": "curated-followup",
+    "parentRunId": "direct-v4-20260928163712689",
+    "parentSourceHash": "ccbab9eae6eba3c1cc8ee1a2f043817be3b069dfa4e91960fb58ee3242ed8b98",
+    "reviewInstruction": "# Complete verification of the material-focus iteration\n\nThe parent `direct-v4-20260928163712689` timed out just after implementing the user-requested composer/sidebar changes. Preserve the implementation and finish this bounded review promptly. Do not redesign, add features or rewrite the existing ledger. The authoritative user requirements are in the parent's recorded review and are repeated briefly here: no input outline/ring; a real plus at rest; stable placeholder/prose alignment while the material height, horizontal inset and radius animate; descriptive attachment controls below on engagement; one persistent textarea, no target movement during activation; no history search, selected stripe or dot; transparent New chat at rest. Keep keyboard focus perceptible via surface tone and preserve reduced motion.\n\nInspect the CURRENT captures supplied by the host, run typecheck/build if changing code, and fix only concrete remaining failures. The input text and sibling reading layout must not shift on focus. Plus activation must reliably hand focus to the textarea. Controls must be usable by keyboard and touch, and hidden controls must not remain focusable. Preserve immediate state updates, scroll position, stop/retry and attachment handling. End the session once this verification is complete; a short verification note is enough. The host handles final browser tests and motion checks.\n",
+    "reviewInstructionHash": "72fc2774b0bd491b4f0d593798bde013b0a3aef12996b108a70950d4bbe19166",
+    "skills": [
+      {
+        "id": "modern-interface-craft-direct",
+        "name": "Modern Interface Craft / Direct",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/modern-interface-craft",
+        "commit": "2677ddd7d3b0fd7ccd4290909a0e4868bc1ef791",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "references/light-workspace.md",
+          "references/interaction-recipes.md",
+          "references/research.md",
+          "references/source-audit.json"
+        ]
+      },
+      {
+        "id": "apple-design-emil",
+        "repo": "emilkowalski/skills",
+        "path": "skills/apple-design",
+        "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md"
+        ],
+        "name": "Apple Design (Emil Kowalski)",
+        "sourceURLs": [
+          "https://www.ui-skills.com/skills/emilkowalski/apple-design",
+          "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/apple-design"
+        ]
+      },
+      {
+        "id": "accessibility",
+        "repo": "addyosmani/web-quality-skills",
+        "path": "skills/accessibility",
+        "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "references/A11Y-PATTERNS.md",
+          "references/WCAG.md"
+        ],
+        "name": "Accessibility",
+        "sourceURLs": [
+          "https://www.ui-skills.com/skills/addyosmani/accessibility",
+          "https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility"
+        ]
+      },
+      {
+        "id": "nested-geometry",
+        "name": "Nested Geometry",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/nested-geometry",
+        "commit": "0fdd20bed5a45857c652427a445089b045167413",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "scripts/geometry.mjs"
+        ]
+      },
+      {
+        "id": "motion-storytelling",
+        "name": "Motion Storytelling",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/motion-storytelling",
+        "commit": "046ff46b275cb8aa8414741ad938f912098df872",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "references/brief-template.md"
+        ]
+      }
+    ],
+    "createdAt": "2026-09-28T16:48:03.811Z",
+    "benchmark": "folio-v4",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "promptHash": "93c78854cda813b18d4f77f0af7d3c3ee110cd72d8a5e809eb7998afcd143f8a",
+    "starterHash": "73076abaa79d22db5d11e7d05ec9e95652316ffa8bb94937a77e7eb1fe647966",
+    "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/modern-interface-craft/SKILL.md\n- .agents/skills/apple-design/SKILL.md\n- .agents/skills/accessibility/SKILL.md\n- .agents/skills/nested-geometry/SKILL.md\n- .agents/skills/motion-storytelling/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+    "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+    "cliVersion": "codex-cli 0.153.4",
+    "isolation": {
+      "passed": true,
+      "skills": 5,
+      "promptHash": "b7bf2e5b3768709a43156e65400003cc6d790181cafa918c02f58fda3a82787b"
+    },
+    "repairCount": 0,
+    "refinementCount": 1,
+    "refinementRounds": 1,
+    "taskPrompt": "Build Folio, a fictional research tool for professionals working through questions and documents. Deliver a complete React/Tailwind application with a distinct, coherent product point of view. The useful work is the interface's focus.\n\nPeople need to start and revisit conversations, write multiline questions, attach/remove local documents, read streaming Markdown answers, understand tool activity, stop, retry, and copy useful responses. Use the supplied useChat hook and preserve its fixtures and behavior. Read CONTRACT.md and CAPABILITIES.md for the API, accessible control names, and available resources.\n\nOwn the information architecture, composition, typography, geometry, identity, and interaction design. No navigation layout or composer structure is prescribed. Apply the selected skills thoughtfully: reconcile overlaps, use guidance where it improves a real user action, and explain conflicts. Baseline has no selected skill. Design for light mode in this benchmark. Use Tailwind with semantic color variables: color literals belong only in the centralized token declarations, never in component classes, inline styles, SVG attributes, or scattered CSS rules. Name tokens by purpose rather than hue. If offering an optional dark theme, its canvas must be OLED black; light is the default.\n\nBefore implementation, use DESIGN.md to compare a few genuinely different product approaches and select one. Record decisions as you make them: the alternative actually considered, the exact skill/reference guidance (or your own reasoning for baseline), why it better serves this product, and where it is implemented. Do not invent an earlier intention or claim causal proof from one generation. A skill that did not change a decision should be reported honestly. Keep this process note out of the product UI.\n\nBuild the complete experience, including populated conversations and small screens. Polish should be visible in hierarchy, precise relationships between shapes, and useful interaction feedback. Copy should help someone act or understand a state; do not pad the experience with invented marketing claims. Show necessary demo/privacy information without repeating it throughout the screen. No fake features.\n\nWrite presentation source under src/ except protected src/main.tsx; DESIGN.md is also allowed. Preserve the shared package, fixtures, configuration, tests, versions, and benchmark instructions. No backend, real AI calls, uploads, remote assets, network calls, or new dependencies. Use only selected skills, with their supplied references; no unrelated skills, memory, plugins, subagents, host projects, or web research. The behavioral contract wins on actual behavior conflicts, without prescribing aesthetic choices.\n\nYou have one implementation session, two fresh browser-informed refinement sessions, and at most one objective repair. The runner captures desktop/mobile states and interaction contact sheets outside your sandbox. These are opportunities for substantive product critique, not just adjusting spacing. Run pnpm typecheck and pnpm build --configLoader runner as needed. Do not attempt to bypass sandbox browser restrictions. Finish with working source and honest verification notes; do not commit or publish.\n",
+    "refinementPrompt": "Review the actual interface in the attached settled screenshots and interaction contact sheets. Read source, DESIGN.md, and every selected skill entrypoint again. The report identifies image filenames and objective findings; temporal samples are not smooth video playback.\n\nAct as a critical product designer seeing this implementation for the first time. Find the three most consequential weaknesses before changing anything. Assess the hierarchy of the whole screen, how quickly a person can begin/resume useful work, the continuity between entry and conversation, geometry at actual rendered sizes, readability of long responses, and feedback during real input/navigation/file/streaming actions. Is the skill guidance implemented in these details, or merely repeated in DESIGN.md? Remove elements that do not earn their attention. Preserve deliberate choices that already work.\n\nMake substantive improvements where warranted. Avoid restyling purely for novelty or adding effects to satisfy a checklist. Inspect mobile and populated states with the same care as welcome. Check keyboard/focus, exiting interactive elements, reduced motion, semantic color tokens and responsive corner/inset relationships. Address objective findings without changing protected behavior or files.\n\nUpdate the decision ledger with the actual previous implementation, precise skill guidance used, resulting change, source location, and what the supplied evidence can and cannot verify. State when guidance confirms an existing choice rather than changing it. No invented browsing, causal claim, aesthetic score, commit or publication.\n",
+    "refinementTimeoutMs": 600000,
+    "status": "passed",
+    "elapsedMs": 164714,
+    "tokenUsage": [
+      {
+        "input_tokens": 486337,
+        "cached_input_tokens": 413184,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2690,
+        "reasoning_output_tokens": 692
+      }
+    ],
+    "loadedSkills": [
+      ".agents/skills/modern-interface-craft/SKILL.md",
+      ".agents/skills/apple-design/SKILL.md",
+      ".agents/skills/accessibility/SKILL.md",
+      ".agents/skills/nested-geometry/SKILL.md",
+      ".agents/skills/motion-storytelling/SKILL.md"
+    ],
+    "validation": [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      },
+      {
+        "task": "semantic-colors",
+        "passed": true
+      }
+    ],
+    "validationAttempts": [
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": true
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ],
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": true
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ]
+    ],
+    "failure": null,
+    "browserReview": {
+      "before": {
+        "captures": [
+          "desktop-welcome.png",
+          "desktop-research.png",
+          "intermediate-welcome.png",
+          "intermediate-research.png",
+          "mobile-welcome.png",
+          "mobile-research.png",
+          "mobile-attachment.png",
+          "mobile-activity.png",
+          "interaction-desktop.png",
+          "interaction-mobile.png"
+        ],
+        "observations": [
+          {
+            "state": "desktop-welcome",
+            "overflow": false
+          },
+          {
+            "state": "desktop-research",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-welcome",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-welcome",
+            "overflow": false
+          },
+          {
+            "state": "mobile-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-attachment",
+            "overflow": false
+          },
+          {
+            "state": "mobile-activity",
+            "overflow": false
+          },
+          {
+            "state": "cancellation",
+            "retryVisible": true
+          },
+          {
+            "state": "reduced-motion",
+            "composerVisible": true
+          }
+        ],
+        "runtimeErrors": [],
+        "accessibility": [
+          {
+            "viewport": "desktop",
+            "findings": []
+          },
+          {
+            "viewport": "intermediate",
+            "findings": []
+          },
+          {
+            "viewport": "mobile",
+            "findings": []
+          }
+        ],
+        "recordings": [
+          {
+            "video": "interaction-desktop.webm",
+            "sheet": "interaction-desktop.png",
+            "events": [
+              {
+                "label": "Conversation navigation already exposed",
+                "ms": 4
+              },
+              {
+                "label": "Add local document",
+                "ms": 4
+              },
+              {
+                "label": "Remove document",
+                "ms": 621
+              },
+              {
+                "label": "Send first message",
+                "ms": 1245
+              },
+              {
+                "label": "Stop",
+                "ms": 1679
+              },
+              {
+                "label": "Retry",
+                "ms": 2141
+              },
+              {
+                "label": "Completed",
+                "ms": 5156
+              }
+            ],
+            "durationSeconds": 5.76,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          },
+          {
+            "video": "interaction-mobile.webm",
+            "sheet": "interaction-mobile.png",
+            "events": [
+              {
+                "label": "Open history",
+                "ms": 4
+              },
+              {
+                "label": "Dismiss history with Escape",
+                "ms": 735
+              },
+              {
+                "label": "Add local document",
+                "ms": 1242
+              },
+              {
+                "label": "Remove document",
+                "ms": 1851
+              },
+              {
+                "label": "Send first message",
+                "ms": 2486
+              },
+              {
+                "label": "Stop",
+                "ms": 2933
+              },
+              {
+                "label": "Retry",
+                "ms": 3394
+              },
+              {
+                "label": "Completed",
+                "ms": 6407
+              }
+            ],
+            "durationSeconds": 7.48,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          }
+        ],
+        "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+      },
+      "after": {
+        "captures": [
+          "desktop-welcome.png",
+          "desktop-research.png",
+          "intermediate-welcome.png",
+          "intermediate-research.png",
+          "mobile-welcome.png",
+          "mobile-research.png",
+          "mobile-attachment.png",
+          "mobile-activity.png",
+          "interaction-desktop.png",
+          "interaction-mobile.png"
+        ],
+        "observations": [
+          {
+            "state": "desktop-welcome",
+            "overflow": false
+          },
+          {
+            "state": "desktop-research",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-welcome",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-welcome",
+            "overflow": false
+          },
+          {
+            "state": "mobile-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-attachment",
+            "overflow": false
+          },
+          {
+            "state": "mobile-activity",
+            "overflow": false
+          },
+          {
+            "state": "cancellation",
+            "retryVisible": true
+          },
+          {
+            "state": "reduced-motion",
+            "composerVisible": true
+          }
+        ],
+        "runtimeErrors": [],
+        "accessibility": [
+          {
+            "viewport": "desktop",
+            "findings": []
+          },
+          {
+            "viewport": "intermediate",
+            "findings": []
+          },
+          {
+            "viewport": "mobile",
+            "findings": []
+          }
+        ],
+        "recordings": [
+          {
+            "video": "interaction-desktop.webm",
+            "sheet": "interaction-desktop.png",
+            "events": [
+              {
+                "label": "Conversation navigation already exposed",
+                "ms": 3
+              },
+              {
+                "label": "Add local document",
+                "ms": 3
+              },
+              {
+                "label": "Remove document",
+                "ms": 619
+              },
+              {
+                "label": "Send first message",
+                "ms": 1237
+              },
+              {
+                "label": "Stop",
+                "ms": 1672
+              },
+              {
+                "label": "Retry",
+                "ms": 2131
+              },
+              {
+                "label": "Completed",
+                "ms": 5140
+              }
+            ],
+            "durationSeconds": 5.8,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          },
+          {
+            "video": "interaction-mobile.webm",
+            "sheet": "interaction-mobile.png",
+            "events": [
+              {
+                "label": "Open history",
+                "ms": 4
+              },
+              {
+                "label": "Dismiss history with Escape",
+                "ms": 731
+              },
+              {
+                "label": "Add local document",
+                "ms": 1239
+              },
+              {
+                "label": "Remove document",
+                "ms": 1850
+              },
+              {
+                "label": "Send first message",
+                "ms": 2490
+              },
+              {
+                "label": "Stop",
+                "ms": 2936
+              },
+              {
+                "label": "Retry",
+                "ms": 3431
+              },
+              {
+                "label": "Completed",
+                "ms": 6476
+              }
+            ],
+            "durationSeconds": 7.56,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          }
+        ],
+        "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+      }
+    },
+    "accessibility": [
+      {
+        "viewport": "desktop-accessibility",
+        "findings": []
+      },
+      {
+        "viewport": "mobile-accessibility",
+        "findings": []
+      }
+    ],
+    "sourceHash": "6a3225d0a53d6e874a8dbdc771c2115bc48732f63804c2e3538374eb62bfe11c"
+  },
+  {
+    "id": "direct-v4-20260928163712689",
+    "profile": "direct-v4",
+    "requestedSkills": [
+      "modern-interface-craft-direct",
+      "apple-design-emil",
+      "accessibility",
+      "nested-geometry",
+      "motion-storytelling"
+    ],
+    "label": "Folio / Direct / Reviewed",
+    "mode": "curated-followup",
+    "parentRunId": "direct-v4-20260928154819804",
+    "parentSourceHash": "5b4fdd2081cbe7ccd9c64bf108b8b12177c5b58c65f79a3c089ddd25577bda78",
+    "reviewInstruction": "# User-directed composer motion and sidebar restraint\n\nApply this explicit user feedback to `direct-v4-20260928154819804`. These instructions supersede conflicting profile advice about history search, a placeholder-only resting composer, or an outlined focus treatment. Keep the shared behavior, exact fixtures, medium-weight typography, desktop sidebar and semantic colors unchanged.\n\n## Composer\n\nThe user wants the input to respond like a physical material on focus, not acquire an outline. Remove the composer outline/ring, including the current spread-only box shadow. Use a clearly perceptible tonal surface change as a non-outline keyboard focus cue; reduced motion must retain that cue. Preserve normal visible keyboard focus for the individual controls.\n\nAt rest, show an operable plus button left of the placeholder, generous horizontal padding on both sides, and a more rounded but not capsule-shaped surface. The placeholder's text edge must align with the chat prose edge, not the outer edge of the composer. This alignment must remain fixed through focus/reveal; inset motion must not shift or scale the glyphs or caret.\n\nOn focus or plus activation, gracefully increase the material's height, reduce its horizontal padding and corner radius together, fade out the plus and reveal descriptive controls such as Attach files below the input. Keep Send absent until there is a valid submission. The plus should meaningfully expand/focus the composer, and must not vanish between pointer-down and click in a way that cancels its own action. Do not leave a hidden plus as a tab stop or drop keyboard focus to body when it disappears.\n\nUse one persistent textarea, a coherent interruptible transition and measured geometry. Prefer animating the surrounding material and reserved control area independently from the stable text/content layout. Keep sibling text, reading position and pointer targets stable; no full-composer scale or long travel across messages. Derive child corners from the actual inset at each state. Make reversing focus halfway through, typing during expansion, multiline drafting, attachment addition/removal, stop/retry and mobile touch usable. Controls should remain present while focus is within the composer, while an interaction needs them, or while content/busy/error state requires them. Outside activation should not shift its target during the click. Preserve space for the expanded material so it does not cover response content. Apply the treatment in welcome and working views; preserve the user's restrained body typography.\n\n## Sidebar\n\nRemove search entirely, including its label and empty-search/reset UI; do not replace it with another search icon or command. History remains directly visible and independently scrollable.\n\nThe selected conversation uses its background tone as the sole decorative selection indicator. Remove the left stripe and trailing dot. Retain aria-current and appropriate keyboard focus feedback.\n\nNew chat is transparent at rest. Give it a restrained fill only on hover/press (and accessible keyboard focus feedback). Avoid adding any replacement ornaments.\n\n## Review\n\nKeep the scope to these changes. Record a concise design note explaining state geometry, stable text alignment and actual verification. Finish within this review session so the host can capture and test the result. Source checks are not motion verification; do not claim live browser inspection inside the sandbox. No new broad redesign, duplicate helper text or extra features.\n",
+    "reviewInstructionHash": "fe2bbe3473a53725767cc7a06a94c173246cc0f01f21995d812642526395b8c1",
+    "skills": [
+      {
+        "id": "modern-interface-craft-direct",
+        "name": "Modern Interface Craft / Direct",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/modern-interface-craft",
+        "commit": "2677ddd7d3b0fd7ccd4290909a0e4868bc1ef791",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "references/light-workspace.md",
+          "references/interaction-recipes.md",
+          "references/research.md",
+          "references/source-audit.json"
+        ]
+      },
+      {
+        "id": "apple-design-emil",
+        "repo": "emilkowalski/skills",
+        "path": "skills/apple-design",
+        "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md"
+        ],
+        "name": "Apple Design (Emil Kowalski)",
+        "sourceURLs": [
+          "https://www.ui-skills.com/skills/emilkowalski/apple-design",
+          "https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/apple-design"
+        ]
+      },
+      {
+        "id": "accessibility",
+        "repo": "addyosmani/web-quality-skills",
+        "path": "skills/accessibility",
+        "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "references/A11Y-PATTERNS.md",
+          "references/WCAG.md"
+        ],
+        "name": "Accessibility",
+        "sourceURLs": [
+          "https://www.ui-skills.com/skills/addyosmani/accessibility",
+          "https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility"
+        ]
+      },
+      {
+        "id": "nested-geometry",
+        "name": "Nested Geometry",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/nested-geometry",
+        "commit": "0fdd20bed5a45857c652427a445089b045167413",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "scripts/geometry.mjs"
+        ]
+      },
+      {
+        "id": "motion-storytelling",
+        "name": "Motion Storytelling",
+        "repo": "christophbuehler/skill-tester",
+        "path": "skills/motion-storytelling",
+        "commit": "046ff46b275cb8aa8414741ad938f912098df872",
+        "license": "MIT",
+        "requiredResources": [
+          "SKILL.md",
+          "LICENSE.txt",
+          "references/brief-template.md"
+        ]
+      }
+    ],
+    "createdAt": "2026-09-28T16:37:14.735Z",
+    "benchmark": "folio-v4",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "promptHash": "93c78854cda813b18d4f77f0af7d3c3ee110cd72d8a5e809eb7998afcd143f8a",
+    "starterHash": "73076abaa79d22db5d11e7d05ec9e95652316ffa8bb94937a77e7eb1fe647966",
+    "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/modern-interface-craft/SKILL.md\n- .agents/skills/apple-design/SKILL.md\n- .agents/skills/accessibility/SKILL.md\n- .agents/skills/nested-geometry/SKILL.md\n- .agents/skills/motion-storytelling/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+    "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+    "cliVersion": "codex-cli 0.153.4",
+    "isolation": {
+      "passed": true,
+      "skills": 5,
+      "promptHash": "b849c7108cb5e2ecd2b65af52a6a28b26cfe02b0544214d6778029406760f0c3"
+    },
+    "repairCount": 0,
+    "refinementCount": 1,
+    "refinementRounds": 1,
+    "taskPrompt": "Build Folio, a fictional research tool for professionals working through questions and documents. Deliver a complete React/Tailwind application with a distinct, coherent product point of view. The useful work is the interface's focus.\n\nPeople need to start and revisit conversations, write multiline questions, attach/remove local documents, read streaming Markdown answers, understand tool activity, stop, retry, and copy useful responses. Use the supplied useChat hook and preserve its fixtures and behavior. Read CONTRACT.md and CAPABILITIES.md for the API, accessible control names, and available resources.\n\nOwn the information architecture, composition, typography, geometry, identity, and interaction design. No navigation layout or composer structure is prescribed. Apply the selected skills thoughtfully: reconcile overlaps, use guidance where it improves a real user action, and explain conflicts. Baseline has no selected skill. Design for light mode in this benchmark. Use Tailwind with semantic color variables: color literals belong only in the centralized token declarations, never in component classes, inline styles, SVG attributes, or scattered CSS rules. Name tokens by purpose rather than hue. If offering an optional dark theme, its canvas must be OLED black; light is the default.\n\nBefore implementation, use DESIGN.md to compare a few genuinely different product approaches and select one. Record decisions as you make them: the alternative actually considered, the exact skill/reference guidance (or your own reasoning for baseline), why it better serves this product, and where it is implemented. Do not invent an earlier intention or claim causal proof from one generation. A skill that did not change a decision should be reported honestly. Keep this process note out of the product UI.\n\nBuild the complete experience, including populated conversations and small screens. Polish should be visible in hierarchy, precise relationships between shapes, and useful interaction feedback. Copy should help someone act or understand a state; do not pad the experience with invented marketing claims. Show necessary demo/privacy information without repeating it throughout the screen. No fake features.\n\nWrite presentation source under src/ except protected src/main.tsx; DESIGN.md is also allowed. Preserve the shared package, fixtures, configuration, tests, versions, and benchmark instructions. No backend, real AI calls, uploads, remote assets, network calls, or new dependencies. Use only selected skills, with their supplied references; no unrelated skills, memory, plugins, subagents, host projects, or web research. The behavioral contract wins on actual behavior conflicts, without prescribing aesthetic choices.\n\nYou have one implementation session, two fresh browser-informed refinement sessions, and at most one objective repair. The runner captures desktop/mobile states and interaction contact sheets outside your sandbox. These are opportunities for substantive product critique, not just adjusting spacing. Run pnpm typecheck and pnpm build --configLoader runner as needed. Do not attempt to bypass sandbox browser restrictions. Finish with working source and honest verification notes; do not commit or publish.\n",
+    "refinementPrompt": "Review the actual interface in the attached settled screenshots and interaction contact sheets. Read source, DESIGN.md, and every selected skill entrypoint again. The report identifies image filenames and objective findings; temporal samples are not smooth video playback.\n\nAct as a critical product designer seeing this implementation for the first time. Find the three most consequential weaknesses before changing anything. Assess the hierarchy of the whole screen, how quickly a person can begin/resume useful work, the continuity between entry and conversation, geometry at actual rendered sizes, readability of long responses, and feedback during real input/navigation/file/streaming actions. Is the skill guidance implemented in these details, or merely repeated in DESIGN.md? Remove elements that do not earn their attention. Preserve deliberate choices that already work.\n\nMake substantive improvements where warranted. Avoid restyling purely for novelty or adding effects to satisfy a checklist. Inspect mobile and populated states with the same care as welcome. Check keyboard/focus, exiting interactive elements, reduced motion, semantic color tokens and responsive corner/inset relationships. Address objective findings without changing protected behavior or files.\n\nUpdate the decision ledger with the actual previous implementation, precise skill guidance used, resulting change, source location, and what the supplied evidence can and cannot verify. State when guidance confirms an existing choice rather than changing it. No invented browsing, causal claim, aesthetic score, commit or publication.\n",
+    "refinementTimeoutMs": 600000,
+    "status": "failed",
+    "elapsedMs": 628852,
+    "tokenUsage": [],
+    "loadedSkills": [
+      ".agents/skills/modern-interface-craft/SKILL.md",
+      ".agents/skills/apple-design/SKILL.md",
+      ".agents/skills/accessibility/SKILL.md",
+      ".agents/skills/nested-geometry/SKILL.md",
+      ".agents/skills/motion-storytelling/SKILL.md"
+    ],
+    "validation": [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      },
+      {
+        "task": "semantic-colors",
+        "passed": true
+      }
+    ],
+    "validationAttempts": [
+      [
+        {
+          "task": "typecheck",
+          "passed": true
+        },
+        {
+          "task": "build",
+          "passed": true
+        },
+        {
+          "task": "test:e2e",
+          "passed": true
+        },
+        {
+          "task": "semantic-colors",
+          "passed": true
+        }
+      ]
+    ],
+    "failure": "refinement-1 timed out",
+    "browserReview": {
+      "before": {
+        "captures": [
+          "desktop-welcome.png",
+          "desktop-research.png",
+          "intermediate-welcome.png",
+          "intermediate-research.png",
+          "mobile-welcome.png",
+          "mobile-research.png",
+          "mobile-attachment.png",
+          "mobile-activity.png",
+          "interaction-desktop.png",
+          "interaction-mobile.png"
+        ],
+        "observations": [
+          {
+            "state": "desktop-welcome",
+            "overflow": false
+          },
+          {
+            "state": "desktop-research",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-welcome",
+            "overflow": false
+          },
+          {
+            "state": "intermediate-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-welcome",
+            "overflow": false
+          },
+          {
+            "state": "mobile-research",
+            "overflow": false
+          },
+          {
+            "state": "mobile-attachment",
+            "overflow": false
+          },
+          {
+            "state": "mobile-activity",
+            "overflow": false
+          },
+          {
+            "state": "cancellation",
+            "retryVisible": true
+          },
+          {
+            "state": "reduced-motion",
+            "composerVisible": true
+          }
+        ],
+        "runtimeErrors": [],
+        "accessibility": [
+          {
+            "viewport": "desktop",
+            "findings": []
+          },
+          {
+            "viewport": "intermediate",
+            "findings": []
+          },
+          {
+            "viewport": "mobile",
+            "findings": []
+          }
+        ],
+        "recordings": [
+          {
+            "video": "interaction-desktop.webm",
+            "sheet": "interaction-desktop.png",
+            "events": [
+              {
+                "label": "Conversation navigation already exposed",
+                "ms": 4
+              },
+              {
+                "label": "Add local document",
+                "ms": 4
+              },
+              {
+                "label": "Remove document",
+                "ms": 619
+              },
+              {
+                "label": "Send first message",
+                "ms": 1240
+              },
+              {
+                "label": "Stop",
+                "ms": 1671
+              },
+              {
+                "label": "Retry",
+                "ms": 2134
+              },
+              {
+                "label": "Completed",
+                "ms": 5152
+              }
+            ],
+            "durationSeconds": 5.76,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          },
+          {
+            "video": "interaction-mobile.webm",
+            "sheet": "interaction-mobile.png",
+            "events": [
+              {
+                "label": "Open history",
+                "ms": 3
+              },
+              {
+                "label": "Dismiss history with Escape",
+                "ms": 739
+              },
+              {
+                "label": "Add local document",
+                "ms": 1245
+              },
+              {
+                "label": "Remove document",
+                "ms": 1863
+              },
+              {
+                "label": "Send first message",
+                "ms": 2495
+              },
+              {
+                "label": "Stop",
+                "ms": 2938
+              },
+              {
+                "label": "Retry",
+                "ms": 3400
+              },
+              {
+                "label": "Completed",
+                "ms": 6418
+              }
+            ],
+            "durationSeconds": 7.44,
+            "notes": "Contact sheet reads left-to-right, top-to-bottom across the complete recording. Event offsets start after initial page/font settling. Video starts before navigation settles. Frames describe sampled states, not an aesthetic score."
+          }
+        ],
+        "motion": "Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity."
+      }
+    },
+    "accessibility": [
+      {
+        "viewport": "desktop-accessibility",
+        "findings": []
+      },
+      {
+        "viewport": "mobile-accessibility",
+        "findings": []
+      }
+    ],
+    "sourceHash": "ccbab9eae6eba3c1cc8ee1a2f043817be3b069dfa4e91960fb58ee3242ed8b98"
+  },
+  {
     "id": "direct-v4-20260928154819804",
     "profile": "direct-v4",
     "requestedSkills": [

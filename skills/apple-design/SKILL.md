@@ -22,6 +22,7 @@ The primary content is opaque and comfortable to read. Translucency belongs to a
 - Use generous continuous-looking rounded geometry: roughly 24–32px for a main control surface/sheet, 16–20px for a nested group, and capsules/circles for small controls. Keep inner and outer curves concentric with their spacing. Use CSS `corner-shape` only as optional enhancement with a reliable border-radius fallback.
 - Give material a subtle edge highlight and a soft, layered shadow only where it floats above content. Choose enough opacity to keep text readable over both light and dark content. An opaque fallback is better than illegible transparency. Do not frame the reading canvas with an unnecessary border.
 - Prefer a restrained wordmark with careful spacing. If an app mark is useful, draw one simple intentional geometric glyph within a rounded tile; do not use the Apple logo, SF Symbols files, or a stack of generic document icons as branding. Use the supplied icon library consistently for controls.
+- Keep visible headings and labels in sentence case. Do not add uppercase, widely tracked eyebrows or a slogan above the task. A short direct invitation and the primary control are enough for a welcome state. Avoid repeating the product category, assistant role, and privacy note in several places.
 
 ## Motion is a spatial contract
 
@@ -33,6 +34,8 @@ Implement the following as real stateful behavior, not styling notes:
 - Activity resolves into a completed summary without a page jump. Copy feedback briefly replaces or supplements the control in place. Returning to an earlier conversation restores useful reading context rather than forcing a scroll to the bottom.
 
 Use Motion layout/presence animation or equivalent measured transitions. Prefer damped, controlled spring movement over wobbling or exaggerated bounce. Use the same physical character across related controls; quick feedback and larger surface movement need different timing. Do not fade whole paragraphs or animate streamed tokens. Design for keyboard, pointer, and touch; the interface should not depend on cursor-following effects.
+
+An exit animation is a visual remnant, not a still-open control surface. As soon as a sheet closes or an object is removed, make the exiting subtree inert and remove it from the accessibility tree; cancel its pointer events before the animation ends. With AnimatePresence, an exiting component can use `useIsPresent()` to set `inert` and `aria-hidden`. Only the active sheet owns focus trapping. Restore focus to its trigger, and allow an immediate new open to reverse the exit safely. Exercise selecting a conversation and immediately starting another: visible pixels from an old panel must not advertise actions that are about to disappear. Keep one unambiguous primary action for each automation name required by the product contract.
 
 ## Adapt and finish
 

@@ -250,3 +250,24 @@ test('curated follow-up exposes its parent and additional review instructions',a
  await expect(page.getByRole('dialog')).toContainText(run.parentRunId);
  await expect(page.getByRole('dialog')).toContainText(run.reviewInstruction);
 });
+
+test('APM downloads preserve exact public profiles and custom skill revisions', async ({page, request}) => {
+  for (const run of runs) {
+    for (const file of ['apm.yml', 'apm.lock.yaml']) {
+      const response = await request.get(`/skill-tester/profiles/${run.profile}/${file}`);
+      expect(response.ok()).toBeTruthy();
+      expect(await response.text()).toBe(fs.readFileSync(`profiles/${run.profile}/${file}`, 'utf8'));
+    }
+    const manifest = fs.readFileSync(`profiles/${run.profile}/apm.yml`, 'utf8');
+    for (const skill of run.skills) expect(manifest).toContain(`${skill.repo}/${skill.path}#${skill.commit}`);
+  }
+  await page.goto('/skill-tester/');
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('link', {name:'Download APM', exact:true}).first().click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe('apm.yml');
+  const downloadPath = await download.path();
+  expect(fs.readFileSync(downloadPath!, 'utf8')).toContain('dependencies:');
+  await page.getByRole('button',{name:'Compare side by side'}).click();
+  await expect(page.getByRole('link',{name:'Download APM',exact:true})).toHaveCount(2);
+});

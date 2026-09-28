@@ -2,6 +2,7 @@ import { StrictMode, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowUpRight,
+  Download,
   ArrowLeft,
   Check,
   ChevronDown,
@@ -73,6 +74,11 @@ const descriptions: Record<string, string> = {
 };
 function link(run: Run, scenario = "research") {
   return `${base}variants/${run.id}/?scenario=${scenario}`;
+}
+function ApmDownload({ run }: { run: Run }) {
+  return <a className="apm-download" href={`${base}profiles/${run.profile}/apm.yml`} download="apm.yml" title={`Download the pinned skills for ${run.label}`}>
+    <Download size={14} aria-hidden="true" /> Download APM
+  </a>;
 }
 function App() {
   const [hash, setHash] = useState(location.hash);
@@ -354,6 +360,7 @@ function App() {
                           <span className="dot-divider">·</span>{" "}
                           {run.repairCount === 0 ? "No repair" : "1 repair"}
                         </span>
+                        <ApmDownload run={run} />
                         <button onClick={() => openDetails(run)}>
                           Run details <ArrowUpRight size={14} />
                         </button>
@@ -430,6 +437,11 @@ function App() {
                 <span className="eyebrow">Run record</span>
                 <h2>{details.label}</h2>
                 <p className="muted">{details.id}</p>
+                <div className="apm-export">
+                  <ApmDownload run={details} />
+                  <a href={`${base}profiles/${details.profile}/apm.lock.yaml`} download="apm.lock.yaml">Download lockfile</a>
+                  <p>Save as <code>apm.yml</code> in your project, then run <code>apm install</code>. Includes every enabled skill at its recorded public GitHub revision, including skills created in this repository.</p>
+                </div>
                 <dl>
                   <dt>Benchmark</dt><dd>{details.benchmark}{details.mode === "curated-followup" && " · Curated follow-up (extra review, not a fresh benchmark run)"}</dd>
                   {details.parentRunId && <><dt>Parent run</dt><dd>{details.parentRunId}</dd><dt>Recorded review</dt><dd><pre className="prompt-text">{details.reviewInstruction}</pre></dd></>}
@@ -659,6 +671,7 @@ function Compare({
                     options={passed}
                     onSelect={(id) => update(i ? "right" : "left", id)}
                   />
+                  <ApmDownload run={r} />
                   <button onClick={() => onDetails(r)}>Details</button>
                   <a
                     aria-label={`Open ${r.label} standalone`}

@@ -39,6 +39,12 @@ fs.writeFileSync(
   JSON.stringify(prompts, null, 2),
 );
 await build({ root });
+for (const profile of new Set(runs.map(run => run.profile))) {
+  const dest = path.join(root, "dist/profiles", profile);
+  fs.mkdirSync(dest, { recursive: true });
+  for (const file of ["apm.yml", "apm.lock.yaml"])
+    fs.copyFileSync(path.join(root, "profiles", profile, file), path.join(dest, file));
+}
 for (const run of runs) {
   const dest = path.join(root, "dist", "variants", run.id);
   if (run.status === "passed")

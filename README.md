@@ -25,6 +25,15 @@ pnpm test:e2e
 pnpm validate    # all of the above
 ```
 
+## Download a design’s skills
+
+Use **Download APM** on a gallery card, comparison pane, or run details to save
+that design’s exact profile as `apm.yml`. Run details also offers `apm.lock.yaml`.
+Place the files in your project and run `apm install` (or `apm install --frozen`
+with the lockfile). Custom skills reference this public GitHub repository at their
+recorded commits, just like upstream skills. The manifest installs the selected
+skills; it does not reproduce the generated UI or include the benchmark prompt.
+
 ## Generate a variant
 
 Use the repository's `generate-ui-comparison` skill, or the local runner directly. Generation requires authenticated Codex CLI 0.153.4+ and APM 0.25.0+; it uses your local Codex account. It does not require a hosted application backend. The initial benchmark fixes `gpt-6-astra` with medium reasoning in `benchmark/config.json`.

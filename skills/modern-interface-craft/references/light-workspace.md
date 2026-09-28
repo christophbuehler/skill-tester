@@ -4,30 +4,31 @@ Use this reference when designing a text-led creative or research workspace. It 
 
 ## Give attention a useful place to land
 
-Build around the active work and its next action. A short left-aligned invitation, the real input, and a few genuine recent items can make a complete welcome. If there is no history, leave that space open. Avoid manufacturing a populated studio from imaginary projects or treating empty-state copy as a marketing hero.
+Build around the active work and its next action. A clearly worded input can be the entire invitation. Add genuine recent items only when resuming work is useful; do not add a heading or explanatory paragraph just to fill the welcome view. If there is no history, leave that space open. Avoid manufacturing a populated studio from imaginary projects or treating empty-state copy as a marketing hero.
 
-The content column should hold both the input and the principal reading edge. Modest asymmetry can give it character: a compact identity near the top and a current-work control near the reading area create a recognizable composition without filling the sides. Keep the invitation subordinate to the work once work exists. Do not duplicate the current thread name in a breadcrumb, heading, and status strip.
+The content column should hold both the input and the principal reading edge. Modest asymmetry can give it character: a compact identity near the top and a current-work control near the reading area create a recognizable composition without filling the sides. Keep the input invitation subordinate to existing work. Do not duplicate the current thread name in a breadcrumb, heading, and status strip.
 
 ## Design the input in all its shapes
 
-Think of one input with three content conditions, not three components:
+Keep one input across these states:
 
 | Condition | Shape and behavior |
 | --- | --- |
-| Short draft | A low rounded instrument with embedded attachment and send controls; no empty toolbar below it. |
+| Empty and unfocused | A softly filled input with a clear placeholder; no idle send/attach icons or permanent instructions crowding it. |
+| Engaged, still empty | Focus or touch reveals a discoverable attachment affordance. Keep send absent until a valid submission exists. |
+| Valid draft | Reveal send in a stable location without moving the caret or causing the first line to jump. |
 | Multiline draft | The writing region grows to a sensible viewport-relative maximum. Controls stay aligned to a predictable edge, and the draft scrolls internally only when necessary. |
 | Attached objects | Real file items gain a compact band inside the same surface. Text and controls retain room; filenames wrap or truncate with an accessible full name. |
 
-A CSS grid can keep fixed control footprints beside a flexible `min-width: 0` writing region. Use a real textarea with content-driven height, reset its measurement before recalculating, and account for padding and line height. Attachment content should determine additional height, rather than preallocating a large vacant rectangle. Preserve the stable textarea node across welcome-to-work changes; wrapper motion should not recreate the input or rescale glyphs.
+A CSS grid can allocate stable action space beside a flexible `min-width: 0` writing region. Keep latent action space modest; an empty state must not look like a toolbar with its icons erased. Revealed controls must not cover entered text. Use a real textarea with content-driven height, reset its measurement before recalculating, and account for padding and line height. Attachment content should determine additional height, rather than preallocating a large vacant rectangle. Preserve the stable textarea node across welcome-to-work changes; wrapper motion should not recreate the input or rescale glyphs.
 
 Relocation should preserve the input's identity and spatial relationship to the reading column. A persistent dock can be sticky in the work layout or otherwise positioned with measured content clearance. Reserve its actual expanded height in the reading area. A fixed bottom offset that only fits the empty row will hide content after attachments or a multiline draft arrive.
 
 ## Geometry is about visible edges
 
-Consider a single-row surface containing painted 44px circles. A 22px control radius plus a measured 10px inset gives a 32px surrounding radius; the corresponding equal-inset row is 64px tall. This is a worked relationship, not a size mandate. A larger invisible hit target does not change the painted radius.
+Select a moderately rounded parent shape before calculating its children. A low input need not be a pill; a revealed send action need not be a circle. Derive a nested rounded rectangle's corner from the surrounding corner minus its actual painted inset, clamped at zero. This keeps a related family of shapes without turning “more rounding” into a goal.
 
-Measure from the outer painted boundary to the inner painted control. Borders participate: a 1px outer border plus 9px content padding may provide the intended 10px edge distance, while 10px padding inside that border gives 11px. CSS can clamp radii to fit short edges. Inspect the computed result rather than trusting a token name. Expanded content usually needs a rounded rectangle instead of a full-height pill; relate its corner to the nearby controls and attachment insets instead of increasing the radius with total height.
-
+Measure from the outer painted boundary to the inner painted control. Borders participate in that distance if present, but the input does not need a border to make the equation work. Distinguish the painted shape from its larger invisible touch target. CSS can clamp declared radii to fit short edges; inspect used geometry in empty, multiline, and attached states. Do not force an expanded rectangle into a full-height capsule.
 When Nested Geometry is selected, defer the detailed math and verification to it. The art-direction criterion is an even, deliberate visible relationship between curves, controls, and space. Apply it where objects nest; unboxed prose needs no corner system.
 
 ## Give real objects continuity
@@ -46,7 +47,11 @@ Apple Design, when selected, supplies the mechanics of interruptibility and spat
 
 ## Adapt to real input methods
 
-Keep frequent actions visible on touch. Pointer hover can add labels or secondary emphasis, but keyboard focus also exposes any necessary secondary controls without moving them under the user. Press styling acknowledges pointer-down while the action retains the control's normal activation semantics; do not execute twice or commit a cancelled press.
+Distinguish a quiet resting state from a usable engaged state. Tapping or keyboard-focusing the input must reveal the attachment action without requiring text first; moving focus to that action keeps the engaged state open. Pointer hover may supplement this route but must never be the only way to discover or use an action. Hidden controls are not invisible tab stops. Do not hide stop, retry, errors, or removal while they are relevant.
+
+Remove standing file-type lists, keyboard hints and demo/privacy boilerplate from the composer surround. Present limits in the attachment interaction and show validation errors when they occur. Keep required demo/privacy information available through a clear, accessible disclosure or an appropriate one-time presentation; do not erase or misrepresent it. Preserve an accessible field label even when the placeholder is the only visible text. Avoid a row of new disclosure icons that simply recreates the clutter.
+
+Use a meaningful placeholder with enough size, weight and contrast to carry the empty state; omit trailing ellipses and decorative copy. Pure white canvas, a quiet neutral-gray input fill, and restrained corners are the Folio preference, expressed through semantic color variables. A visible keyboard-focus treatment remains necessary even when the resting border disappears. Press styling acknowledges pointer-down while the action retains the control's normal activation semantics; do not execute twice or commit a cancelled press.
 
 At small widths, reduce peripheral spacing before shrinking reading text or touch targets. Let the dock respond to multiline content, safe-area insets, and the visible viewport with the keyboard open. Verify that the last response, attachment removal, and stop action remain reachable. A tall history surface should dismiss predictably and return the user to the same working context. Reduced motion removes travel while preserving the same object and state relationships.
 

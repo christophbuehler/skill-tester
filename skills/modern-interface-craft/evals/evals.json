@@ -30,6 +30,22 @@
         "Search and category filtering change the displayed documents; no-results offers a working reset.",
         "Selecting a document exposes its details at desktop and mobile widths."
       ]
+    },
+    {
+      "id": 3,
+      "name": "quiet-composer-states",
+      "prompt": "Design a light Folio research composer using this skill. Implement an empty state, multiline drafting, local file selection/removal, simulated sending with stop, and a recoverable error. Use a standalone HTML file with local state, no network dependencies, and a short design note. Make it work with pointer, touch and keyboard at 390px and 1280px. Do not use unrelated skills.",
+      "expected_output": "A quiet placeholder-led resting state that reveals useful actions as interaction and content require them, with coherent moderate geometry and no loss of access or state.",
+      "files": [],
+      "assertions": [
+        "The empty unfocused composer has no visible send or attachment control and no surrounding standing helper-copy stack.",
+        "Keyboard focus and touch expose file selection without requiring a typed draft; focus can move into the revealed actions without closing them.",
+        "A valid draft or supported attachment exposes sending; stop and retry remain explicit in their relevant states.",
+        "Reveal, submission and attachment removal preserve textarea identity, entered content and a useful focus target.",
+        "The white canvas and neutral input fill use semantic colors; a permanent strong outline is unnecessary, while keyboard focus and text remain perceptible.",
+        "Parent and revealed action use related moderate corner geometry; the design note explains actual insets rather than prescribing a full capsule.",
+        "File limits and demo/privacy information remain discoverable, and validation errors are readable when relevant."
+      ]
     }
   ]
 }

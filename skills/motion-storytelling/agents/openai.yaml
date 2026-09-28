@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Storytelling"
+  short_description: "Create clear visual stories through purposeful motion"
+  default_prompt: "Use $motion-storytelling to turn my topic into a coherent animated explanation."

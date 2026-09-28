@@ -60,3 +60,10 @@ pnpm generate my-combination
 ```
 
 The eight new individual profiles have APM lockfiles and passed exact-pin, entrypoint-count and required-resource checks. This verifies installation completeness, not generated UI quality. Only requested combinations/samples are generated; adding a skill does not generate ten new interfaces automatically.
+
+## Working skill revisions awaiting a new generation profile
+
+- [Modern Interface Craft](../skills/modern-interface-craft/SKILL.md) now incorporates the user's quieter Folio preference: a placeholder-led resting state, contextual actions, pure-white canvas, soft neutral input tone and moderate related corners. Existing published profiles keep their historical pins; this update does not silently alter their output.
+- [Motion Storytelling](../skills/motion-storytelling/SKILL.md) is a new original adaptation of the user-supplied motion-guide screenshot. It is model-independent, with causal scene planning, object continuity, narration/caption timing and complete-deliverable review. The handcrafted paper aesthetic is optional. Its [brief template](../skills/motion-storytelling/references/brief-template.md) is reusable outside this repository. For a UI combination, apply its interaction-continuity principles without importing a film, narrator or mascot.
+
+These working sources are not yet new APM registry entries or generated samples. When generation is requested, publish and pin their exact revisions in new profiles, verify resources, and preserve the old locks. Do not describe existing Studio runs as having used these updates.

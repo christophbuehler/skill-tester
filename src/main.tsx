@@ -494,7 +494,12 @@ function App() {
                     const prefix = `${base}evidence/${details.id}/${folder}/`;
                     return <details key={phase}><summary>{label}</summary>
                       <ul>{evidence.captures.map(file=><li key={file}><a href={prefix+file} target="_blank" rel="noreferrer">{file.replace('.png','')}</a></li>)}</ul>
-                      {evidence.recordings?.map(recording=><div key={recording.video}><p>{recording.video.replace('.webm','')} · {recording.durationSeconds.toFixed(1)}s</p><video style={{width:'100%',maxHeight:480}} controls preload="none" aria-label={`${label} ${recording.video}`} src={prefix+recording.video} /></div>)}
+                      {evidence.recordings?.map(recording=><div key={recording.video}>
+                        <p>{recording.video.replace('.webm','')} · {recording.durationSeconds.toFixed(1)}s</p>
+                        <a href={prefix+recording.sheet} target="_blank" rel="noreferrer"><img style={{width:'100%',maxHeight:360,objectFit:'contain'}} loading="lazy" src={prefix+recording.sheet} alt={`${label} ${recording.video.includes('mobile')?'mobile':'desktop'} interaction sequence`} /></a>
+                        <a href={prefix+recording.video.replace(/\.webm$/,'.mp4')} download>Download recording (MP4)</a>
+                        {' · '}<a href={prefix+recording.video} download>Original WebM</a>
+                      </div>)}
                     </details>;
                   })}
                 </section> : null}

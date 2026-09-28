@@ -6,7 +6,7 @@ One chatbot brief, one model, different design skills. Explore live AI-generated
 
 ## Local development
 
-Requires Node 22+, pnpm 10.17.1, and Chromium for Playwright.
+Requires Node 22+, pnpm 10.17.1, Chromium for Playwright, and ffmpeg with libx264 for recording playback copies.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -149,7 +149,7 @@ All profiles receive Motion 13.4.4, Geist Variable 5.3.0, and Manrope Variable 5
 
 The v3 process allows 30 minutes implementation, two 10-minute design refinement sessions, and one 10-minute objective repair total. The host waits for fonts and resting-state transitions before screenshots, and separately records navigation, add/remove file, send, stop, and retry flows at desktop and mobile. Contact sheets plus targeted accessibility findings enter each refinement session; full recordings are published in Run details. Generating models see temporal samples rather than native video playback. Recordings are evidence for human review, not automated proof of exceptional design.
 
-Local generation additionally requires `ffmpeg` and `ffprobe`. CI only builds and validates committed results; it does not generate video or call AI.
+Local generation additionally requires `ffprobe`. Builds create H.264/MP4 playback copies of the immutable WebM recordings for browser compatibility, cached locally by source hash. Run details shows temporal previews and download links; it avoids native embedded video controls because an embedded-browser playback crash was observed during live review. Original recordings remain available. CI builds and validates committed results and transcodes playback copies; it does not generate new UI recordings or call AI.
 
 ```sh
 pnpm generate baseline-v3 --preflight

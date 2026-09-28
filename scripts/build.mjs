@@ -4,6 +4,8 @@ import { build } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwind from "@tailwindcss/vite";
 import { root } from "./profiles.mjs";
+import { files } from "./runner-lib.mjs";
+import { playbackCopy } from "./playback-copy.mjs";
 export function catalog() {
   return fs
     .readdirSync(path.join(root, "runs"))
@@ -51,4 +53,9 @@ for (const run of runs) {
     fs.cpSync(evidence, path.join(root, "dist/evidence", run.id), {
       recursive: true,
     });
+  for (const source of files(evidence).filter(file => file.endsWith('.webm'))) {
+    playbackCopy(source,
+      path.join(root, 'dist/evidence', run.id, path.relative(evidence, source).replace(/\.webm$/, '.mp4')),
+      path.join(root, '.local/playback-cache'));
+  }
 }

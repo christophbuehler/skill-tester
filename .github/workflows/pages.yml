@@ -23,6 +23,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
+      - name: Install recording playback encoder
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
       - run: pnpm validate
       - name: Upload browser evidence
         if: always()

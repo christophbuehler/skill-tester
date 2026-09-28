@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import fs from "node:fs";
+import { execFileSync } from "node:child_process";
 const runs = fs
   .readdirSync("runs")
   .filter((id) => fs.existsSync(`runs/${id}/metadata.json`))
@@ -87,20 +88,45 @@ test('versioned briefs and comparisons preserve benchmark provenance',async({pag
  }
 });
 
-test('v3 interaction evidence is playable from the Pages base path', async ({page}) => {
+test('v3 recordings download from the Pages base path and decode', async ({page, context}, info) => {
   const run = passed.find(r => r.benchmark === 'folio-v3');
   test.skip(!run, 'Need a completed v3 run');
   await page.goto(`/skill-tester/#compare?left=${run.id}&right=${run.id}`);
   await page.getByRole('button', {name: 'Details', exact: true}).first().click();
-  const videos = page.getByRole('dialog').locator('video');
-  await expect(videos).toHaveCount(6);
-  for (const video of await videos.all()) {
-    await video.evaluate((element: HTMLVideoElement) => element.load());
+  const links = page.getByRole('dialog').locator('a[download][href$=".mp4"]');
+  await expect(links).toHaveCount(6);
+  await expect(page.getByRole('dialog').locator('video')).toHaveCount(0);
+  const player = await context.newPage();
+  await player.goto('/skill-tester/');
+  for (const [index, link] of (await links.all()).entries()) {
+    const href = await link.getAttribute('href');
+    const source = new URL(href!, page.url()).href;
+    const response = await page.request.get(source);
+    expect(response.ok()).toBe(true);
+    expect(response.headers()['content-type']).toContain('video/mp4');
+    const downloaded = info.outputPath(`recording-${index}.mp4`);
+    fs.writeFileSync(downloaded, await response.body());
+    execFileSync('ffmpeg', ['-v', 'error', '-i', downloaded, '-f', 'null', '-'], {stdio:'pipe'});
+    // Decode the downloadable file in a separate test player. The gallery itself
+    // avoids native video controls because some embedded browsers crash on play.
+    await player.setContent('<video muted playsinline></video>');
+    const video = player.locator('video');
+    const supportsMP4 = await video.evaluate((element: HTMLVideoElement) => !!element.canPlayType('video/mp4; codecs="avc1.4D401F"'));
+    const original = await page.getByRole('dialog').locator('a[download][href$=".webm"]').nth(index).getAttribute('href');
+    const browserSource = supportsMP4 ? source : new URL(original!, page.url()).href;
+    await video.evaluate((element: HTMLVideoElement, url) => { element.src = url; }, browserSource);
+    await video.evaluate(async (element: HTMLVideoElement) => {
+      element.muted = true;
+      element.load();
+      await element.play();
+    });
     await expect.poll(() => video.evaluate((element: HTMLVideoElement) => ({
-      ready: element.readyState >= 1 && element.duration > 0,
+      ready: element.readyState >= 2 && element.currentTime > 0.15 && element.videoWidth > 0,
       error: element.error?.message ?? null,
     }))).toEqual({ready: true, error: null});
+    await video.evaluate((element: HTMLVideoElement) => element.pause());
   }
+  await player.close();
 });
 
 test('failed runs retain their outcome and review evidence', async ({page}) => {
@@ -116,5 +142,5 @@ test('failed runs retain their outcome and review evidence', async ({page}) => {
   await expect(page.getByRole('dialog')).toContainText(run.id);
   await expect(page.getByRole('dialog')).toContainText('failed;');
   const recordingCount = Object.values(run.browserReview ?? {}).reduce((sum: number, phase: any) => sum + (phase.recordings?.length ?? 0), 0);
-  await expect(page.getByRole('dialog').locator('video')).toHaveCount(recordingCount);
+  await expect(page.getByRole('dialog').locator('a[download][href$=".mp4"]')).toHaveCount(recordingCount);
 });

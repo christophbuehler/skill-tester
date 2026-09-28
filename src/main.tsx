@@ -42,7 +42,7 @@ type Run = {
   repairCount: number;
   refinementCount?: number;
   refinementPrompt?: string;
-  browserReview?: { before?: unknown; after?: unknown };
+  browserReview?: Record<string, { captures: string[]; recordings?: {video: string; sheet: string; durationSeconds: number}[] }>;
   promptHash: string;
   starterHash: string;
   validation: { task: string; passed: boolean }[];
@@ -485,10 +485,18 @@ function App() {
                   </pre>
                 </details>
                 {details.refinementCount ? <section>
-                  <h3>Visual refinement evidence</h3>
-                  <p>Browser captures informed one refinement session. Checks passing is not a design-quality rating.</p>
+                  <h3>Design refinement evidence</h3>
+                  <p>{details.refinementCount} browser-informed refinement session(s). Functional checks do not rate visual quality.</p>
                   <details><summary>Exact refinement instruction</summary><pre className="prompt-text">{details.refinementPrompt}</pre></details>
-                  <ul>{['desktop-welcome','desktop-research','intermediate-welcome','intermediate-research','mobile-welcome','mobile-research','mobile-attachment','mobile-activity'].map(state => <li key={state}>{state}: <a href={`${base}evidence/${details.id}/review-before/${state}.png`} target="_blank" rel="noreferrer">Before</a> · {details.browserReview?.after ? <a href={`${base}evidence/${details.id}/review-after/${state}.png`} target="_blank" rel="noreferrer">After</a> : "Final capture unavailable"}</li>)}</ul>
+                  {Object.entries(details.browserReview || {}).map(([phase, evidence]) => {
+                    const folder = phase === 'before' ? 'review-before' : phase === 'after' ? 'review-after' : `review-round-${phase.replace('round','')}`;
+                    const label = phase === 'before' ? 'Initial implementation' : phase === 'after' ? 'Final result' : `After refinement ${phase.replace('round','')}`;
+                    const prefix = `${base}evidence/${details.id}/${folder}/`;
+                    return <details key={phase}><summary>{label}</summary>
+                      <ul>{evidence.captures.map(file=><li key={file}><a href={prefix+file} target="_blank" rel="noreferrer">{file.replace('.png','')}</a></li>)}</ul>
+                      {evidence.recordings?.map(recording=><div key={recording.video}><p>{recording.video.replace('.webm','')} · {recording.durationSeconds.toFixed(1)}s</p><video style={{width:'100%',maxHeight:480}} controls preload="none" aria-label={`${label} ${recording.video}`} src={prefix+recording.video} /></div>)}
+                    </details>;
+                  })}
                 </section> : null}
                 <h3>Validation</h3>
                 <ul>

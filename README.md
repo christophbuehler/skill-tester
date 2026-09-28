@@ -97,9 +97,10 @@ The harness and comparison website are MIT licensed. Generated samples are inclu
 
 [`skills/modern-interface-craft/SKILL.md`](skills/modern-interface-craft/SKILL.md)
 contains an original design skill created using Anthropic's Skill Creator workflow.
-It emphasizes clean contemporary composition, useful responsive behavior, coherent
-visual identity, purposeful motion, and complete microinteraction states. It does
-not impose a palette, component library, font, or animation dependency.
+The current revision provides explicit art direction: a dark creative workspace,
+generous rounded controls, strong variable typography, contextual history, and
+continuous composer and attachment interactions. Earlier neutral revisions remain
+pinned in their original profiles.
 
 The [research notes](skills/modern-interface-craft/references/research.md) and
 [source audit](skills/modern-interface-craft/references/source-audit.json) record
@@ -107,20 +108,20 @@ all 555 external resources and designer URLs discovered across Designeer's pages
 Coverage includes 454 readable pages, 64 limited shells, and 37 unavailable or
 blocked responses; it is not a claim of 555 rendered usability reviews.
 
-Use the current pinned single-skill profile (the unsuffixed profile retains the old skill revision):
+Use the current pinned single-skill profile (older profile IDs retain their historical revisions):
 
 ```sh
-pnpm generate modern-interface-craft-v2 --preflight
-pnpm generate modern-interface-craft-v2
+pnpm generate modern-interface-craft-v3 --preflight
+pnpm generate modern-interface-craft-v3
 ```
 
 Or explicitly combine it with the existing three skills in one new variant:
 
 ```sh
-pnpm run profile add all-four-v2 frontend-design impeccable ui-ux-pro-max modern-interface-craft-v2
-(cd profiles/all-four-v2 && apm install)
-pnpm generate all-four-v2 --preflight
-pnpm generate all-four-v2
+pnpm run profile add all-four-v3 frontend-design impeccable ui-ux-pro-max modern-interface-craft-v3
+(cd profiles/all-four-v3 && apm install)
+pnpm generate all-four-v3 --preflight
+pnpm generate all-four-v3
 ```
 
 Registering a profile does not generate a result or change existing runs. The
@@ -132,9 +133,9 @@ pinned to that exact revision. Preserve old profile pins and immutable results.
 See the [initial authoring evaluation](docs/modern-interface-craft-evaluation.md)
 for paired prototype checks, contrast findings, and evaluation limitations.
 
-## Folio v2
+## Folio v2 (preserved experiment)
 
-The current benchmark expresses capabilities rather than prescribing sidebar, card, or attachment presentation. Conversation navigation may be disclosed at any width; suggestions are optional. V1 prompts/configuration remain in `benchmark/versions/folio-v1`, with existing runs and profile pins unchanged. The gallery labels benchmark versions and warns about comparing different inputs.
+The v2 benchmark expresses capabilities rather than prescribing sidebar, card, or attachment presentation. Conversation navigation may be disclosed at any width; suggestions are optional. V1 prompts/configuration remain in `benchmark/versions/folio-v1`, with existing runs and profile pins unchanged. The gallery labels benchmark versions and warns about comparing different inputs.
 
 ```sh
 pnpm generate baseline-v2 --preflight
@@ -144,3 +145,24 @@ pnpm generate modern-interface-craft-v2
 ```
 
 The updated skill favors minimal product composition, concrete copy, contextual controls, and continuity between meaningful states. Its aesthetic guidance appears only in that skill profile. Both profiles receive identical neutral implementation/refinement prompts and budgets. New metadata records the exact prompts, refinement count, browser observations, and before/after captures. One pair is a showcase, not evidence of a reliable skill ranking. Functional success and accessibility findings are separate from a human design assessment.
+
+## Folio v3: art direction and temporal review
+
+V3 gives selected skills explicit authority over composition, navigation, type, geometry, the composer, and motion. The neutral task asks for three distinct concepts before selecting one; art direction lives in the profiles. Modern Interface Craft now commits to a dark tactile studio with substantial rounded controls and contextual history. The new independent Apple Design skill interprets Apple's public material and motion guidance as a light content plane with floating controls and anchored sheets. It is not an official Apple skill and bundles no proprietary Apple assets.
+
+All profiles receive Motion 13.4.4, Geist Variable 5.3.0, and Manrope Variable 5.3.0, locked and bundled offline. No shared theme or component shell is supplied. Font licenses are published in `public/font-licenses.txt`. V1/V2 sources, profile pins, and records remain immutable; their original prompts remain viewable. Rebuilding old results uses the current common build toolchain, not a archived binary artifact.
+
+The v3 process allows 30 minutes implementation, two 10-minute design refinement sessions, and one 10-minute objective repair total. The host waits for fonts and resting-state transitions before screenshots, and separately records navigation, add/remove file, send, stop, and retry flows at desktop and mobile. Contact sheets plus targeted accessibility findings enter each refinement session; full recordings are published in Run details. Generating models see temporal samples rather than native video playback. Recordings are evidence for human review, not automated proof of exceptional design.
+
+Local generation additionally requires `ffmpeg` and `ffprobe`. CI only builds and validates committed results; it does not generate video or call AI.
+
+```sh
+pnpm generate baseline-v3 --preflight
+pnpm generate baseline-v3
+pnpm generate modern-interface-craft-v3 --preflight
+pnpm generate modern-interface-craft-v3
+pnpm generate apple-design-v3 --preflight
+pnpm generate apple-design-v3
+```
+
+Apple Design source: [`skills/apple-design/SKILL.md`](skills/apple-design/SKILL.md), with [sources and interpretation](skills/apple-design/references/design-language.md). Combine registered skill IDs explicitly as before; `apple-design` is its registry ID, while `apple-design-v3` is the initial single-skill profile. The first v3 batch compares baseline and the two custom directions; earlier upstream-skill runs remain available, and those pinned profiles can also be generated under the new benchmark.

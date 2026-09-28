@@ -43,6 +43,20 @@ test("each benchmark batch shares inputs and exact prompt provenance", () => {
     const prompt=fs.readFileSync(version===current?'benchmark/prompt.md':`benchmark/versions/${version}/prompt.md`,'utf8');
     for(const r of batch) {
       assert.equal(hash(prompt),r.promptHash);
+      if(r.benchmark==='folio-v3' && r.status==='passed') {
+        assert.equal(r.refinementCount,2);
+        assert.equal(r.refinementRounds,2);
+        for(const phase of ['before','round1','after']) {
+          assert.equal(r.browserReview[phase].captures.length,10);
+          assert.equal(r.browserReview[phase].recordings.length,2);
+          const folder = phase==='before' ? 'review-before' : phase==='after' ? 'review-after' : 'review-round-1';
+          for(const file of [...r.browserReview[phase].captures, ...r.browserReview[phase].recordings.map((recording: {video: string})=>recording.video)]) {
+            assert.equal(path.basename(file),file);
+            assert.ok(fs.statSync(path.join('runs',r.id,'evidence',folder,file)).size>0);
+          }
+          for(const recording of r.browserReview[phase].recordings) assert.ok(recording.durationSeconds>0);
+        }
+      }
       if(r.benchmark==='folio-v2' && r.status==='passed') {
         assert.equal(r.refinementCount,1);
         assert.equal(r.taskPrompt,prompt);

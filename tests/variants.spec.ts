@@ -36,6 +36,8 @@ for(const run of runs) {
   for(const [name,width,height] of [['desktop',1440,1000],['mobile',390,844]] as const) {
    await page.setViewportSize({width,height});await page.goto(`${route}?scenario=research`);await expect(page.getByTestId('messages')).toContainText('A clearer path');
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBe(true);
+   await page.evaluate(()=>document.fonts.ready);
+   await page.waitForTimeout(650);
    await page.screenshot({path:info.outputPath(`${name}.png`),fullPage:true});
    if(process.env.CAPTURE_DIR) {fs.mkdirSync(path.join(process.env.CAPTURE_DIR,run.id),{recursive:true});await page.screenshot({path:path.join(process.env.CAPTURE_DIR,run.id,`${name}.png`),fullPage:true});}
    const a11y=await new AxeBuilder({page}).analyze();await info.attach(`${name}-accessibility`,{body:JSON.stringify(a11y.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length})),null,2),contentType:'application/json'});

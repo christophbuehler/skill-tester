@@ -78,6 +78,7 @@ test('versioned briefs and comparisons preserve benchmark provenance',async({pag
  const dialog=page.getByRole('dialog');
  await expect(dialog).toContainText('folio-v1');
  await expect(dialog).toContainText('folio-v2');
+ await expect(dialog).toContainText('folio-v3');
  const v1=passed.find(r=>r.benchmark==='folio-v1');
  const v2=passed.find(r=>r.benchmark==='folio-v2');
  if(v1 && v2) {

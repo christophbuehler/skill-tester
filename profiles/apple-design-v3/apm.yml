@@ -1,0 +1,8 @@
+name: apple-design-v3
+version: 1.0.0
+description: Skill Tester profile apple-design-v3
+targets:
+  - codex
+dependencies:
+  apm:
+    - christophbuehler/skill-tester/skills/apple-design#f80e26d80fd4cfe11d81fa3c852cd1928f7cc570

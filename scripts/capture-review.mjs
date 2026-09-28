@@ -1,4 +1,6 @@
 import fs from 'node:fs';
+import AxeBuilder from '@axe-core/playwright';
+import {recordInteractions} from './record-interactions.mjs';
 import path from 'node:path';
 import {spawn} from 'node:child_process';
 import {chromium} from '@playwright/test';
@@ -20,9 +22,11 @@ export async function captureReview(work, output) {
   const context=await browser.newContext();
   await context.route('**/*',route=>route.request().url().startsWith('http://127.0.0.1:4184/') ? route.continue() : route.abort());
   const page=await context.newPage();
-  const report={captures:[],observations:[],runtimeErrors:[],motion:'Static captures and reduced-motion state check; motion quality requires interactive human review.'};
+  const report={captures:[],observations:[],runtimeErrors:[],accessibility:[], recordings:[], motion:'Settled static views plus recorded navigation, document, send/stop/retry transitions. Contact sheets are temporal samples; inspect videos for continuity.'};
   page.on('pageerror',e=>report.runtimeErrors.push(e.message));
   async function shot(name) {
+   await page.evaluate(()=>document.fonts.ready);
+   await page.waitForTimeout(650);
    await page.screenshot({path:path.join(output,name+'.png'),fullPage:true});
    report.captures.push(name+'.png');
    report.observations.push({state:name,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)});
@@ -35,6 +39,8 @@ export async function captureReview(work, output) {
    await page.goto('http://127.0.0.1:4184/?scenario=research');
    await page.getByTestId('messages').getByText('A clearer path',{exact:false}).first().waitFor();
    await shot(`${name}-research`);
+   const scan=await new AxeBuilder({page}).analyze();
+   report.accessibility.push({viewport:name,findings:scan.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length,examples:v.nodes.slice(0,4).map(n=>({target:n.target,reason:n.failureSummary}))}))});
   }
   await page.goto('http://127.0.0.1:4184/?scenario=welcome');
   await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'research-notes.txt',mimeType:'text/plain',buffer:Buffer.from('Local fixture')});
@@ -50,6 +56,11 @@ export async function captureReview(work, output) {
   await page.reload();
   await page.getByRole('textbox',{name:'Message',exact:true}).waitFor();
   report.observations.push({state:'reduced-motion',composerVisible:true});
+  await context.close();
+  for(const [name,viewport] of [['desktop',{width:1440,height:1000}],['mobile',{width:390,height:844}]]) {
+   const recording=await recordInteractions(browser,output,name,viewport);
+   report.recordings.push(recording);report.captures.push(recording.sheet);
+  }
   fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(report,null,2)+'\n');
   return report;
  } finally {

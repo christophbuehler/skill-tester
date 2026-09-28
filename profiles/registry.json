@@ -63,5 +63,31 @@
       "references/research.md",
       "references/source-audit.json"
     ]
+  },
+  "modern-interface-craft-v3": {
+    "name": "Modern Interface Craft v3",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/modern-interface-craft",
+    "commit": "f80e26d80fd4cfe11d81fa3c852cd1928f7cc570",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/interaction-recipes.md",
+      "references/research.md",
+      "references/source-audit.json"
+    ]
+  },
+  "apple-design": {
+    "name": "Apple Design",
+    "repo": "christophbuehler/skill-tester",
+    "path": "skills/apple-design",
+    "commit": "f80e26d80fd4cfe11d81fa3c852cd1928f7cc570",
+    "license": "MIT",
+    "requiredResources": [
+      "SKILL.md",
+      "LICENSE.txt",
+      "references/design-language.md"
+    ]
   }
 }

@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import fs from "node:fs";
-const ids = fs
+const isolated = process.env.BENCHMARK_ISOLATED === "1";
+const ids = isolated ? ["isolated"] : fs
   .readdirSync("runs")
   .filter(
     (id) =>
@@ -15,12 +16,12 @@ for (const id of ids)
     const external: string[] = [];
     page.on("request", (r) => {
       if (
-        !r.url().startsWith("http://127.0.0.1:4173/") &&
+        !r.url().startsWith(isolated ? "http://127.0.0.1:4183/" : "http://127.0.0.1:4173/") &&
         !r.url().startsWith("data:")
       )
         external.push(r.url());
     });
-    await page.goto(`/skill-tester/variants/${id}/`);
+    await page.goto(isolated ? "/" : `/skill-tester/variants/${id}/`);
     const dt = await page.evaluateHandle(() => {
       const data = new DataTransfer();
       data.items.add(

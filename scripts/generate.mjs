@@ -110,6 +110,7 @@ try {
   cp(path.join(root, "packages/mock-agent"), path.join(work, "shared"));
   cp(path.join(root, "benchmark/prompt.md"), path.join(work, "PROMPT.md"));
   cp(path.join(root, "benchmark/CONTRACT.md"), path.join(work, "CONTRACT.md"));
+  cp(path.join(root, "benchmark/CAPABILITIES.md"), path.join(work, "CAPABILITIES.md"));
   cp(path.join(root, "pnpm-lock.yaml"), path.join(work, "pnpm-lock.yaml"));
   const pkg = JSON.parse(
     fs.readFileSync(path.join(root, "package.json"), "utf8"),
@@ -149,6 +150,7 @@ try {
     path.join(root, "tests/variants.spec.ts"),
     path.join(work, "tests/variants.spec.ts"),
   );
+  cp(path.join(root, "tests/interactions.spec.ts"), path.join(work, "tests/interactions.spec.ts"));
   fs.writeFileSync(
     path.join(work, "playwright.config.ts"),
     fs
@@ -261,6 +263,7 @@ try {
     isolation,
     repairCount: 0,
     refinementCount: 0,
+    refinementRounds: config.refinementRounds,
     taskPrompt: prompt,
     refinementPrompt: fs.readFileSync(path.join(root, "benchmark/refinement.md"), "utf8"),
     refinementTimeoutMs: config.refinementTimeoutMs,
@@ -419,13 +422,17 @@ try {
         if (failures.length) throw Error("Acceptance checks failed after the permitted repair.");
       }
       await validateWithRepair();
-      const before = path.join(logDir, 'review-before');
-      const review = await captureReview(work, before);
-      metadata.refinementCount = 1;
+      let phase = 'review-before';
+      let review = await captureReview(work, path.join(logDir,phase));
       metadata.browserReview = {before: review};
-      await invoke(`${prompt}\n\n${metadata.refinementPrompt}\nBrowser observations:\n${JSON.stringify(review)}`, config.refinementTimeoutMs, 'refinement', review.captures.map(file => path.join(before,file)));
-      await validateWithRepair();
-      metadata.browserReview.after = await captureReview(work, path.join(logDir,'review-after'));
+      for (let round=1; round<=config.refinementRounds; round++) {
+        metadata.refinementCount = round;
+        await invoke(`${prompt}\n\nDesign refinement ${round} of ${config.refinementRounds}.\n${metadata.refinementPrompt}\nBrowser observations:\n${JSON.stringify(review)}`, config.refinementTimeoutMs, `refinement-${round}`, review.captures.map(file => path.join(logDir,phase,file)));
+        await validateWithRepair();
+        phase = round===config.refinementRounds ? 'review-after' : `review-round-${round}`;
+        review = await captureReview(work,path.join(logDir,phase));
+        metadata.browserReview[round===config.refinementRounds ? 'after' : `round${round}`] = review;
+      }
       if (metadata.loadedSkills.length !== selected.length)
         throw Error("Missing successful skill entrypoint read evidence.");
       metadata.status = "passed";
@@ -471,7 +478,7 @@ try {
       collect(r.suites || []);
       metadata.accessibility = violations;
     }
-    for (const phase of ['review-before','review-after']) {
+    for (const phase of ['review-before', ...Array.from({length: config.refinementRounds-1}, (_,i)=>`review-round-${i+1}`), 'review-after']) {
       if (fs.existsSync(path.join(logDir,phase))) cp(path.join(logDir,phase),path.join(evidence,phase));
     }
     metadata.sourceHash = hash(JSON.stringify(snapshot(dest)));

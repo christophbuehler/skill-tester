@@ -1,0 +1,7 @@
+name: baseline-v3
+version: 1.0.0
+description: Skill Tester profile baseline-v3
+targets:
+  - codex
+dependencies:
+  apm: []

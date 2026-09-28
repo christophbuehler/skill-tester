@@ -15,23 +15,26 @@
     "validate": "node scripts/validate.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "lucide-react": "0.468.0",
+    "motion": "13.4.4",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-markdown": "10.1.0",
-    "remark-gfm": "4.0.1",
-    "lucide-react": "0.468.0"
+    "remark-gfm": "4.0.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.55.1",
     "@tailwindcss/vite": "4.1.13",
-    "tailwindcss": "4.1.13",
-    "@vitejs/plugin-react": "5.0.3",
-    "vite": "7.1.7",
-    "typescript": "5.9.2",
+    "@types/node": "24.5.2",
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
-    "@types/node": "24.5.2",
+    "@vitejs/plugin-react": "5.0.3",
+    "tailwindcss": "4.1.13",
     "tsx": "4.20.5",
-    "@playwright/test": "1.55.1",
-    "@axe-core/playwright": "4.10.2"
+    "typescript": "5.9.2",
+    "vite": "7.1.7"
   }
 }

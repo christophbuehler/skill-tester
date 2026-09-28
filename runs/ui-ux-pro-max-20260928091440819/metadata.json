@@ -1,0 +1,146 @@
+{
+  "id": "ui-ux-pro-max-20260928091440819",
+  "profile": "ui-ux-pro-max",
+  "label": "UI/UX Pro Max",
+  "skills": [
+    {
+      "id": "ui-ux-pro-max",
+      "name": "UI/UX Pro Max",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/ui-ux-pro-max",
+      "commit": "09170eec67eefd46a7ae85de61b40c194020f997",
+      "license": "MIT",
+      "requiredResources": [
+        "SKILL.md",
+        "scripts/search.py",
+        "data/styles.csv",
+        "references/quick-reference.md"
+      ]
+    }
+  ],
+  "createdAt": "2026-09-28T09:14:42.486Z",
+  "benchmark": "folio-v1",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "promptHash": "acd5368648d598aef41ba8de7ddb8602856525a42d00b76d58362265650b6515",
+  "starterHash": "4b9a02ef9d65ef26dd6b5fcd01b49d82ae8d7b58829788613b11f6e220a2716a",
+  "profileInstruction": "Selected design skills (read every entrypoint before implementing):\n- .agents/skills/ui-ux-pro-max/SKILL.md\nApply all of them. The shared benchmark brief takes precedence. No additional skills.",
+  "apmVersion": "Agent Package Manager (APM) CLI version 0.25.0 (d73e6ac)",
+  "cliVersion": "codex-cli 0.153.4",
+  "isolation": {
+    "passed": true,
+    "skills": 1,
+    "promptHash": "1b058eb9ea2dece9444b019fcf652d202c5dd3bd02855fa45cd48a0ea8ac0128"
+  },
+  "repairCount": 1,
+  "status": "passed",
+  "elapsedMs": 408879,
+  "tokenUsage": [
+    {
+      "input_tokens": 264598,
+      "cached_input_tokens": 210176,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10185,
+      "reasoning_output_tokens": 183
+    },
+    {
+      "input_tokens": 121912,
+      "cached_input_tokens": 87936,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 786,
+      "reasoning_output_tokens": 118
+    }
+  ],
+  "loadedSkills": [
+    ".agents/skills/ui-ux-pro-max/SKILL.md"
+  ],
+  "validation": [
+    {
+      "task": "typecheck",
+      "passed": true
+    },
+    {
+      "task": "build",
+      "passed": true
+    },
+    {
+      "task": "test:e2e",
+      "passed": true
+    }
+  ],
+  "validationAttempts": [
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": false,
+        "failure": "\n> skill-tester@1.0.0 test:e2e /private<workspace>\n> BENCHMARK_ISOLATED=1 playwright test\n\n\nRunning 4 tests using 4 workers\n\n  ✓  3 tests/variants.spec.ts:13:3 › isolated: chat, streaming, stop, retry, switch (3.2s)\n  ✓  2 tests/variants.spec.ts:93:3 › isolated: deterministic error recovery (3.2s)\n  ✘  4 tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send (5.5s)\n  ✘  1 tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report (30.0s)\n\n\n  1) tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send ──────────────────────\n\n    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n    Locator: getByTestId('pending-attachments')\n    Expected string: not \u001b[32m\"notes.txt\"\u001b[39m\n    Received: <element(s) not found>\n    Timeout: 5000ms\n\n    Call log:\n    \u001b[2m  - Expect \"not toContainText\" with timeout 5000ms\u001b[22m\n    \u001b[2m  - waiting for getByTestId('pending-attachments')\u001b[22m\n\n\n      21 |   await page.goto(route);await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'notes.txt',mimeType:'text/plain',buffer:Buffer.from('Research notes')});\n      22 |   await expect(page.getByTestId('pending-attachments')).toContainText('notes.txt');await page.getByRole('button',{name:'Remove notes.txt',exact:true}).click();\n    > 23 |   await expect(page.getByTestId('pending-attachments')).not.toContainText('notes.txt');\n         |                                                             ^\n      24 |   await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'bad.exe',mimeType:'application/octet-stream',buffer:Buffer.from('x')});await expect(page.getByRole('alert')).toContainText('unsupported');\n      25 |   await page.getByLabel('Upload files',{exact:true}).setInputFiles({name:'brief.pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF fixture')});await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.getByTestId('messages')).toContainText('brief.pdf');\n      26 |  });\n        at /private<workspace>/tests/variants.spec.ts:23:61\n\n    Error Context: test-results/variants-isolated-attachments-invalid-files-send/error-context.md\n\n  2) tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report ──────\n\n    \u001b[31mTest timeout of 30000ms exceeded.\u001b[39m\n\n    Error: locator.click: Test timeout of 30000ms exceeded.\n    Call log:\n    \u001b[2m  - waiting for getByRole('button', { name: 'Open conversations', exact: true })\u001b[22m\n    \u001b[2m    - locator resolved to <button aria-expanded=\"false\" class=\"icon-button open-nav\" aria-label=\"Open conversations\">…</button>\u001b[22m\n    \u001b[2m  - attempting click action\u001b[22m\n    \u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m      - element is visible, enabled and stable\u001b[22m\n    \u001b[2m      - scrolling into view if needed\u001b[22m\n    \u001b[2m      - done scrolling\u001b[22m\n    \u001b[2m      - <a href=\"#message\" class=\"skip-link\">Skip to message</a> intercepts pointer events\u001b[22m\n    \u001b[2m    - retrying click action\u001b[22m\n    \u001b[2m    - waiting 20ms\u001b[22m\n    \u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m      - element is visible, enabled and stable\u001b[22m\n    \u001b[2m      - scrolling into view if needed\u001b[22m\n    \u001b[2m      - done scrolling\u001b[22m\n    \u001b[2m      - <a href=\"#message\" class=\"skip-link\">Skip to message</a> intercepts pointer events\u001b[22m\n    \u001b[2m    - retrying click action\u001b[22m\n    \u001b[2m      - waiting 100ms\u001b[22m\n    \u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m       - element is visible, enabled and stable\u001b[22m\n    \u001b[2m       - scrolling into view if needed\u001b[22m\n    \u001b[2m       - done scrolling\u001b[22m\n    \u001b[2m       - <a href=\"#message\" class=\"skip-link\">Skip to message</a> intercepts pointer events\u001b[22m\n    \u001b[2m     - retrying click action\u001b[22m\n    \u001b[2m       - waiting 500ms\u001b[22m\n\n\n      36 |    const a11y=await new AxeBuilder({page}).analyze();await info.attach(`${name}-accessibility`,{body:JSON.stringify(a11y.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length})),null,2),contentType:'application/json'});\n      37 |    await page.keyboard.press('Tab');expect(await page.evaluate(()=>document.activeElement!==document.body)).toBe(true);\n    > 38 |    if(name==='mobile') {const open=page.getByRole('button',{name:'Open conversations',exact:true});if(await open.isVisible())await open.click();await page.getByRole('button',{name:'Document review',exact:true}).click();await expect(page.getByTestId('messages')).toContainText('launch-brief.pdf');}\n         |                                                                                                                                         ^\n      39 |   }\n      40 |  });\n      41 | }\n        at /private<workspace>/tests/variants.spec.ts:38:137\n\n    Error Context: test-results/variants-isolated-responsi-41793-ts-and-accessibility-report/error-context.md\n\n  2 failed\n    tests/variants.spec.ts:55:3 › isolated: attachments, invalid files, send ───────────────────────\n    tests/variants.spec.ts:112:3 › isolated: responsive screenshots and accessibility report ───────\n  2 passed (31.2s)\n ELIFECYCLE  Command failed with exit code 1.\n\n(node:75394) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:75400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:75401) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[2m[WebServer] \u001b[22m(node:75401) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:75409) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75411) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75411) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:75411) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75409) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:75409) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75408) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:75410) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(node:75408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:75410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+      }
+    ],
+    [
+      {
+        "task": "typecheck",
+        "passed": true
+      },
+      {
+        "task": "build",
+        "passed": true
+      },
+      {
+        "task": "test:e2e",
+        "passed": true
+      }
+    ]
+  ],
+  "failure": null,
+  "accessibility": [
+    {
+      "viewport": "desktop-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 4
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "viewport": "mobile-accessibility",
+      "findings": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 3
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "nodes": 1
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "description": "Ensure elements that have scrollable content are accessible by keyboard",
+          "nodes": 1
+        }
+      ]
+    }
+  ],
+  "sourceHash": "e699bad32c1d9b788252708a8bda3553a47512a6a70b635d8c47139c02f9b273"
+}
